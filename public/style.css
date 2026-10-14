@@ -1,0 +1,104 @@
+﻿body { margin:0; padding:6px; background:#191813; color:#e4dcc9; font:13px Georgia,"Times New Roman",serif; }
+#room { width:740px; margin:0 auto; }
+#masthead { text-align:center; border-top:3px double #ae8c4e; border-bottom:3px double #ae8c4e; padding:5px 0; }
+h1 { font-size:24px; font-weight:normal; letter-spacing:3px; margin:0; color:#f0e4c6; }
+h2 { font:12px Arial,sans-serif; letter-spacing:2px; color:#c9af74; margin:0 0 10px; }
+a { color:#e2c58a; }
+.tagline { font-style:italic; margin:5px 0 0; color:#b9b09e; }
+.toolbar { padding:6px 0; font:12px Arial,sans-serif; }
+button { background:#d9c28b; color:#231e14; border:1px solid #ab8c4b; padding:4px 7px; font:bold 12px Arial,sans-serif; cursor:pointer; }
+button:disabled { color:#807969; background:#39372e; cursor:default; }
+input { background:#ebe2cd; color:#27231b; border:1px solid #aa9367; padding:3px; font:12px "Courier New",monospace; }
+#bankroll { float:right; padding:5px 0; color:#ecd198; }
+#notice { background:#28261d; border:1px solid #5f5436; padding:5px 7px; line-height:16px; }
+#table { width:100%; table-layout:fixed; }
+.seatcell { vertical-align:top; width:25%; }
+.seatspot { position:relative; }
+.seat { background:#25231c; border:1px solid #4d4735; padding:5px 3px; text-align:center; }
+.seat.active, .human.active { border-color:#d3b168; background:#302d20; }
+.portrait { width:32px; height:40px; border:1px solid #8e784c; vertical-align:middle; float:left; margin:0 5px 2px 0; }
+.name { display:block; height:16px; overflow:hidden; white-space:nowrap; font-size:12px; color:#ead8ad; }
+.stack { font:bold 15px Georgia,serif; color:#f0dfb6; margin:3px 0; }
+.holes { clear:both; }
+.badge { color:#efd18e; font:10px Arial,sans-serif; height:12px; padding-top:2px; }
+.action { color:#b9ac8b; font:11px Arial,sans-serif; height:12px; overflow:hidden; white-space:nowrap; }
+.folded { color:#898478; }
+#felt { background:#143b30; border:3px double #9d8450; text-align:center; padding:5px; }
+#handlabel { font:10px Arial,sans-serif; letter-spacing:1px; color:#c6cbb4; }
+#board { height:43px; padding:4px 0; }
+.card { display:inline-block; vertical-align:middle; background:#f2ecd9; color:#24231e; border:1px solid #b5a77c; width:28px; height:36px; margin:0 2px; text-align:center; font:bold 16px Georgia,serif; }
+.seat .card { width:22px; height:27px; font-size:12px; }
+.red { color:#9b362b; }
+.back { background:#634533; color:#d5b777; }
+#pot { font-size:20px; color:#e4d09b; }
+.human { background:#25231c; border:1px solid #776241; padding:5px; text-align:center; }
+.human .portrait { float:none; width:28px; height:35px; margin:0 8px 0 0; }
+.human .name, .human .stack, .human .holes, .human .badge { display:inline; margin-right:12px; }
+.human .action { display:none; }
+#controls { text-align:center; padding:6px 0 0; font:12px Arial,sans-serif; }
+#limits { color:#ada17e; font:11px Arial,sans-serif; height:14px; padding-top:4px; }
+#lastaction { font:11px Arial,sans-serif; color:#b9ac8b; height:16px; overflow:hidden; white-space:nowrap; padding:3px 7px; }
+#dialoguebox { border:3px double #ae8c4e; background:#24241f; margin-top:4px; }
+#talkheading { font:bold 11px Arial,sans-serif; color:#ecd198; padding:4px 6px; }
+#talkheading .fine { margin-left:10px; font-weight:normal; }
+#talklog { height:130px; overflow:auto; padding:0 6px 4px; font:12px Georgia,serif; line-height:16px; }
+.talkline { padding:3px 0; border-bottom:1px solid #3d3829; }
+.talkline b { color:#ecd198; }
+.talkline .context { color:#a99c82; font:10px Arial,sans-serif; }
+.talkline.win { color:#f0dfb6; background:#353020; }
+.talkline.dealer { color:#d8e0cf; background:#1b352b; border-top:1px solid #8a7647; }
+.spoken { color:#d3c4a2; font-style:italic; margin-left:4px; }
+.seatquote { height:26px; overflow:hidden; font:italic 10px Georgia,serif; line-height:13px; color:#d3c4a2; margin-bottom:3px; text-align:center; }
+.speaking { background:#29271e; }
+.panel { border:1px solid #5f5436; background:#25231c; padding:10px; margin-top:8px; }
+.panel p { margin:6px 0; line-height:1.4; }
+#history { height:130px; overflow:auto; font:11px "Courier New",monospace; }
+.event { padding:3px 0; border-bottom:1px solid #39352a; }
+.fine { color:#a99c82; font:11px Arial,sans-serif; }
+#playerpicker { text-align:center; margin-top:12px; padding:10px; border:1px solid #776241; background:#25231c; }
+#playerpicker p { margin:8px 0; }
+#avatars { width:100%; table-layout:fixed; }
+.avatar { border:1px solid #4d4735; padding:6px 2px; font:12px Arial,sans-serif; }
+.avatar.selected { border-color:#d3b168; background:#383020; color:#f0dfb6; }
+.avatar label { display:block; cursor:pointer; }
+.avatar img { width:72px; height:90px; border:1px solid #8e784c; margin-bottom:5px; }
+.lobby #masthead { padding:12px 0; }
+.lobby #notice { margin-top:10px; text-align:center; }
+.lobby .panel { text-align:center; }
+#resume { margin-left:12px; }
+#footer { padding:8px; text-align:center; font:10px Arial,sans-serif; color:#8c8269; }
+#tableview { position:relative; }
+#tableart { display:none; }
+.perspective { width:740px; height:300px; overflow:hidden; background:#252525; }
+.perspective #tableart { display:block; position:absolute; left:0; top:0; width:740px; height:300px; }
+.perspective #roomimage { display:block; width:740px; height:300px; }
+.perspective #table { position:static; }
+.perspective .seatspot { position:absolute; z-index:2; width:130px; }
+.perspective .seat, .perspective .human { position:static; width:120px; padding:4px; background:#202020; border:1px solid #958d78; }
+.perspective .active { border:1px solid #f4e0ab; background:#30302a; }
+.perspective #spot1 { left:18px; top:177px; }
+.perspective #spot2 { left:92px; top:6px; }
+.perspective #spot3 { left:305px; top:4px; }
+.perspective #spot4 { left:528px; top:8px; }
+.perspective #spot0 { left:523px; top:192px; width:194px; }
+.perspective #seat0 { width:184px; }
+.perspective .name { font-size:11px; }
+.perspective .stack { font-size:14px; margin:2px 0; }
+.perspective .seatquote { height:24px; line-height:12px; font-size:10px; }
+.perspective .holes { position:absolute; width:78px; height:40px; margin:0; }
+.perspective #seat1 .holes { left:138px; top:10px; }
+.perspective #seat2 .holes { left:32px; top:96px; }
+.perspective #seat3 .holes { left:22px; top:94px; }
+.perspective #seat4 .holes { left:-23px; top:96px; }
+.perspective #seat0 .holes { left:-106px; top:22px; visibility:visible; }
+.perspective .seat .card { width:26px; height:34px; font-size:15px; }
+.perspective .human .card { width:30px; height:40px; font-size:17px; }
+.perspective .human .name, .perspective .human .stack { display:block; margin:0; }
+.perspective .human .badge { display:block; margin:0; }
+.perspective .human .portrait { float:left; margin:0 6px 0 0; }
+.perspective .human .action { display:block; }
+.perspective #felt { position:absolute; left:250px; top:142px; z-index:1; width:240px; padding:0; border:0; background:transparent; }
+.perspective #handlabel, .perspective #pot { background:#282823; padding:1px 5px; color:#f1e5cc; }
+.perspective #board { height:45px; padding:5px 0; }
+.perspective #pot { font-size:17px; }
+.perspective .seat.folded .holes { visibility:hidden; }

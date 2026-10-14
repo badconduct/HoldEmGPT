@@ -1,0 +1,14 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>The Midnight Room - New Game</title><link rel="stylesheet" type="text/css" href="/style.css"></head>
+<body><div id="room" class="lobby"><div id="masthead"><h1>THE MIDNIGHT ROOM</h1><p class="tagline">Five seats. One deck. Make your own luck.</p></div>
+<div id="notice">Enter your name and choose a character.</div>
+<div id="playerpicker"><h2>NEW GAME</h2><p><label for="playername">Your name:</label> <input type="text" id="playername" size="24" maxlength="32" value="You"></p>
+<table id="avatars" cellpadding="0" cellspacing="6" summary="Choose your portrait"><tr>
+<td class="avatar selected"><label for="avatar-drifter"><img src="/portraits/players/drifter.jpg" width="72" height="90" alt="The Drifter"><br><input type="radio" id="avatar-drifter" name="playerportrait" value="drifter" checked="checked"> Drifter</label></td>
+<td class="avatar"><label for="avatar-heiress"><img src="/portraits/players/heiress.jpg" width="72" height="90" alt="The Heiress"><br><input type="radio" id="avatar-heiress" name="playerportrait" value="heiress"> Heiress</label></td>
+<td class="avatar"><label for="avatar-pilot"><img src="/portraits/players/pilot.jpg" width="72" height="90" alt="The Pilot"><br><input type="radio" id="avatar-pilot" name="playerportrait" value="pilot"> Pilot</label></td>
+<td class="avatar"><label for="avatar-reporter"><img src="/portraits/players/reporter.jpg" width="72" height="90" alt="The Reporter"><br><input type="radio" id="avatar-reporter" name="playerportrait" value="reporter"> Reporter</label></td>
+<td class="avatar"><label for="avatar-crooner"><img src="/portraits/players/crooner.jpg" width="72" height="90" alt="The Crooner"><br><input type="radio" id="avatar-crooner" name="playerportrait" value="crooner"> Crooner</label></td>
+</tr></table><button type="button" id="play">Play Game</button> <a id="resume" href="/table.html" style="display:none">Resume Table</a><p class="fine">$3,000 starting cash &nbsp; / &nbsp; $1,000 buy-in &nbsp; / &nbsp; $10/$20 blinds</p></div>
+<div class="panel"><h2>LOAD GAME</h2><label for="savecode">Save code:</label> <input type="text" id="savecode" size="36" maxlength="36"> <button type="button" id="load">Load</button></div>
+<div id="footer">Las Vegas, after dark &nbsp; / &nbsp; Play tokens only &nbsp; / &nbsp; <button type="button" id="musictoggle">Music: Off</button> <a href="/music/midnight-ledger.mid">Piano MIDI</a></div></div><script type="text/javascript" src="/music.js"></script><script type="text/javascript" src="/lobby.js"></script></body></html>

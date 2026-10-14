@@ -1,0 +1,73 @@
+name: Test and publish
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+  packages: write
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm audit --omit=dev --audit-level=high
+      - uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build the candidate
+        run: docker build --build-arg VCS_REF="$GITHUB_SHA" --build-arg SOURCE_URL="https://github.com/$GITHUB_REPOSITORY" -t holdemgpt:test .
+      - name: Verify read-only runtime and persistent saves
+        shell: bash
+        run: |
+          set -euo pipefail
+          trap 'docker rm -f holdemgpt-smoke >/dev/null 2>&1 || true; docker volume rm holdemgpt-smoke-data >/dev/null 2>&1 || true' EXIT
+          docker run -d --name holdemgpt-smoke --read-only --cap-drop ALL \
+            --security-opt no-new-privileges:true --memory 256m --cpus 0.5 --pids-limit 64 \
+            -e AI_MODE=local -v holdemgpt-smoke-data:/app/data \
+            -p 127.0.0.1:18083:3083 holdemgpt:test
+          for attempt in {1..30}; do
+            if curl -fsS http://127.0.0.1:18083/healthz; then break; fi
+            sleep 1
+          done
+          CHECK_URL=http://127.0.0.1:18083 CHECK_MODE=local SMOKE_STATE_FILE=/tmp/holdem-smoke.json node scripts/smoke-check.js
+          docker rm -f holdemgpt-smoke
+          docker run -d --name holdemgpt-smoke --read-only --cap-drop ALL \
+            --security-opt no-new-privileges:true --memory 256m --cpus 0.5 --pids-limit 64 \
+            -e AI_MODE=local -v holdemgpt-smoke-data:/app/data \
+            -p 127.0.0.1:18083:3083 holdemgpt:test
+          for attempt in {1..30}; do
+            if curl -fsS http://127.0.0.1:18083/healthz; then break; fi
+            sleep 1
+          done
+          CHECK_URL=http://127.0.0.1:18083 SMOKE_STATE_FILE=/tmp/holdem-smoke.json node scripts/smoke-check.js --restore
+          docker exec holdemgpt-smoke sh -c 'test "$(id -u)" = 1000 && test ! -e /app/.env'
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9
+        if: github.event_name == 'push'
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish the verified image
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="ghcr.io/${GITHUB_REPOSITORY,,}:sha-${GITHUB_SHA}"
+          docker tag holdemgpt:test "$image"
+          docker push "$image"
+          docker image inspect "$image" --format '{{index .RepoDigests 0}}' | tee image-digest.txt
+          cat image-digest.txt >> "$GITHUB_STEP_SUMMARY"
