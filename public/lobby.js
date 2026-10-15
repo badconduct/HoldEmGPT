@@ -15,7 +15,7 @@
       if(body!==null){req.setRequestHeader('Content-Type','application/x-www-form-urlencoded');req.setRequestHeader('X-Holdem-Request','1');}
       req.onreadystatechange=function(){if(req.readyState!==4 || done)return;try{
         var doc=req.responseXML,g=doc && doc.getElementsByTagName('game')[0];
-        if(req.status===200 && g){hasGame=Number(g.getAttribute('hand'))>0;el('resume').style.display=hasGame?'inline':'none';if(body!==null){finish();window.location.href='/table.html';return;}if(hasGame)say('Your table is available. Resume it, load a save, or start fresh.');finish();}
+        if(req.status===200 && g){hasGame=Number(g.getAttribute('hand'))>0;el('resume').style.display=hasGame?'inline':'none';if(body!==null){finish();window.location.href=g.getAttribute('campaign')==='1'?(g.getAttribute('destination') || '/map.html'):'/table.html';return;}if(hasGame)say('Your table is available. Resume it, load a save, or start fresh.');finish();}
         else finish(doc && doc.documentElement?text(doc.documentElement):'Could not connect to the dealer.');
       }catch(e){finish('Could not read the dealer reply.');}};
       timeout=window.setTimeout(function(){finish('Dealer did not respond. Try again.');req.abort();},15000);req.send(body);

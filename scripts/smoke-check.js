@@ -18,26 +18,32 @@ async function idle() {
   throw new Error('Opponents did not finish.');
 }
 const health=await fetch(base+'/healthz');assert.equal(health.status,200);assert.equal((await health.json()).service,'holdemgpt');
-const page=await (await fetch(base+'/')).text();assert(page.includes('<title>The Midnight Room - New Game</title>'));assert(page.includes('id="playername"'));
+const page=await (await fetch(base+'/')).text();assert(page.includes('Last Seat on Fortune Row'));assert(page.includes('href="/name.html"'));
 if(process.argv.includes('--restore')) {
   assert(process.env.SMOKE_STATE_FILE,'SMOKE_STATE_FILE is required to restore');
   const saved=JSON.parse(await readFile(process.env.SMOKE_STATE_FILE,'utf8'));
-  await request('/api/load','code='+saved.code);const xml=await idle();
-  assert.equal(attr(xml,'cash'),saved.cash);assert.equal(attr(xml,'hand'),saved.hand);assert(xml.includes('name="Deployment Check" portrait="pilot"'));
-  console.log('Saved bankroll and table restored after recreation.');
+  for(const code of [saved.recoveryCode,saved.code]) {
+    await request('/api/load','code='+code);const xml=await idle();
+    assert.equal(attr(xml,'cash'),saved.cash);assert.equal(attr(xml,'hand'),saved.hand);assert.equal(attr(xml,'campaign'),'1');assert(xml.includes('name="Deployment Check" portrait="pilot"'));
+  }
+  console.log('Campaign autosave and manual snapshot restored after recreation.');
 } else {
-  let xml=await request('/api/new','name=Deployment+Check&portrait=pilot');assert.equal(attr(xml,'cash'),'2000');
+  let xml=await request('/api/campaign/new','name=Deployment+Check&portrait=pilot');assert.equal(attr(xml,'cash'),'1000');assert.equal(attr(xml,'hand'),'0');
+  const recoveryCode=attr(xml,'recoveryCode');assert(/^[a-f0-9]{36}$/.test(recoveryCode));
+  assert((await request('/intro.html')).includes('Deployment Check / The Pilot'));
+  const map=await request('/map.html');assert.equal((map.match(/class="camp-label"/g)||[]).length,1);
+  xml=await request('/api/campaign/buy','casino=gilded-alibi&table=table-1');assert.equal(attr(xml,'cash'),'750');
   if(process.env.CHECK_MODE)assert.equal(attr(xml,'mode'),process.env.CHECK_MODE);
   xml=await idle();assert.equal(attr(xml,'actor'),'0');assert.equal((xml.match(/<card>\?\?<\/card>/g)||[]).length,8);assert(xml.includes('<quote'));
   assert(!xml.includes('privateMemory') && !xml.includes('AI_TOKEN'));
   const cash=attr(xml,'cash'), hand=attr(xml,'hand');
   const saved=await request('/api/save',''), code=/<save>([a-f0-9]{36})<\/save>/.exec(saved)?.[1];assert(code);
-  if(process.env.SMOKE_STATE_FILE)await writeFile(process.env.SMOKE_STATE_FILE,JSON.stringify({code,cash,hand}),{mode:0o600});
+  if(process.env.SMOKE_STATE_FILE)await writeFile(process.env.SMOKE_STATE_FILE,JSON.stringify({code,recoveryCode,cash,hand}),{mode:0o600});
   cookie='';xml=await request('/api/load','code='+code);assert.equal(attr(xml,'cash'),cash);assert(xml.includes('name="Deployment Check" portrait="pilot"'));
-  console.log('Routed game, independent opponent dialogue, hidden cards and save/load passed.');
+  console.log('Campaign flow, independent opponent dialogue, hidden cards and save/load passed.');
 }
 // Drain every response so the HTTP pool can release its sockets on all hosts.
-for(const path of ['/table.html','/portraits/players/pilot.jpg','/portraits/ada.jpg','/images/table-room.jpg','/music/midnight-ledger.mid','/.env']) {
+for(const path of ['/table.html','/campaign.js','/campaign.css','/portraits/players/pilot.jpg','/portraits/ada.jpg','/images/table-room.jpg','/images/campaign/gilded-alibi/table-1.jpg','/music/midnight-ledger.mid','/.env']) {
   const response=await fetch(base+path,{signal:AbortSignal.timeout(15000)});
   assert.equal(response.status,path==='/.env'?404:200);await response.arrayBuffer();
 }

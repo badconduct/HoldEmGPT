@@ -1,0 +1,22 @@
+.camp-toolbar { padding:5px 0; font:12px Arial,sans-serif; }
+.camp-toolbar button { padding:2px 8px; }
+.camp-tagline { text-align:center; }
+.camp-button { display:inline-block; padding:8px 16px; background:#d9c28b; border:1px solid #ae8c4e; color:#231e14; font:bold 13px Arial,sans-serif; text-decoration:none; }
+.campaignpost { margin:4px 0; }
+.camp-choices { width:740px; table-layout:fixed; }
+.camp-choices td { vertical-align:top; text-align:center; background:#25231c; border:1px solid #776241; }
+.camp-choices p { font:12px/16px Georgia,serif; }
+.camp-portrait { display:block; border:1px solid #8e784c; margin:0 auto 5px; }
+.camp-scene { position:relative; width:740px; height:400px; zoom:1; }
+.camp-scene img { display:block; border:0; }
+.camp-label { position:absolute; width:152px; padding:3px; background:#25231c; border:1px solid #ae8c4e; text-align:center; font:bold 11px/14px Arial,sans-serif; color:#f0dfb6; text-decoration:none; }
+.camp-label form { margin:0; }
+.camp-label button { width:150px; padding:2px 0; font:bold 11px/14px Arial,sans-serif; }
+.camp-label span { display:block; color:#d5bb78; }
+.camp-locked { color:#b3a78c; border-color:#70674e; }
+.camp-prices { width:740px; border-collapse:collapse; margin:7px 0; }
+.camp-prices th,.camp-prices td { padding:4px; border:1px solid #5f5436; text-align:left; }
+.camp-recovery { margin:9px 0; padding:6px; border-top:1px solid #5f5436; font:11px Arial,sans-serif; }
+.camp-recovery p { margin:4px 0; color:#aaa18b; }
+.camp-pass { padding:12px; margin:8px 0; text-align:center; color:#30271d; background:#e2d1aa; border:3px double #ae8c4e; }
+.camp-pass h2 { color:#47361d; }

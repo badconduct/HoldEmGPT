@@ -9,6 +9,7 @@ COPY package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 COPY --chown=node:node server.js ./
 COPY --chown=node:node lib ./lib
+COPY --chown=node:node content/v2/campaign.json ./content/v2/campaign.json
 COPY --chown=node:node public ./public
 COPY --chown=node:node LICENSE ./LICENSE
 RUN mkdir -p /app/data/saves && chown -R node:node /app/data

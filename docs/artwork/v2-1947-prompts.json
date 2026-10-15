@@ -1,0 +1,894 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "generatedDate": "2026-10-15",
+  "setting": "1947; Las Vegas, Hollywood, Mexico City, New York, postwar Paris",
+  "references": {
+    "table": "public/images/table-room.jpg",
+    "portraits": [
+      "public/portraits/ada.jpg",
+      "public/portraits/rail.jpg"
+    ]
+  },
+  "assets": [
+    {
+      "id": "gilded-alibi-table-1",
+      "kind": "table",
+      "casinoId": "gilded-alibi",
+      "tableId": "table-1",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/gilded-alibi/table-1.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: Table 1, the welcoming main-room table at The Gilded Alibi in Las Vegas, 1947. An intimate 1947 Las Vegas private card club, dark walnut paneling, restrained Art Deco trim, simple shaded wall lamps, leather chairs, a very subtle desert view through distant shutters. The table uses simple handsome dark walnut and understated leather chairs. This is the most modest of five unique tables for this casino.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays."
+    },
+    {
+      "id": "marigold-star-table-1",
+      "kind": "table",
+      "casinoId": "marigold-star",
+      "tableId": "table-1",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/marigold-star/table-1.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: Table 1, the welcoming main-room table at The Marigold Star in Hollywood, 1947. An elegant 1947 Hollywood private supper club, restrained Streamline Moderne curves, dark polished wood, upholstered booth alcoves, shaded sconces, velvet curtains, subtle palm silhouettes beyond French doors. No studio logos or readable signs. The table uses simple handsome dark walnut and understated leather chairs. This is the most modest of five unique tables for this casino.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays."
+    },
+    {
+      "id": "casa-azahar-table-1",
+      "kind": "table",
+      "casinoId": "casa-azahar",
+      "tableId": "table-1",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/casa-azahar/table-1.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: Table 1, the welcoming main-room table at Casa del Azahar in Mexico City, 1947. An elegant private card club in 1947 Mexico City, pale plaster arches around a planted courtyard, carved dark wood, traditional wrought iron, period shaded lamps, tasteful geometric floor tiles and upholstered chairs. Cosmopolitan urban sophistication; no costume clichés. The table uses simple handsome dark walnut and understated leather chairs. This is the most modest of five unique tables for this casino.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays."
+    },
+    {
+      "id": "lantern-exchange-table-1",
+      "kind": "table",
+      "casinoId": "lantern-exchange",
+      "tableId": "table-1",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/lantern-exchange/table-1.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: Table 1, the welcoming main-room table at The Lantern Exchange in New York, 1947. A sophisticated 1947 Manhattan private card club, dark mahogany, leaded glass, a small bookcase, restrained Art Deco fittings, shaded brass lamps, high windows overlooking an understated 1940s New York skyline. No modern towers or electronic displays. The table uses simple handsome dark walnut and understated leather chairs. This is the most modest of five unique tables for this casino.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays."
+    },
+    {
+      "id": "salon-des-brumes-table-1",
+      "kind": "table",
+      "casinoId": "salon-des-brumes",
+      "tableId": "table-1",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/salon-des-brumes/table-1.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: Table 1, the welcoming main-room table at Le Salon des Brumes in Paris, 1947. A restored private card salon in postwar Paris in 1947, dark carved wood, understated Haussmann-style moldings, tall French windows, parquet floor, shaded lamps, a restrained glimpse of old rooftops and a distant Eiffel Tower. Quiet renewed elegance; no wartime uniforms, flags or propaganda. The table uses simple handsome dark walnut and understated leather chairs. This is the most modest of five unique tables for this casino.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays."
+    },
+    {
+      "id": "gilded-alibi-room",
+      "kind": "room",
+      "casinoId": "gilded-alibi",
+      "width": 740,
+      "height": 400,
+      "file": "public/images/campaign/gilded-alibi/room.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: the five-table room at The Gilded Alibi, Las Vegas, in 1947. An intimate 1947 Las Vegas private card club, dark walnut paneling, restrained Art Deco trim, simple shaded wall lamps, leather chairs, a very subtle desert view through distant shutters.\nWide landscape 740:400 aspect ratio, about 1.85:1. A full club poker-room selection background, seen from a fixed elevated three-quarter balcony viewpoint. EXACTLY FIVE empty oval poker tables of the same traditional dark wood and plain charcoal felt family as the original reference. Four ordinary tables in two rows: centers near (24%,45%),(76%,45%),(24%,77%),(76%,77%). A fifth, distinct boss table at (50%,23%) on a modest raised rear platform under an architectural arch. All five tables and chairs clearly separated, fully within frame; clear central aisle. Differentiate the boss with restrained craftsmanship, upholstery and lighting, never a different era. No additional tables hidden in reflections or other rooms. No people, chips, cards or written labels. Keep space below each table for later HTML labels."
+    },
+    {
+      "id": "marigold-star-room",
+      "kind": "room",
+      "casinoId": "marigold-star",
+      "width": 740,
+      "height": 400,
+      "file": "public/images/campaign/marigold-star/room.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: the five-table room at The Marigold Star, Hollywood, in 1947. An elegant 1947 Hollywood private supper club, restrained Streamline Moderne curves, dark polished wood, upholstered booth alcoves, shaded sconces, velvet curtains, subtle palm silhouettes beyond French doors. No studio logos or readable signs.\nWide landscape 740:400 aspect ratio, about 1.85:1. A full club poker-room selection background, seen from a fixed elevated three-quarter balcony viewpoint. EXACTLY FIVE empty oval poker tables of the same traditional dark wood and plain charcoal felt family as the original reference. Four ordinary tables in two rows: centers near (24%,45%),(76%,45%),(24%,77%),(76%,77%). A fifth, distinct boss table at (50%,23%) on a modest raised rear platform under an architectural arch. All five tables and chairs clearly separated, fully within frame; clear central aisle. Differentiate the boss with restrained craftsmanship, upholstery and lighting, never a different era. No additional tables hidden in reflections or other rooms. No people, chips, cards or written labels. Keep space below each table for later HTML labels."
+    },
+    {
+      "id": "casa-azahar-room",
+      "kind": "room",
+      "casinoId": "casa-azahar",
+      "width": 740,
+      "height": 400,
+      "file": "public/images/campaign/casa-azahar/room.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: the five-table room at Casa del Azahar, Mexico City, in 1947. An elegant private card club in 1947 Mexico City, pale plaster arches around a planted courtyard, carved dark wood, traditional wrought iron, period shaded lamps, tasteful geometric floor tiles and upholstered chairs. Cosmopolitan urban sophistication; no costume clichés.\nWide landscape 740:400 aspect ratio, about 1.85:1. A full club poker-room selection background, seen from a fixed elevated three-quarter balcony viewpoint. EXACTLY FIVE empty oval poker tables of the same traditional dark wood and plain charcoal felt family as the original reference. Four ordinary tables in two rows: centers near (24%,45%),(76%,45%),(24%,77%),(76%,77%). A fifth, distinct boss table at (50%,23%) on a modest raised rear platform under an architectural arch. All five tables and chairs clearly separated, fully within frame; clear central aisle. Differentiate the boss with restrained craftsmanship, upholstery and lighting, never a different era. No additional tables hidden in reflections or other rooms. No people, chips, cards or written labels. Keep space below each table for later HTML labels."
+    },
+    {
+      "id": "lantern-exchange-room",
+      "kind": "room",
+      "casinoId": "lantern-exchange",
+      "width": 740,
+      "height": 400,
+      "file": "public/images/campaign/lantern-exchange/room.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: the five-table room at The Lantern Exchange, New York, in 1947. A sophisticated 1947 Manhattan private card club, dark mahogany, leaded glass, a small bookcase, restrained Art Deco fittings, shaded brass lamps, high windows overlooking an understated 1940s New York skyline. No modern towers or electronic displays.\nWide landscape 740:400 aspect ratio, about 1.85:1. A full club poker-room selection background, seen from a fixed elevated three-quarter balcony viewpoint. EXACTLY FIVE empty oval poker tables of the same traditional dark wood and plain charcoal felt family as the original reference. Four ordinary tables in two rows: centers near (24%,45%),(76%,45%),(24%,77%),(76%,77%). A fifth, distinct boss table at (50%,23%) on a modest raised rear platform under an architectural arch. All five tables and chairs clearly separated, fully within frame; clear central aisle. Differentiate the boss with restrained craftsmanship, upholstery and lighting, never a different era. No additional tables hidden in reflections or other rooms. No people, chips, cards or written labels. Keep space below each table for later HTML labels."
+    },
+    {
+      "id": "salon-des-brumes-room",
+      "kind": "room",
+      "casinoId": "salon-des-brumes",
+      "width": 740,
+      "height": 400,
+      "file": "public/images/campaign/salon-des-brumes/room.jpg",
+      "references": [
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: historical-scene. Production background for an original Windows 98/IE6 poker adventure set in 1947. Image 1 is the ORIGINAL table artwork: use its strictly BLACK-AND-WHITE grayscale, restrained fine film grain, realistic photographed/finely painted noir treatment, quiet low-key lighting, polished dark wood and understated furnishings as the visual template. No color tint, no sepia for the room, no bright modern neon, no modern furniture, no electronic displays. Use period architecture as environment detail. No text, letters, signs, labels, numbers, UI, cards, chips, hands, people or portraits. Opaque image, no decorative border or watermark.\nPrimary request: the five-table room at Le Salon des Brumes, Paris, in 1947. A restored private card salon in postwar Paris in 1947, dark carved wood, understated Haussmann-style moldings, tall French windows, parquet floor, shaded lamps, a restrained glimpse of old rooftops and a distant Eiffel Tower. Quiet renewed elegance; no wartime uniforms, flags or propaganda.\nWide landscape 740:400 aspect ratio, about 1.85:1. A full club poker-room selection background, seen from a fixed elevated three-quarter balcony viewpoint. EXACTLY FIVE empty oval poker tables of the same traditional dark wood and plain charcoal felt family as the original reference. Four ordinary tables in two rows: centers near (24%,45%),(76%,45%),(24%,77%),(76%,77%). A fifth, distinct boss table at (50%,23%) on a modest raised rear platform under an architectural arch. All five tables and chairs clearly separated, fully within frame; clear central aisle. Differentiate the boss with restrained craftsmanship, upholstery and lighting, never a different era. No additional tables hidden in reflections or other rooms. No people, chips, cards or written labels. Keep space below each table for later HTML labels."
+    },
+    {
+      "id": "travel-map",
+      "kind": "map",
+      "casinoId": null,
+      "width": 740,
+      "height": 400,
+      "file": "public/images/campaign/travel-map.jpg",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: stylized-concept. ONE original production travel-map background for a 1947 private-poker adventure. Wide 740:400 composition, about 1.85:1, intended to remain legible at that small size. Reference Image 1 supplies warm cream engraved paper, dark brown fine ink and understated paper grain; Image 2 supplies the quiet noir world. Create a vintage illustrated international itinerary map with five distinct city vignettes arranged as a clear circuit. This is a stylized travel board, not a literal map projection. A faint Atlantic travel-chart backdrop can connect the Americas and Europe, kept subdued behind the destinations.\nExactly FIVE illustrated destinations, each with its own readable silhouette and uncluttered label space below: 1 Las Vegas at roughly (15% width,32% height), a modest Art Deco desert club and low mountains; 2 Hollywood at (36%,23%), a discreet supper club with palms and low studio-era hills; 3 Mexico City at (40%,76%), a sophisticated stone-and-plaster courtyard club with a gentle distant mountain silhouette; 4 New York at (65%,28%), an elegant private club among 1940s Manhattan towers; 5 postwar Paris at (85%,64%), a restored French salon with rooftops and a small distant Eiffel Tower. All architecture, cars if any, and furnishings belong to the 1940s. Link the five with one simple dotted itinerary route in that order; no branching destination nodes. Show the cities, not five versions of a Las Vegas resort. No text or numbers anywhere, no real-world casino branding, no labels, signs, legends, lock icons, UI or decorative frames. Opaque warm cream paper, restrained sepia and grayscale ink only; no bright colors, neon, futuristic buildings, military imagery or modern airplanes."
+    },
+    {
+      "id": "gilded-alibi-table-2",
+      "kind": "table",
+      "casinoId": "gilded-alibi",
+      "tableId": "table-2",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/gilded-alibi/table-2.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/gilded-alibi-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Gilded Alibi, Las Vegas, 1947: the quiet alcove table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A narrow pale-wood double inlay around a dark ebony-and-walnut rail, square-backed leather chairs, and a secluded library or screened alcove within this same club. The inlay stays entirely on the rail; the charcoal felt remains plain.\nLocal environment: An intimate 1947 Las Vegas private card club, dark walnut paneling, restrained Art Deco trim, simple shaded wall lamps, leather chairs, a very subtle desert view through distant shutters.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "gilded-alibi-table-3",
+      "kind": "table",
+      "casinoId": "gilded-alibi",
+      "tableId": "table-3",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/gilded-alibi/table-3.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/gilded-alibi-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Gilded Alibi, Las Vegas, 1947: the window table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A polished mahogany rail with a modest padded dark-leather inner edge, softly rounded upholstered chairs, and the club's period window or courtyard view behind the rear seats. Reflections stay subtle and off the central felt.\nLocal environment: An intimate 1947 Las Vegas private card club, dark walnut paneling, restrained Art Deco trim, simple shaded wall lamps, leather chairs, a very subtle desert view through distant shutters.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "gilded-alibi-table-4",
+      "kind": "table",
+      "casinoId": "gilded-alibi",
+      "tableId": "table-4",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/gilded-alibi/table-4.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/gilded-alibi-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Gilded Alibi, Las Vegas, 1947: the private-room table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A dark oak rail with restrained nailhead detail and a slimmer dark-leather band, fan-backed period chairs, and a quieter private-room wall with shaded sconces and an architectural screen. No pattern on the felt.\nLocal environment: An intimate 1947 Las Vegas private card club, dark walnut paneling, restrained Art Deco trim, simple shaded wall lamps, leather chairs, a very subtle desert view through distant shutters.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "gilded-alibi-boss-table",
+      "kind": "table",
+      "casinoId": "gilded-alibi",
+      "tableId": "boss",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/gilded-alibi/boss-table.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/gilded-alibi-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Gilded Alibi, Las Vegas, 1947: the boss's private table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: The most finely crafted table in this house: a polished ebony rail with a restrained thin silver-metal inlay, deeply upholstered leather chairs, and a dignified private salon framed by a broad rear arch and two shaded lamps. Luxury comes from craftsmanship and space, not a bigger table or a different camera. The felt remains completely plain dark charcoal.\nLocal environment: An intimate 1947 Las Vegas private card club, dark walnut paneling, restrained Art Deco trim, simple shaded wall lamps, leather chairs, a very subtle desert view through distant shutters.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "marigold-star-table-2",
+      "kind": "table",
+      "casinoId": "marigold-star",
+      "tableId": "table-2",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/marigold-star/table-2.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/marigold-star-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Marigold Star, Hollywood, 1947: the quiet alcove table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A narrow pale-wood double inlay around a dark ebony-and-walnut rail, square-backed leather chairs, and a secluded library or screened alcove within this same club. The inlay stays entirely on the rail; the charcoal felt remains plain.\nLocal environment: An elegant 1947 Hollywood private supper club, restrained Streamline Moderne curves, dark polished wood, upholstered booth alcoves, shaded sconces, velvet curtains, subtle palm silhouettes beyond French doors. No studio logos or readable signs.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "marigold-star-table-3",
+      "kind": "table",
+      "casinoId": "marigold-star",
+      "tableId": "table-3",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/marigold-star/table-3.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/marigold-star-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Marigold Star, Hollywood, 1947: the window table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A polished mahogany rail with a modest padded dark-leather inner edge, softly rounded upholstered chairs, and the club's period window or courtyard view behind the rear seats. Reflections stay subtle and off the central felt.\nLocal environment: An elegant 1947 Hollywood private supper club, restrained Streamline Moderne curves, dark polished wood, upholstered booth alcoves, shaded sconces, velvet curtains, subtle palm silhouettes beyond French doors. No studio logos or readable signs.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "marigold-star-table-4",
+      "kind": "table",
+      "casinoId": "marigold-star",
+      "tableId": "table-4",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/marigold-star/table-4.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/marigold-star-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Marigold Star, Hollywood, 1947: the private-room table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A dark oak rail with restrained nailhead detail and a slimmer dark-leather band, fan-backed period chairs, and a quieter private-room wall with shaded sconces and an architectural screen. No pattern on the felt.\nLocal environment: An elegant 1947 Hollywood private supper club, restrained Streamline Moderne curves, dark polished wood, upholstered booth alcoves, shaded sconces, velvet curtains, subtle palm silhouettes beyond French doors. No studio logos or readable signs.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "marigold-star-boss-table",
+      "kind": "table",
+      "casinoId": "marigold-star",
+      "tableId": "boss",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/marigold-star/boss-table.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/marigold-star-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Marigold Star, Hollywood, 1947: the boss's private table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: The most finely crafted table in this house: a polished ebony rail with a restrained thin silver-metal inlay, deeply upholstered leather chairs, and a dignified private salon framed by a broad rear arch and two shaded lamps. Luxury comes from craftsmanship and space, not a bigger table or a different camera. The felt remains completely plain dark charcoal.\nLocal environment: An elegant 1947 Hollywood private supper club, restrained Streamline Moderne curves, dark polished wood, upholstered booth alcoves, shaded sconces, velvet curtains, subtle palm silhouettes beyond French doors. No studio logos or readable signs.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "casa-azahar-table-2",
+      "kind": "table",
+      "casinoId": "casa-azahar",
+      "tableId": "table-2",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/casa-azahar/table-2.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/casa-azahar-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for Casa del Azahar, Mexico City, 1947: the quiet alcove table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A narrow pale-wood double inlay around a dark ebony-and-walnut rail, square-backed leather chairs, and a secluded library or screened alcove within this same club. The inlay stays entirely on the rail; the charcoal felt remains plain.\nLocal environment: An elegant private card club in 1947 Mexico City, pale plaster arches around a planted courtyard, carved dark wood, traditional wrought iron, period shaded lamps, tasteful geometric floor tiles and upholstered chairs. Cosmopolitan urban sophistication; no costume clichés.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "casa-azahar-table-3",
+      "kind": "table",
+      "casinoId": "casa-azahar",
+      "tableId": "table-3",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/casa-azahar/table-3.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/casa-azahar-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for Casa del Azahar, Mexico City, 1947: the window table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A polished mahogany rail with a modest padded dark-leather inner edge, softly rounded upholstered chairs, and the club's period window or courtyard view behind the rear seats. Reflections stay subtle and off the central felt.\nLocal environment: An elegant private card club in 1947 Mexico City, pale plaster arches around a planted courtyard, carved dark wood, traditional wrought iron, period shaded lamps, tasteful geometric floor tiles and upholstered chairs. Cosmopolitan urban sophistication; no costume clichés.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "casa-azahar-table-4",
+      "kind": "table",
+      "casinoId": "casa-azahar",
+      "tableId": "table-4",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/casa-azahar/table-4.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/casa-azahar-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for Casa del Azahar, Mexico City, 1947: the private-room table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A dark oak rail with restrained nailhead detail and a slimmer dark-leather band, fan-backed period chairs, and a quieter private-room wall with shaded sconces and an architectural screen. No pattern on the felt.\nLocal environment: An elegant private card club in 1947 Mexico City, pale plaster arches around a planted courtyard, carved dark wood, traditional wrought iron, period shaded lamps, tasteful geometric floor tiles and upholstered chairs. Cosmopolitan urban sophistication; no costume clichés.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "casa-azahar-boss-table",
+      "kind": "table",
+      "casinoId": "casa-azahar",
+      "tableId": "boss",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/casa-azahar/boss-table.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/casa-azahar-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for Casa del Azahar, Mexico City, 1947: the boss's private table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: The most finely crafted table in this house: a polished ebony rail with a restrained thin silver-metal inlay, deeply upholstered leather chairs, and a dignified private salon framed by a broad rear arch and two shaded lamps. Luxury comes from craftsmanship and space, not a bigger table or a different camera. The felt remains completely plain dark charcoal.\nLocal environment: An elegant private card club in 1947 Mexico City, pale plaster arches around a planted courtyard, carved dark wood, traditional wrought iron, period shaded lamps, tasteful geometric floor tiles and upholstered chairs. Cosmopolitan urban sophistication; no costume clichés.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "lantern-exchange-table-2",
+      "kind": "table",
+      "casinoId": "lantern-exchange",
+      "tableId": "table-2",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/lantern-exchange/table-2.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/lantern-exchange-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Lantern Exchange, New York, 1947: the quiet alcove table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A narrow pale-wood double inlay around a dark ebony-and-walnut rail, square-backed leather chairs, and a secluded library or screened alcove within this same club. The inlay stays entirely on the rail; the charcoal felt remains plain.\nLocal environment: A sophisticated 1947 Manhattan private card club, dark mahogany, leaded glass, a small bookcase, restrained Art Deco fittings, shaded brass lamps, high windows overlooking an understated 1940s New York skyline. No modern towers or electronic displays.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "lantern-exchange-table-3",
+      "kind": "table",
+      "casinoId": "lantern-exchange",
+      "tableId": "table-3",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/lantern-exchange/table-3.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/lantern-exchange-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Lantern Exchange, New York, 1947: the window table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A polished mahogany rail with a modest padded dark-leather inner edge, softly rounded upholstered chairs, and the club's period window or courtyard view behind the rear seats. Reflections stay subtle and off the central felt.\nLocal environment: A sophisticated 1947 Manhattan private card club, dark mahogany, leaded glass, a small bookcase, restrained Art Deco fittings, shaded brass lamps, high windows overlooking an understated 1940s New York skyline. No modern towers or electronic displays.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "lantern-exchange-table-4",
+      "kind": "table",
+      "casinoId": "lantern-exchange",
+      "tableId": "table-4",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/lantern-exchange/table-4.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/lantern-exchange-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Lantern Exchange, New York, 1947: the private-room table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A dark oak rail with restrained nailhead detail and a slimmer dark-leather band, fan-backed period chairs, and a quieter private-room wall with shaded sconces and an architectural screen. No pattern on the felt.\nLocal environment: A sophisticated 1947 Manhattan private card club, dark mahogany, leaded glass, a small bookcase, restrained Art Deco fittings, shaded brass lamps, high windows overlooking an understated 1940s New York skyline. No modern towers or electronic displays.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "lantern-exchange-boss-table",
+      "kind": "table",
+      "casinoId": "lantern-exchange",
+      "tableId": "boss",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/lantern-exchange/boss-table.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/lantern-exchange-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for The Lantern Exchange, New York, 1947: the boss's private table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: The most finely crafted table in this house: a polished ebony rail with a restrained thin silver-metal inlay, deeply upholstered leather chairs, and a dignified private salon framed by a broad rear arch and two shaded lamps. Luxury comes from craftsmanship and space, not a bigger table or a different camera. The felt remains completely plain dark charcoal.\nLocal environment: A sophisticated 1947 Manhattan private card club, dark mahogany, leaded glass, a small bookcase, restrained Art Deco fittings, shaded brass lamps, high windows overlooking an understated 1940s New York skyline. No modern towers or electronic displays.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "salon-des-brumes-table-2",
+      "kind": "table",
+      "casinoId": "salon-des-brumes",
+      "tableId": "table-2",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/salon-des-brumes/table-2.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/salon-des-brumes-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for Le Salon des Brumes, Paris, 1947: the quiet alcove table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A narrow pale-wood double inlay around a dark ebony-and-walnut rail, square-backed leather chairs, and a secluded library or screened alcove within this same club. The inlay stays entirely on the rail; the charcoal felt remains plain.\nLocal environment: A restored private card salon in postwar Paris in 1947, dark carved wood, understated Haussmann-style moldings, tall French windows, parquet floor, shaded lamps, a restrained glimpse of old rooftops and a distant Eiffel Tower. Quiet renewed elegance; no wartime uniforms, flags or propaganda.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "salon-des-brumes-table-3",
+      "kind": "table",
+      "casinoId": "salon-des-brumes",
+      "tableId": "table-3",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/salon-des-brumes/table-3.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/salon-des-brumes-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for Le Salon des Brumes, Paris, 1947: the window table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A polished mahogany rail with a modest padded dark-leather inner edge, softly rounded upholstered chairs, and the club's period window or courtyard view behind the rear seats. Reflections stay subtle and off the central felt.\nLocal environment: A restored private card salon in postwar Paris in 1947, dark carved wood, understated Haussmann-style moldings, tall French windows, parquet floor, shaded lamps, a restrained glimpse of old rooftops and a distant Eiffel Tower. Quiet renewed elegance; no wartime uniforms, flags or propaganda.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "salon-des-brumes-table-4",
+      "kind": "table",
+      "casinoId": "salon-des-brumes",
+      "tableId": "table-4",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/salon-des-brumes/table-4.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/salon-des-brumes-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for Le Salon des Brumes, Paris, 1947: the private-room table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: A dark oak rail with restrained nailhead detail and a slimmer dark-leather band, fan-backed period chairs, and a quieter private-room wall with shaded sconces and an architectural screen. No pattern on the felt.\nLocal environment: A restored private card salon in postwar Paris in 1947, dark carved wood, understated Haussmann-style moldings, tall French windows, parquet floor, shaded lamps, a restrained glimpse of old rooftops and a distant Eiffel Tower. Quiet renewed elegance; no wartime uniforms, flags or propaganda.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "salon-des-brumes-boss-table",
+      "kind": "table",
+      "casinoId": "salon-des-brumes",
+      "tableId": "boss",
+      "width": 740,
+      "height": 300,
+      "file": "public/images/campaign/salon-des-brumes/boss-table.jpg",
+      "references": [
+        "artifacts/v2-1947-art/originals/salon-des-brumes-table-1.png",
+        "public/images/table-room.jpg"
+      ],
+      "prompt": "Use case: precise-object-edit / historical-scene. Create a distinct production table background for Le Salon des Brumes, Paris, 1947: the boss's private table. Image 1 is this city's base playing-table view and is the edit/composition target. Image 2 is the original game table and is the strict reference for noir tone and usable playing geometry. Preserve the exact camera, table position, outline, proportions, full oval, felt footprint and negative space in Image 1. Change only the rail materials, chair upholstery and surrounding room decor according to the variation below, producing a genuinely distinct room/table design while keeping the city recognizable.\nVariation: The most finely crafted table in this house: a polished ebony rail with a restrained thin silver-metal inlay, deeply upholstered leather chairs, and a dignified private salon framed by a broad rear arch and two shaded lamps. Luxury comes from craftsmanship and space, not a bigger table or a different camera. The felt remains completely plain dark charcoal.\nLocal environment: A restored private card salon in postwar Paris in 1947, dark carved wood, understated Haussmann-style moldings, tall French windows, parquet floor, shaded lamps, a restrained glimpse of old rooftops and a distant Eiffel Tower. Quiet renewed elegance; no wartime uniforms, flags or propaganda.\nExact composition invariant: match Image 1's camera position and table silhouette. Ultra-wide landscape 740:300 aspect ratio, approximately 2.47:1. ONE empty oval five-seat poker table viewed from the near rail at the original moderately elevated oblique perspective. The full broad tabletop occupies most of the frame, rear rim near 25 percent height, front rim near 85 percent, left and right outer edges near 5 and 95 percent width. Preserve the original table's perspective, apparent size and position. Plain uniform dark charcoal felt with no pattern, insignia, seam or highlight in the central card area. Low, clean dark rail. Four opponent portrait/card overlays will sit at the left and rear rim; the human overlay occupies the lower-right. Keep those positions uncluttered. No centerpiece, objects, decorations, cards or chips on the felt. Five appropriate empty chairs, background furniture kept quiet. The tabletop must remain clearly visible and wholly useful for HTML card and number overlays.\nFinish strictly in black-and-white grayscale with restrained fine film grain, the same realistic noir photograph/finely painted treatment as the original game. No color tint, modern furnishings, electronic screens or neon. No people, portraits, hands, cards, chips, printed markings, text, signs, numbers, logos or UI. No other poker tables anywhere. No decorative border, no watermark. Opaque ultra-wide 740:300 composition, approximately 2.47:1."
+    },
+    {
+      "id": "marigold-star-regulars-atlas",
+      "kind": "atlas",
+      "casinoId": "marigold-star",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "frankie-bellhop",
+          "name": "Frankie Bellhop",
+          "file": "public/portraits/campaign/marigold-star/frankie-bellhop.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "della-marigold",
+          "name": "Della Marigold",
+          "file": "public/portraits/campaign/marigold-star/della-marigold.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "calvin-price",
+          "name": "Calvin \"Cadillac\" Price",
+          "file": "public/portraits/campaign/marigold-star/calvin-price.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "june-jukebox",
+          "name": "June \"Jukebox\" Jansen",
+          "file": "public/portraits/campaign/marigold-star/june-jukebox.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "walt-greer",
+          "name": "Walt Greer",
+          "file": "public/portraits/campaign/marigold-star/walt-greer.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "ruth-lane",
+          "name": "Ruth \"Lucky\" Lane",
+          "file": "public/portraits/campaign/marigold-star/ruth-lane.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "otis-reed",
+          "name": "Otis Reed",
+          "file": "public/portraits/campaign/marigold-star/otis-reed.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "irene-ashford",
+          "name": "Irene Ashford",
+          "file": "public/portraits/campaign/marigold-star/irene-ashford.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE production eight-person portrait atlas for The Marigold Star in Hollywood, 1947. Exactly 4 columns by 2 rows, eight equal cells with individual 4:5 proportions, overall 8:5 aspect ratio. Each cell contains ONE independent bust, its entire head comfortably inside. Uniform face scale, cream paper continuing through the sheet, zero gutters, zero frames or dividing rules. The exact grid is split at quarter widths and half height. No shared bodies, merged faces, extra people or written labels. The retained atlas will be exported into eight small JPEG portraits in reading order.\nReading order, top row left to right then bottom row:\n1. An adult white man in his early thirties, narrow face, tidy dark hair, 1940s bell-captain jacket with a modest standing collar, polite guarded half-smile.\n2. An adult Black woman in her forties, elegant sculpted 1940s updo, pearl earrings and a tailored evening jacket, knowing composed smile.\n3. A broad-faced adult white man in his forties, neatly brushed 1940s hair, small mustache, checked sports coat and wide tie, persuasive confident smile.\n4. An adult Latina woman in her late twenties, softly curled 1940s shoulder-length hair, understated satin neckline and small earrings, bright mischievous eyes.\n5. A sturdy adult white man in his fifties, weathered square face, short graying hair, clean 1940s work jacket over a collared shirt, patient thoughtful expression.\n6. An adult white woman in her fifties, friendly lined face, short curled 1940s hair, simple collared diner uniform and cardigan, warm determined smile.\n7. An adult Black man in his forties, lean face, neat pencil mustache, 1940s dinner jacket and narrow bow tie, attentive level gaze.\n8. An adult East Asian woman in her thirties, softly waved 1940s bob, refined tailored blouse, understated brooch, calm analytical eyes.\nEverything belongs to 1947, not the 1950s, 1960s, 1970s or 1980s. No celebrity likenesses. Keep all eight faces distinct and expressive, with the same restrained engraved finish as the original references."
+    },
+    {
+      "id": "casa-azahar-regulars-atlas",
+      "kind": "atlas",
+      "casinoId": "casa-azahar",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "tomas-valera",
+          "name": "Tomás Valera",
+          "file": "public/portraits/campaign/casa-azahar/tomas-valera.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "lucia-robles",
+          "name": "Lucía Robles",
+          "file": "public/portraits/campaign/casa-azahar/lucia-robles.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "rafael-acosta",
+          "name": "Rafael \"Atlas\" Acosta",
+          "file": "public/portraits/campaign/casa-azahar/rafael-acosta.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "ines-montoya",
+          "name": "Inés Montoya",
+          "file": "public/portraits/campaign/casa-azahar/ines-montoya.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "felipe-salcedo",
+          "name": "Felipe Salcedo",
+          "file": "public/portraits/campaign/casa-azahar/felipe-salcedo.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "nora-beltran",
+          "name": "Nora Beltrán",
+          "file": "public/portraits/campaign/casa-azahar/nora-beltran.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "benito-luna",
+          "name": "Benito \"Benny\" Luna",
+          "file": "public/portraits/campaign/casa-azahar/benito-luna.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "leila-soria",
+          "name": "Leila Soria",
+          "file": "public/portraits/campaign/casa-azahar/leila-soria.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE production eight-person portrait atlas for Casa del Azahar in Mexico City, 1947. Exactly 4 columns by 2 rows, eight equal cells with individual 4:5 proportions, overall 8:5 aspect ratio. Each cell contains ONE independent bust, its entire head comfortably inside. Uniform face scale, cream paper continuing through the sheet, zero gutters, zero frames or dividing rules. The exact grid is split at quarter widths and half height. No shared bodies, merged faces, extra people or written labels. The retained atlas will be exported into eight small JPEG portraits in reading order.\nReading order, top row left to right then bottom row:\n1. An adult Mexican man in his forties, wavy side-parted 1940s hair, practical tweed jacket and open-collar shirt, curious slightly skeptical expression.\n2. An adult Mexican woman in her late twenties, elegant 1940s waved bob, modest earrings and a crisply tailored jacket, lively confident eyes.\n3. An adult Mexican man in his fifties, lean angular face, short graying hair, understated 1940s airline captain uniform without readable insignia, calm steady expression.\n4. An adult Mexican woman in her thirties, dark 1940s hair in soft side-parted waves, simple evening blouse and small earrings, reserved amused expression.\n5. An adult Mexican man in his forties, slim face, neatly parted 1940s hair, round spectacles and a conservative suit, thoughtful analytical expression.\n6. An adult Afro-Mexican woman in her forties, swept 1940s updo, collared blouse and tailored jacket, alert slightly wry eyes.\n7. An adult Mexican man in his thirties, neat dark 1940s hair, narrow mustache, a simple dinner jacket and small bow tie, warm lively expression.\n8. An adult Mexican woman of Lebanese heritage in her thirties, shoulder-length softly waved 1940s hair, understated earrings and a well-cut jacket, composed confident expression.\nEverything belongs to 1947, not the 1950s, 1960s, 1970s or 1980s. No celebrity likenesses. Keep all eight faces distinct and expressive, with the same restrained engraved finish as the original references."
+    },
+    {
+      "id": "lantern-exchange-regulars-atlas",
+      "kind": "atlas",
+      "casinoId": "lantern-exchange",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "gloria-gaines",
+          "name": "Gloria \"Goldie\" Gaines",
+          "file": "public/portraits/campaign/lantern-exchange/gloria-gaines.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "stan-sloane",
+          "name": "Stan Sloane",
+          "file": "public/portraits/campaign/lantern-exchange/stan-sloane.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "carmen-cielo",
+          "name": "Carmen Cielo",
+          "file": "public/portraits/campaign/lantern-exchange/carmen-cielo.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "reggie-darden",
+          "name": "Reggie Darden",
+          "file": "public/portraits/campaign/lantern-exchange/reggie-darden.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "paula-fox",
+          "name": "Paula Fox",
+          "file": "public/portraits/campaign/lantern-exchange/paula-fox.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "morris-morrow",
+          "name": "Morris \"Mo\" Morrow",
+          "file": "public/portraits/campaign/lantern-exchange/morris-morrow.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "yvette-satin",
+          "name": "Yvette Satin",
+          "file": "public/portraits/campaign/lantern-exchange/yvette-satin.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "dean-drake",
+          "name": "Dean Drake",
+          "file": "public/portraits/campaign/lantern-exchange/dean-drake.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE production eight-person portrait atlas for The Lantern Exchange in New York, 1947. Exactly 4 columns by 2 rows, eight equal cells with individual 4:5 proportions, overall 8:5 aspect ratio. Each cell contains ONE independent bust, its entire head comfortably inside. Uniform face scale, cream paper continuing through the sheet, zero gutters, zero frames or dividing rules. The exact grid is split at quarter widths and half height. No shared bodies, merged faces, extra people or written labels. The retained atlas will be exported into eight small JPEG portraits in reading order.\nReading order, top row left to right then bottom row:\n1. An adult Black woman in her thirties, waved 1940s updo, modest earrings and a tailored silk blouse, delighted self-assured smile.\n2. An adult white man in his forties, side-parted 1940s hair, full mustache, round wire spectacles and a plain tweed jacket, thoughtful slightly rumpled expression.\n3. An adult Latina woman in her forties, 1940s hair in neat shoulder-length waves, a high-collared blouse and understated necklace, lively assessing eyes.\n4. A large adult Black man in his forties, close neat hair, 1940s dark suit and tie, calm imposing face.\n5. An adult white woman in her thirties, practical 1940s waved bob under a modest felt hat, blouse and tailored jacket, intelligent inquisitive expression.\n6. An older adult white man in his sixties, receding hair, heavy brows, 1940s waistcoat and well-used suit jacket, dry unsentimental expression.\n7. An adult Black woman in her forties, elegant 1940s swept updo, draped evening blouse and small pendant, gentle watchful smile.\n8. An adult East Asian man in his forties, neat 1940s hair and mustache, collared shirt and tie under a worn driver's jacket, plain driver cap and cheerful weathered face.\nEverything belongs to 1947, not the 1950s, 1960s, 1970s or 1980s. No celebrity likenesses. Keep all eight faces distinct and expressive, with the same restrained engraved finish as the original references."
+    },
+    {
+      "id": "salon-des-brumes-regulars-atlas",
+      "kind": "atlas",
+      "casinoId": "salon-des-brumes",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "blaise-bisset",
+          "name": "Blaise Bisset",
+          "file": "public/portraits/campaign/salon-des-brumes/blaise-bisset.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "roxane-renaud",
+          "name": "Roxane Renaud",
+          "file": "public/portraits/campaign/salon-des-brumes/roxane-renaud.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "theo-klein",
+          "name": "Théo Klein",
+          "file": "public/portraits/campaign/salon-des-brumes/theo-klein.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "diane-delorme",
+          "name": "Diane Delorme",
+          "file": "public/portraits/campaign/salon-des-brumes/diane-delorme.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "victor-perrin",
+          "name": "Victor Perrin",
+          "file": "public/portraits/campaign/salon-des-brumes/victor-perrin.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "camille-navarre",
+          "name": "Camille Navarre",
+          "file": "public/portraits/campaign/salon-des-brumes/camille-navarre.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "lucien-lenoir",
+          "name": "Lucien Lenoir",
+          "file": "public/portraits/campaign/salon-des-brumes/lucien-lenoir.jpg",
+          "width": 160,
+          "height": 200
+        },
+        {
+          "id": "simone-caron",
+          "name": "Simone Caron",
+          "file": "public/portraits/campaign/salon-des-brumes/simone-caron.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE production eight-person portrait atlas for Le Salon des Brumes in Paris, 1947. Exactly 4 columns by 2 rows, eight equal cells with individual 4:5 proportions, overall 8:5 aspect ratio. Each cell contains ONE independent bust, its entire head comfortably inside. Uniform face scale, cream paper continuing through the sheet, zero gutters, zero frames or dividing rules. The exact grid is split at quarter widths and half height. No shared bodies, merged faces, extra people or written labels. The retained atlas will be exported into eight small JPEG portraits in reading order.\nReading order, top row left to right then bottom row:\n1. An adult white French man in his forties, carefully side-parted 1940s hair, thin wire glasses, conservative dark suit and tie, controlled discerning expression.\n2. An adult Black French woman in her thirties, sculpted 1940s waved hair, restrained earrings and a tailored evening jacket, sparkling assertive smile.\n3. An adult white French man in his thirties, neatly swept 1940s hair, subtle mustache, dark sports jacket and collared shirt, clever watchful eyes.\n4. An adult French woman of North African heritage in her forties, neatly pinned 1940s dark hair, round simple spectacles and a practical tailored jacket, direct thoughtful gaze.\n5. An adult white French man in his fifties, silver hair brushed back, a 1940s three-piece suit and restrained pocket square, unhurried appraising expression.\n6. An adult French woman of East Asian heritage in her thirties, a softly waved 1940s bob, tailored dark jacket and small earrings, sharp amused eyes.\n7. An adult Black French man in his fifties, close neat hair, trim mustache, 1940s chauffeur's dark suit and simple peaked cap, broad friendly face.\n8. An adult French woman of East Asian heritage in her forties, neatly pinned-back 1940s hair, structured jacket with modest shoulders and small earrings, composed confident expression.\nEverything belongs to 1947, not the 1950s, 1960s, 1970s or 1980s. No celebrity likenesses. Keep all eight faces distinct and expressive, with the same restrained engraved finish as the original references."
+    },
+    {
+      "id": "evelyn-rook",
+      "kind": "portrait",
+      "casinoId": "gilded-alibi",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "evelyn-rook",
+          "name": "Evelyn \"The Count\" Rook",
+          "file": "public/portraits/campaign/gilded-alibi/evelyn-rook.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE static boss portrait for The Gilded Alibi, a private club in Las Vegas, 1947. Evelyn \"The Count\" Rook, The Comptroller: An older adult white woman in her sixties, swept-back silver 1940s hair, thin oval spectacles low on her nose, immaculate dark tailored suit and small antique brooch, formidable composed face clearly distinct from the younger bookkeeper reference. Quiet authority rather than an exaggerated villain. A single centered head-and-shoulders bust, 4:5 canvas, full head and generous breathing room. All facial features and tailoring clearly readable at small size. Use the same warm sepia engraved treatment as the reference portraits. No extra person, background room, animation frames, text or symbols."
+    },
+    {
+      "id": "vincent-vale",
+      "kind": "portrait",
+      "casinoId": "marigold-star",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "vincent-vale",
+          "name": "Vincent \"Velvet\" Vale",
+          "file": "public/portraits/campaign/marigold-star/vincent-vale.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE static boss portrait for The Marigold Star, a private club in Hollywood, 1947. Vincent \"Velvet\" Vale, The Headliner: An adult white man in his fifties, immaculate slicked-back 1940s dark hair with silver temples, strong slightly lined face, elegant dinner jacket and bow tie, magnetic controlled smile. Quiet authority rather than an exaggerated villain. A single centered head-and-shoulders bust, 4:5 canvas, full head and generous breathing room. All facial features and tailoring clearly readable at small size. Use the same warm sepia engraved treatment as the reference portraits. No extra person, background room, animation frames, text or symbols."
+    },
+    {
+      "id": "celeste-varela",
+      "kind": "portrait",
+      "casinoId": "casa-azahar",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "celeste-varela",
+          "name": "Celeste Varela",
+          "file": "public/portraits/campaign/casa-azahar/celeste-varela.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE static boss portrait for Casa del Azahar, a private club in Mexico City, 1947. Celeste Varela, The Hostess: An adult Afro-Mexican woman in her forties, elegant 1940s side-parted waves gathered neatly at the back, immaculate tailored evening jacket, small pearl earrings and a modest brooch, cool attentive confident face. Quiet authority rather than an exaggerated villain. A single centered head-and-shoulders bust, 4:5 canvas, full head and generous breathing room. All facial features and tailoring clearly readable at small size. Use the same warm sepia engraved treatment as the reference portraits. No extra person, background room, animation frames, text or symbols."
+    },
+    {
+      "id": "leon-lark",
+      "kind": "portrait",
+      "casinoId": "lantern-exchange",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "leon-lark",
+          "name": "Leon Lark",
+          "file": "public/portraits/campaign/lantern-exchange/leon-lark.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE static boss portrait for The Lantern Exchange, a private club in New York, 1947. Leon Lark, The Operator: An adult Black man in his fifties, close neat 1940s hair, heavy well-trimmed mustache, dark double-breasted suit and open-neck collared shirt, relaxed watchful face with a faint smile. Quiet authority rather than an exaggerated villain. A single centered head-and-shoulders bust, 4:5 canvas, full head and generous breathing room. All facial features and tailoring clearly readable at small size. Use the same warm sepia engraved treatment as the reference portraits. No extra person, background room, animation frames, text or symbols."
+    },
+    {
+      "id": "madeleine-desrosiers",
+      "kind": "portrait",
+      "casinoId": "salon-des-brumes",
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "madeleine-desrosiers",
+          "name": "Madeleine Desrosiers",
+          "file": "public/portraits/campaign/salon-des-brumes/madeleine-desrosiers.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE static boss portrait for Le Salon des Brumes, a private club in Paris, 1947. Madeleine Desrosiers, The Financier: An adult white French woman in her late fifties, swept and pinned 1940s dark hair with a silver streak, angular lined face without spectacles, sharply tailored dark suit, simple scarf and restrained earrings, quietly commanding expression. Quiet authority rather than an exaggerated villain. A single centered head-and-shoulders bust, 4:5 canvas, full head and generous breathing room. All facial features and tailoring clearly readable at small size. Use the same warm sepia engraved treatment as the reference portraits. No extra person, background room, animation frames, text or symbols."
+    },
+    {
+      "id": "player-mechanic",
+      "kind": "portrait",
+      "casinoId": null,
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "mechanic",
+          "name": "The Mechanic",
+          "file": "public/portraits/players/mechanic.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE cosmetic player portrait, The Mechanic. An adult white woman in her thirties, short softly waved 1940s hair tucked behind the ears, clean worn work jacket over a collared shirt, practical confident expression. A confident approachable protagonist, visually distinct from both references. Single centered head-and-shoulders bust on a 4:5 canvas, full head and generous headroom. Match the original engraved portraits precisely in paper, linework and sepia palette. No props, cards, UI, words, numbers or border."
+    },
+    {
+      "id": "player-dancer",
+      "kind": "portrait",
+      "casinoId": null,
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "dancer",
+          "name": "The Dancer",
+          "file": "public/portraits/players/dancer.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE cosmetic player portrait, The Dancer. An adult Black woman in her late twenties, elegant 1940s waved hair, simple satin neckline and small earrings, poised lively smile. A confident approachable protagonist, visually distinct from both references. Single centered head-and-shoulders bust on a 4:5 canvas, full head and generous headroom. Match the original engraved portraits precisely in paper, linework and sepia palette. No props, cards, UI, words, numbers or border."
+    },
+    {
+      "id": "player-tailor",
+      "kind": "portrait",
+      "casinoId": null,
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "tailor",
+          "name": "The Tailor",
+          "file": "public/portraits/players/tailor.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE cosmetic player portrait, The Tailor. An adult South Asian man in his forties, neatly parted 1940s hair, trim mustache, a well-fitted waistcoat over a white collared shirt and tie, warm shrewd eyes. A confident approachable protagonist, visually distinct from both references. Single centered head-and-shoulders bust on a 4:5 canvas, full head and generous headroom. Match the original engraved portraits precisely in paper, linework and sepia palette. No props, cards, UI, words, numbers or border."
+    },
+    {
+      "id": "player-nurse",
+      "kind": "portrait",
+      "casinoId": null,
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "nurse",
+          "name": "The Night Nurse",
+          "file": "public/portraits/players/nurse.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE cosmetic player portrait, The Night Nurse. An adult white woman in her forties, pinned-back gently waved 1940s hair, plain collared blouse and cardigan, kind lined face with a calm determined smile; no medical cap or symbols. A confident approachable protagonist, visually distinct from both references. Single centered head-and-shoulders bust on a 4:5 canvas, full head and generous headroom. Match the original engraved portraits precisely in paper, linework and sepia palette. No props, cards, UI, words, numbers or border."
+    },
+    {
+      "id": "player-gambler",
+      "kind": "portrait",
+      "casinoId": null,
+      "references": [
+        "public/portraits/ada.jpg",
+        "public/portraits/rail.jpg"
+      ],
+      "members": [
+        {
+          "id": "gambler",
+          "name": "The Gambler",
+          "file": "public/portraits/players/gambler.jpg",
+          "width": 160,
+          "height": 200
+        }
+      ],
+      "prompt": "Use case: historical-scene. Original production character artwork for a 1947 poker adventure. The two reference portraits are STYLE references only: match their vintage sepia engraved newspaper illustration, warm cream paper grain, dark brown ink, fine crosshatching, realistic expressive faces, high contrast and head-and-shoulders scale. Create distinct new fictional people; do not copy either reference person's identity. Period-correct 1940s clothes and hair throughout. Opaque plain cream paper background. No color beyond restrained sepia, no text, labels, numbers, borders, cards, chips or other people within a portrait. Full head with generous headroom, face centered. Readable at 160x200 pixels. Respectful occupational archetypes without national costume clichés or caricatures.\nPrimary request: ONE cosmetic player portrait, The Gambler. An adult East Asian man in his thirties, neatly side-parted 1940s dark hair, dark waistcoat and open-collar white shirt, composed approachable face with a slight knowing smile. A confident approachable protagonist, visually distinct from both references. Single centered head-and-shoulders bust on a 4:5 canvas, full head and generous headroom. Match the original engraved portraits precisely in paper, linework and sepia palette. No props, cards, UI, words, numbers or border."
+    }
+  ]
+}

@@ -1,9 +1,43 @@
-# HoldEmGPT — The Midnight Room
+# HoldEmGPT — Last Seat on Fortune Row
 
-A five-seat no-limit Texas Hold'em game in a fictional 1930s–1940s Las Vegas
-card room. A modern Node server deals and enforces the rules; an HTML 4 / ES3
+A five-seat no-limit Texas Hold'em campaign through five fictional card rooms
+in 1947. A modern Node server deals and enforces the rules; an HTML 4 / ES3
 client uses XMLHTTP (including the IE6 ActiveX fallback). No browser framework,
 JSON parser, fetch, canvas, SVG, modern CSS layout, or TLS is required by the client.
+
+## The campaign
+
+**Last Seat on Fortune Row** follows five fictional casinos across Las Vegas,
+Hollywood, Mexico City, New York and postwar Paris in 1947. Each house has four
+ordinary tables, a scripted boss, its own eight-person regular cast and five
+unique table backgrounds. Ten cosmetic player characters are available.
+
+Start with $1,000 cash. Win four whole tables to unlock the house boss, then win
+its entire table to earn the next invitation. Passes include travel and a room,
+are permanent, and survive losses. Cleared tables remain replayable.
+
+| Casino | Ordinary cash entries | Boss entry |
+| --- | --- | ---: |
+| The Gilded Alibi / Las Vegas | $250 / $500 / $1,000 / $2,000 | $4,000 |
+| The Marigold Star / Hollywood | $1,000 / $2,000 / $4,000 / $8,000 | $16,000 |
+| Casa del Azahar / Mexico City | $2,500 / $5,000 / $10,000 / $20,000 | $40,000 |
+| The Lantern Exchange / New York | $5,000 / $10,000 / $20,000 / $40,000 | $80,000 |
+| Le Salon des Brumes / Paris | $10,000 / $20,000 / $40,000 / $80,000 | $160,000 |
+
+Every entry buys **1,000 tournament chips** with **10/20 blinds**, independently
+of the cash price. Winning the whole table pays five times its entry, including
+the winner's contribution. A loss costs the entry. Hand wins only move chips.
+The clean 25-win path ends at $2,326,000; this is arithmetic, not a difficulty
+estimate. When cash cannot cover the cheapest table in the latest unlocked
+house, a repeatable house stake restores four entries with no debt. A lost
+table can also restart from its pre-entry checkpoint with a new shuffle.
+
+[Story and flow](docs/V2-CONTENT-AND-FLOW.md), [cast](docs/V2-CAST.md),
+[economy](docs/V2-CAMPAIGN-PLAN.md), [implementation checks](docs/V2-IMPLEMENTATION.md)
+and [artwork](docs/V2-ARTWORK.md) document
+the campaign. Runtime content lives in [content/v2/campaign.json](content/v2/campaign.json).
+For an offline art/story walkthrough, run `node scripts/build-v2-content-preview.js`
+and open `artifacts/v2-content/index.html` or `artifacts/v2-content/artwork.html`.
 
 ## Start
 
@@ -22,34 +56,33 @@ Open **http://localhost:3083/**. On the legacy computer open
 Allow port 3083 in the server firewall if needed. IE6 needs JavaScript and
 XMLHTTP/ActiveX enabled. This is intended for a trusted LAN.
 
-Enter your name (up to 32 characters), choose one of five player portraits, and
-press **Play Game**. The main page contains only new-game setup and save loading;
-starting or loading opens the separate poker table at `/table.html`. **Main Menu**
-returns to setup without discarding the current table; **Resume Table** returns
-to it. Playing a new game explicitly resets the bankroll. Your
-portrait is cosmetic: you decide how to play. Your name and portrait are retained
-across hands and in saved games; older saves use The Drifter as their portrait.
+Choose **New Game**, enter a name (up to 32 printable characters), choose one
+of ten portraits on two pages, and read your arrival story. The map initially
+opens only Las Vegas. Select a casino and an affordable table. Your portrait
+is cosmetic; all characters start with the same cash and rules.
 
-New games start with $3,000 cash. The $1,000 buy-in is deducted from that bankroll
-and buys a $1,000 table stack. **Play Game** randomly selects four of eight
-predefined opponents, each with $1,000 in chips; blinds remain $10/$20. The dealer button moves
-after every hand. Betting proceeds preflop, flop, turn and river. The server
-creates and cryptographically shuffles a fresh 52-card deck for every hand,
-deals clockwise, and burns a card before each community street.
+The table remains a separate page. **Main Menu** and **Map** preserve the current
+table; **Continue campaign** returns to it. Buying another entry is blocked until
+the current table finishes. The result page records cash, stamps and invitations.
+Winning a hand or eliminating a boss before the whole table ends is not a clear.
 
-Use Fold, Check, Call, Bet/Raise or All In on your turn. A raise is the total
-street wager, not the amount added. Minimum raises, cumulative short all-ins,
-heads-up button rules, uncalled returns, side pots, split pots and odd chips
-(clockwise from the button) are enforced. All-in players remain eligible until
-showdown. A zero stack eliminates a seat after settlement. **Next Hand** keeps
-the current table. Win all five stacks to receive $5,000 into your cash bankroll
-exactly once. **Buy Into Next Table** deducts another $1,000, keeps your character
-and accumulated cash, and draws four fresh opponents. After losing a table you
-can also buy in again if you have enough cash. There is no table count limit.
-**New Game / Play Game** explicitly resets your cash to $3,000. If you run out
-of buy-in money, load a save or start a new game.
+Use Fold, Check, Call, Raise or All In on your turn. A raise is the total street
+wager. The server cryptographically shuffles a fresh 52-card deck each hand,
+deals clockwise and burns before each community street. Minimum raises,
+cumulative short all-ins, heads-up button rules, uncalled returns, side pots,
+split pots and odd chips remain dealer-enforced. **Next Hand** keeps the table,
+its seats and its independent memories. Blind amounts stay fixed.
+
+**Original free play** on the main menu retains the original $3,000 bankroll,
+$1,000 buy-in and $5,000 whole-table prize. Legacy saves resume those rules.
 
 ## Opponents
+
+Bosses always use authored server policies and contextual dialogue, regardless
+of model mode. Ordinary tables draw four different regulars from the casino's
+pool; boss tables draw three and its fixed boss. The cast and seat order stay
+with a table through hands, view switching and saves. Checkpoint retries retain
+that lineup while dealing fresh cards.
 
 Default `AI_MODE=local` runs independent server strategy bots with distinct
 aggression, looseness and bluff frequencies. They estimate equity by sampling
@@ -162,27 +195,32 @@ semantic disclosure. No private memories are published.
 
 ## Save and resume
 
-**Save Game** writes a full table snapshot, including your cash bankroll, table
-win count, portrait, name and accumulated stack,
-to `data/saves/` and displays a 36-character save code. Keep that code and use
-**Load Game** on the same server, even after a restart. Saves are available
-between decisions, including partway through a hand. Loading clones the
-snapshot; a saved game can be replayed. There is no cash value, account system
-or tamper-proof leaderboard. Save codes grant access to their snapshots; keep
-them private. Back up `data/` to preserve saves. Unsaved sessions expire after
-24 hours without activity and do not survive a restart.
+Campaigns automatically save after entry and each action/result. Keep the private
+**recovery code** shown on the map/menu or in the table's Save panel: it restores
+the latest campaign, cash, stamps, invitations, cast, memories and current hand
+after a browser or server restart. A recovery code has one active session;
+loading it elsewhere transfers the campaign to that session.
 
-Snapshots live on the modern server, rather than in the legacy computer's
-browser storage. `SAVE_DIR` can override the default directory. Load Game and its code field are on the main
-page, so a new browser session can restore a save after a reboot. Version 1 saves
-remain supported and receive a $2,000 reserve bankroll (the initial buy-in is
-already represented by their saved table stack).
+**Save** writes a separate immutable snapshot and displays its own 36-character
+code. Loading that snapshot starts a separate recovery code, preserving the old
+campaign's later autosaves. Checkpoint retry is available after a table loss; it
+restores pre-entry cash/progress and creates a fresh deck, retaining the cast.
+
+Saves live on the modern server under `data/saves/`; `SAVE_DIR` overrides that
+directory. Writes use temporary files and atomic renames. Keep codes private
+and back up the save volume. In-memory sessions expire after 24 hours without
+activity; stored snapshots and campaign autosaves remain loadable.
+
+Version 3 stores campaigns. Version 1/2 saves continue as original free-play
+games; version 1 receives the original $2,000 reserve bankroll. Free-play games
+still require manual saves. No real cash, account system or tamper-proof
+leaderboard is involved.
 
 ## Legacy performance
 
 **Music: On / Off** controls an original quiet solo-piano MIDI, "Midnight Ledger",
-on the main menu and table. The roughly 101-second tune loops through native
-legacy background sound and remembers your setting. Its file is under 5 KB.
+on the original free-play menu and table. The roughly 101-second tune loops through native
+legacy background sound and remembers your setting. Its file is under 5 KB. The reported silent MIDI playback remains unresolved; no new soundtrack is included.
 Unsupported browsers show **Music: MIDI**, with an Open Piano MIDI link in Help
 and on the main menu. See `docs/MUSIC.md` for the composition and playback details.
 
@@ -211,9 +249,12 @@ header, smaller portraits/cards, cash display, betting controls, and one latest
 action line. Help, History, and the saved code open only when requested. Character
 styles remain available as name tooltips. The table loads no player-picker images.
 
-All 13 portraits are baseline, opaque 160 x 200 JPEGs, currently 12–17 KB each.
+All 55 portraits are baseline, opaque 160 x 200 JPEGs. Original files are
+12–17 KB; the 42 new portraits are about 10–12 KB each.
 The picker initially loads five portraits (about 65 KB); the active table uses
-four opponent portraits plus the chosen player portrait. JPEG responses have
+four opponent portraits plus the chosen player portrait. Campaign tables are
+740 x 300 baseline JPEGs at 31–38 KB each; map/room pages load their own
+740 x 400 image, never the entire collection. JPEG responses have
 one-day HTTP caching and an Expires header. The client polls only while opponents
 are acting and skips all table DOM rebuilding when the state is unchanged. On
 your turn and between hands, polling stops. No game analysis runs on the legacy

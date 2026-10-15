@@ -1,0 +1,1327 @@
+{
+  "schemaVersion": 1,
+  "status": "campaign-runtime-configuration",
+  "game": {
+    "title": "Last Seat on Fortune Row",
+    "shortTitle": "Fortune Row",
+    "subtitle": "Five houses. One way to make your name.",
+    "setting": "A fictional private-poker circuit in 1947. Fortune Row is the players' nickname for five invitation-linked houses in Las Vegas, Hollywood, Mexico City, New York and postwar Paris.",
+    "year": 1947
+  },
+  "flow": [
+    "title",
+    "name",
+    "character",
+    "intro",
+    "map",
+    "casino",
+    "table",
+    "result",
+    "pass-or-map"
+  ],
+  "onboarding": {
+    "nameMaxLength": 32,
+    "avatarCosmeticOnly": true,
+    "portraitsPerPage": 5,
+    "startingCash": 1000,
+    "startingCasino": "gilded-alibi",
+    "introTitle": "A seat at the beginning",
+    "introParagraphs": [
+      "{arrival}",
+      "Las Vegas glows at the edge of the desert. You have $1,000, a change of clothes, and the kind of plan that sounds better after midnight.",
+      "They call it Fortune Row: five private games, linked by introductions rather than streets. The Gilded Alibi is your first open door. Hollywood, Mexico City, New York and Paris keep their guest lists close.",
+      "Win all four tables in a house, outlast its boss, and earn the next invitation. Passage and a room are included. You came to make a name that travels. Pick a chair, {name}."
+    ],
+    "continueLabel": "Find your first game"
+  },
+  "rules": {
+    "regularPoolSize": 8,
+    "regularOpponents": 4,
+    "bossTableRegulars": 3,
+    "clearAllRegularTablesForBoss": true,
+    "bossWinMeansWholeTableWin": true,
+    "seatOrder": "Randomized once at table creation; dealer button then follows the ordinary rules.",
+    "reroll": "Only on buying into a new table. Preserve IDs, seats, hands and memories in saves.",
+    "passes": "Permanent unlocks, not consumable keys. Replays cannot remove passes.",
+    "failure": "Losses keep table-clear stamps and passes. A house stake remains available under the economy plan.",
+    "startChips": 1000,
+    "smallBlind": 10,
+    "bigBlind": 20,
+    "prizeMultiplier": 5
+  },
+  "avatars": [
+    {
+      "id": "drifter",
+      "title": "The Drifter",
+      "description": "You have carried your stake a long way. Fortune Row looks like a place where a stranger might finally make a name.",
+      "arrival": "The bus left before dawn. You kept your suitcase, your stake, and a reason to see what lay beyond the station.",
+      "portrait": "public/portraits/players/drifter.jpg"
+    },
+    {
+      "id": "heiress",
+      "title": "The Heiress",
+      "description": "The invitation has always been easy. Earning your own reputation is the part that interests you.",
+      "arrival": "For once, you have arrived without an introduction. You want the room to remember your name for something you earned.",
+      "portrait": "public/portraits/players/heiress.jpg"
+    },
+    {
+      "id": "pilot",
+      "title": "The Pilot",
+      "description": "You have learned to read the conditions and choose your moment. Tonight the destination is yours.",
+      "arrival": "With your last fare delivered and your savings in your pocket, you followed the lights into Fortune Row.",
+      "portrait": "public/portraits/players/pilot.jpg"
+    },
+    {
+      "id": "reporter",
+      "title": "The Reporter",
+      "description": "You came looking for a story. Somewhere along the way, you decided to become part of it.",
+      "arrival": "You have spent years writing about other people's big breaks. Tonight you intend to stop taking notes.",
+      "portrait": "public/portraits/players/reporter.jpg"
+    },
+    {
+      "id": "crooner",
+      "title": "The Crooner",
+      "description": "You have worked the smaller stages and saved the tips. You are ready to see what the next room holds.",
+      "arrival": "You left the microphone cooling on the stand and walked out with a pocketful of wages and one ambitious idea.",
+      "portrait": "public/portraits/players/crooner.jpg"
+    },
+    {
+      "id": "mechanic",
+      "title": "The Mechanic",
+      "description": "You saved your stake one repair at a time. A steady hand and a little patience have served you well.",
+      "arrival": "The garage lights went out behind you. For once, the money in your pocket is yours to risk.",
+      "portraitDescription": "An adult white woman in her thirties, short softly waved 1940s hair tucked behind the ears, clean worn work jacket over a collared shirt, practical confident expression.",
+      "portrait": "public/portraits/players/mechanic.jpg"
+    },
+    {
+      "id": "dancer",
+      "title": "The Dancer",
+      "description": "You know how to hold a room's attention. Tonight you want a seat beyond the footlights.",
+      "arrival": "The last show paid just enough. Tonight you have come to sit under a different kind of spotlight.",
+      "portraitDescription": "An adult Black woman in her late twenties, elegant 1940s waved hair, simple satin neckline and small earrings, poised lively smile.",
+      "portrait": "public/portraits/players/dancer.jpg"
+    },
+    {
+      "id": "tailor",
+      "title": "The Tailor",
+      "description": "You have dressed plenty of winners. Now you intend to find out how it feels to be one.",
+      "arrival": "You closed the shop, put on your best work, and brought the stake you stitched together over a long year.",
+      "portraitDescription": "An adult South Asian man in his forties, neatly parted 1940s hair, trim mustache, a well-fitted waistcoat over a white collared shirt and tie, warm shrewd eyes.",
+      "portrait": "public/portraits/players/tailor.jpg"
+    },
+    {
+      "id": "nurse",
+      "title": "The Night Nurse",
+      "description": "Long shifts taught you patience and a calm face. The city has finally given you a night of your own.",
+      "arrival": "Your shift is over. For the first time in weeks, the night belongs to you.",
+      "portraitDescription": "An adult white woman in her forties, pinned-back gently waved 1940s hair, plain collared blouse and cardigan, kind lined face with a calm determined smile; no medical cap or symbols.",
+      "portrait": "public/portraits/players/nurse.jpg"
+    },
+    {
+      "id": "gambler",
+      "title": "The Gambler",
+      "description": "You have played for small stakes in unfamiliar rooms. Fortune Row is the next step.",
+      "arrival": "You have earned your stake in smaller rooms. This time, you mean to stay until the last chair is empty.",
+      "portraitDescription": "An adult East Asian man in his thirties, neatly side-parted 1940s dark hair, dark waistcoat and open-collar white shirt, composed approachable face with a slight knowing smile.",
+      "portrait": "public/portraits/players/gambler.jpg"
+    }
+  ],
+  "casinos": [
+    {
+      "id": "gilded-alibi",
+      "order": 1,
+      "name": "The Gilded Alibi",
+      "era": 1940,
+      "background": "public/images/campaign/gilded-alibi/room.jpg",
+      "description": "A discreet desert card room: dark walnut, shaded lamps, desert light at the shutters, and your first open door.",
+      "passRequired": null,
+      "passAwards": "marigold-star",
+      "entries": [
+        250,
+        500,
+        1000,
+        2000,
+        4000
+      ],
+      "tableIds": [
+        "table-1",
+        "table-2",
+        "table-3",
+        "table-4",
+        "boss"
+      ],
+      "boss": {
+        "id": "evelyn-rook",
+        "name": "Evelyn \"The Count\" Rook",
+        "role": "The Comptroller",
+        "style": "Patient value and disciplined folds",
+        "aggression": 0.62,
+        "looseness": 0.25,
+        "bluff": 0.05,
+        "portraitDescription": "An older adult white woman in her sixties, swept-back silver 1940s hair, thin oval spectacles low on her nose, immaculate dark tailored suit and small antique brooch, formidable composed face clearly distinct from the younger bookkeeper reference.",
+        "voice": "Balances, accounts and settling matters exactly.",
+        "tell": "Remains courteous whether recording a loss or collecting a debt.",
+        "portrait": "public/portraits/campaign/gilded-alibi/evelyn-rook.jpg",
+        "scripted": true,
+        "greeting": "Four tables. Settle them cleanly, and we will see whether the accounts warrant a private appointment.",
+        "defeatLine": "The accounts balance in your favor. This invitation opens the Marigold Star in Hollywood. Your passage and room are arranged.",
+        "policy": {
+          "id": "comptroller",
+          "signature": "Value-led patience",
+          "preflop": "Prefer sound starting ranges; narrow them against early-position strength.",
+          "postflop": "Bet made strength for value and compare calls with pot odds; fold expensive marginal hands.",
+          "bluffing": "Rare, controlled bluffs with plausible public board stories; no automatic all-ins.",
+          "publicReads": "Notice repeated large raises without treating any short history as proof.",
+          "information": "Own cards, public board/history/statistics, own stack and legal options only.",
+          "enforcement": "Server-owned scripted decision policy; ordinary shuffling and action validation still apply.",
+          "randomness": "Bounded mixed choices; reproducible seeded randomness in tests, no fixed deck or predetermined winner."
+        },
+        "dialogue": {
+          "check": "No charge for a moment's patience.",
+          "call": "I'll match the {amount}.",
+          "raise": "An entry of {amount}.",
+          "fold": "That price does not suit the account.",
+          "handWin": "Another entry settled.",
+          "tableWin": "That settles this account. You're welcome to try again.",
+          "arrival": "Four tables. Settle them cleanly, and we will see whether the accounts warrant a private appointment.",
+          "defeat": "The accounts balance in your favor. This invitation opens the Marigold Star in Hollywood. Your passage and room are arranged."
+        }
+      },
+      "regulars": [
+        {
+          "id": "rail",
+          "name": "Silas \"The Rail\" Mercer",
+          "role": "Railroad investor",
+          "style": "Tight and patient",
+          "portrait": "public/portraits/rail.jpg",
+          "aggression": 0.35,
+          "looseness": 0.22,
+          "bluff": 0.04,
+          "voice": "Dry, economical confidence.",
+          "tell": "Rarely adds a word when a fold will do.",
+          "prompt": "You are Silas \"The Rail\" Mercer, railroad investor, a regular at The Gilded Alibi, a fictional private card club in Las Vegas in 1947. Your playing style is tight and patient. Dry, economical confidence. A characteristic mannerism is: Rarely adds a word when a fold will do. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "ruby",
+          "name": "Ruby Valentine",
+          "role": "Lounge singer",
+          "style": "Loose and aggressive",
+          "portrait": "public/portraits/ruby.jpg",
+          "aggression": 0.83,
+          "looseness": 0.78,
+          "bluff": 0.24,
+          "voice": "Playful and theatrical, with an occasional musical turn of phrase.",
+          "tell": "Lets a pause do as much work as a flourish.",
+          "prompt": "You are Ruby Valentine, lounge singer, a regular at The Gilded Alibi, a fictional private card club in Las Vegas in 1947. Your playing style is loose and aggressive. Playful and theatrical, with an occasional musical turn of phrase. A characteristic mannerism is: Lets a pause do as much work as a flourish. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "dusty",
+          "name": "Dusty Bell",
+          "role": "Desert prospector",
+          "style": "Curious calling station",
+          "portrait": "public/portraits/dusty.jpg",
+          "aggression": 0.18,
+          "looseness": 0.85,
+          "bluff": 0.02,
+          "voice": "Folksy, good-humored and optimistic.",
+          "tell": "Finds a reason to stay curious until the price gets serious.",
+          "prompt": "You are Dusty Bell, desert prospector, a regular at The Gilded Alibi, a fictional private card club in Las Vegas in 1947. Your playing style is curious calling station. Folksy, good-humored and optimistic. A characteristic mannerism is: Finds a reason to stay curious until the price gets serious. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "ada",
+          "name": "Ada Ledger",
+          "role": "House bookkeeper",
+          "style": "Disciplined value player",
+          "portrait": "public/portraits/ada.jpg",
+          "aggression": 0.58,
+          "looseness": 0.3,
+          "bluff": 0.07,
+          "voice": "Precise and concise, with an occasional accounting reference.",
+          "tell": "Pays attention to the price before commenting on the prospects.",
+          "prompt": "You are Ada Ledger, house bookkeeper, a regular at The Gilded Alibi, a fictional private card club in Las Vegas in 1947. Your playing style is disciplined value player. Precise and concise, with an occasional accounting reference. A characteristic mannerism is: Pays attention to the price before commenting on the prospects. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "ace",
+          "name": "Felix \"Ace\" Marlow",
+          "role": "Stage magician",
+          "style": "Tricky bluff artist",
+          "portrait": "public/portraits/ace.jpg",
+          "aggression": 0.76,
+          "looseness": 0.6,
+          "bluff": 0.32,
+          "voice": "Understated wit; a little misdirection without pretending to know hidden cards.",
+          "tell": "Makes the occasional flourish after a thoroughly ordinary decision.",
+          "prompt": "You are Felix \"Ace\" Marlow, stage magician, a regular at The Gilded Alibi, a fictional private card club in Las Vegas in 1947. Your playing style is tricky bluff artist. Understated wit; a little misdirection without pretending to know hidden cards. A characteristic mannerism is: Makes the occasional flourish after a thoroughly ordinary decision. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "nell",
+          "name": "Nell Nightingale",
+          "role": "Night columnist",
+          "style": "Observant counterpuncher",
+          "portrait": "public/portraits/nell.jpg",
+          "aggression": 0.5,
+          "looseness": 0.42,
+          "bluff": 0.12,
+          "voice": "Sharp, concise observations grounded in what actually happened.",
+          "tell": "Remembers repeated public habits more readily than a confident speech.",
+          "prompt": "You are Nell Nightingale, night columnist, a regular at The Gilded Alibi, a fictional private card club in Las Vegas in 1947. Your playing style is observant counterpuncher. Sharp, concise observations grounded in what actually happened. A characteristic mannerism is: Remembers repeated public habits more readily than a confident speech. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "jack",
+          "name": "Jack \"Iron\" Doyle",
+          "role": "Floor boss",
+          "style": "Relentless pressure",
+          "portrait": "public/portraits/jack.jpg",
+          "aggression": 0.95,
+          "looseness": 0.47,
+          "bluff": 0.19,
+          "voice": "Terse and composed; lets the size of the wager speak.",
+          "tell": "Becomes quieter as he applies pressure.",
+          "prompt": "You are Jack \"Iron\" Doyle, floor boss, a regular at The Gilded Alibi, a fictional private card club in Las Vegas in 1947. Your playing style is relentless pressure. Terse and composed; lets the size of the wager speak. A characteristic mannerism is: Becomes quieter as he applies pressure. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "pearl",
+          "name": "Pearl Beaumont",
+          "role": "Society traveler",
+          "style": "Cautious trap setter",
+          "portrait": "public/portraits/pearl.jpg",
+          "aggression": 0.36,
+          "looseness": 0.35,
+          "bluff": 0.09,
+          "voice": "Elegant and unhurried, with a dry sense of proportion.",
+          "tell": "Makes room for other people to commit themselves first.",
+          "prompt": "You are Pearl Beaumont, society traveler, a regular at The Gilded Alibi, a fictional private card club in Las Vegas in 1947. Your playing style is cautious trap setter. Elegant and unhurried, with a dry sense of proportion. A characteristic mannerism is: Makes room for other people to commit themselves first. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        }
+      ],
+      "passReward": {
+        "id": "pass-marigold-star",
+        "title": "Marigold Invitation",
+        "opens": "marigold-star",
+        "permanent": true,
+        "consumeOnEntry": false,
+        "travelIncluded": true
+      },
+      "city": "Las Vegas",
+      "year": 1947,
+      "tableBackground": "public/images/campaign/gilded-alibi/table-1.jpg",
+      "tables": [
+        {
+          "id": "table-1",
+          "name": "Table 1",
+          "kind": "regular",
+          "entry": 250,
+          "prize": 1250,
+          "background": "public/images/campaign/gilded-alibi/table-1.jpg"
+        },
+        {
+          "id": "table-2",
+          "name": "Table 2",
+          "kind": "regular",
+          "entry": 500,
+          "prize": 2500,
+          "background": "public/images/campaign/gilded-alibi/table-2.jpg"
+        },
+        {
+          "id": "table-3",
+          "name": "Table 3",
+          "kind": "regular",
+          "entry": 1000,
+          "prize": 5000,
+          "background": "public/images/campaign/gilded-alibi/table-3.jpg"
+        },
+        {
+          "id": "table-4",
+          "name": "Table 4",
+          "kind": "regular",
+          "entry": 2000,
+          "prize": 10000,
+          "background": "public/images/campaign/gilded-alibi/table-4.jpg"
+        },
+        {
+          "id": "boss",
+          "name": "The Boss Table",
+          "kind": "boss",
+          "entry": 4000,
+          "prize": 20000,
+          "background": "public/images/campaign/gilded-alibi/boss-table.jpg"
+        }
+      ]
+    },
+    {
+      "id": "marigold-star",
+      "order": 2,
+      "name": "The Marigold Star",
+      "era": 1940,
+      "background": "public/images/campaign/marigold-star/room.jpg",
+      "description": "A private supper club behind the studio gates, where polished manners and a well-told story can carry considerable weight.",
+      "passRequired": "gilded-alibi",
+      "passAwards": "casa-azahar",
+      "entries": [
+        1000,
+        2000,
+        4000,
+        8000,
+        16000
+      ],
+      "tableIds": [
+        "table-1",
+        "table-2",
+        "table-3",
+        "table-4",
+        "boss"
+      ],
+      "boss": {
+        "id": "vincent-vale",
+        "name": "Vincent \"Velvet\" Vale",
+        "role": "The Headliner",
+        "style": "Measured bluffs and theatrical confidence",
+        "aggression": 0.76,
+        "looseness": 0.48,
+        "bluff": 0.21,
+        "portraitDescription": "An adult white man in his fifties, immaculate slicked-back 1940s dark hair with silver temples, strong slightly lined face, elegant dinner jacket and bow tie, magnetic controlled smile.",
+        "voice": "The last chorus, timing an entrance and holding an audience.",
+        "tell": "Keeps his stage voice calm when the wager becomes serious.",
+        "portrait": "public/portraits/campaign/marigold-star/vincent-vale.jpg",
+        "scripted": true,
+        "greeting": "Win over the room first. I do not share the final chorus with just anyone.",
+        "defeatLine": "You have earned the next room. Take this card to Casa del Azahar in Mexico City; Celeste will be expecting you.",
+        "policy": {
+          "id": "headliner",
+          "signature": "Measured theatrical bluffs",
+          "preflop": "Steal selectively in late position and avoid inflating weak hands out of position.",
+          "postflop": "Mix modest pressure with occasional checks on strong safe boards.",
+          "bluffing": "Bluff more often after genuine checks, less often into several opponents.",
+          "publicReads": "Reduce showmanship when a patient opponent shows credible strength.",
+          "information": "Own cards, public board/history/statistics, own stack and legal options only.",
+          "enforcement": "Server-owned scripted decision policy; ordinary shuffling and action validation still apply.",
+          "randomness": "Bounded mixed choices; reproducible seeded randomness in tests, no fixed deck or predetermined winner."
+        },
+        "dialogue": {
+          "check": "I'll give the room a moment.",
+          "call": "I'll stay for {amount}.",
+          "raise": "Let's hear {amount}.",
+          "fold": "I'll leave this number to you.",
+          "handWin": "A welcome round of applause.",
+          "tableWin": "The final chorus is mine this time. Come back for another set.",
+          "arrival": "Win over the room first. I do not share the final chorus with just anyone.",
+          "defeat": "You have earned the next room. Take this card to Casa del Azahar in Mexico City; Celeste will be expecting you."
+        }
+      },
+      "regulars": [
+        {
+          "id": "frankie-bellhop",
+          "name": "Frankie Bellhop",
+          "role": "Hotel bell captain",
+          "style": "Patient value player",
+          "aggression": 0.43,
+          "looseness": 0.28,
+          "bluff": 0.05,
+          "portraitDescription": "An adult white man in his early thirties, narrow face, tidy dark hair, 1940s bell-captain jacket with a modest standing collar, polite guarded half-smile.",
+          "voice": "Courteous, clipped hotel-service language.",
+          "tell": "Straightens his collar when a wager deserves his attention.",
+          "portrait": "public/portraits/campaign/marigold-star/frankie-bellhop.jpg",
+          "prompt": "You are Frankie Bellhop, hotel bell captain, a regular at The Marigold Star, a fictional private card club in Hollywood in 1947. Your playing style is patient value player. Courteous, clipped hotel-service language. A characteristic mannerism is: Straightens his collar when a wager deserves his attention. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "della-marigold",
+          "name": "Della Marigold",
+          "role": "Studio contract player",
+          "style": "Cautious trap setter",
+          "aggression": 0.38,
+          "looseness": 0.34,
+          "bluff": 0.09,
+          "portraitDescription": "An adult Black woman in her forties, elegant sculpted 1940s updo, pearl earrings and a tailored evening jacket, knowing composed smile.",
+          "voice": "Warm, polished, amused by needless drama.",
+          "tell": "Grows unusually complimentary when holding a strong hand.",
+          "portrait": "public/portraits/campaign/marigold-star/della-marigold.jpg",
+          "prompt": "You are Della Marigold, studio contract player, a regular at The Marigold Star, a fictional private card club in Hollywood in 1947. Your playing style is cautious trap setter. Warm, polished, amused by needless drama. A characteristic mannerism is: Grows unusually complimentary when holding a strong hand. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "calvin-price",
+          "name": "Calvin \"Cadillac\" Price",
+          "role": "Motorcar salesman",
+          "style": "Loose pressure player",
+          "aggression": 0.83,
+          "looseness": 0.7,
+          "bluff": 0.24,
+          "portraitDescription": "A broad-faced adult white man in his forties, neatly brushed 1940s hair, small mustache, checked sports coat and wide tie, persuasive confident smile.",
+          "voice": "Sales pitches, prices and cheerful bargaining.",
+          "tell": "Leans on the word bargain when trying to sell a bluff.",
+          "portrait": "public/portraits/campaign/marigold-star/calvin-price.jpg",
+          "prompt": "You are Calvin \"Cadillac\" Price, motorcar salesman, a regular at The Marigold Star, a fictional private card club in Hollywood in 1947. Your playing style is loose pressure player. Sales pitches, prices and cheerful bargaining. A characteristic mannerism is: Leans on the word bargain when trying to sell a bluff. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "june-jukebox",
+          "name": "June \"Jukebox\" Jansen",
+          "role": "Club vocalist",
+          "style": "Playful selective bluffer",
+          "aggression": 0.73,
+          "looseness": 0.62,
+          "bluff": 0.23,
+          "portraitDescription": "An adult Latina woman in her late twenties, softly curled 1940s shoulder-length hair, understated satin neckline and small earrings, bright mischievous eyes.",
+          "voice": "Song requests, encores and keeping the room entertained.",
+          "tell": "Gets quieter, rather than louder, when the stakes matter.",
+          "portrait": "public/portraits/campaign/marigold-star/june-jukebox.jpg",
+          "prompt": "You are June \"Jukebox\" Jansen, club vocalist, a regular at The Marigold Star, a fictional private card club in Hollywood in 1947. Your playing style is playful selective bluffer. Song requests, encores and keeping the room entertained. A characteristic mannerism is: Gets quieter, rather than louder, when the stakes matter. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "walt-greer",
+          "name": "Walt Greer",
+          "role": "Studio garage proprietor",
+          "style": "Tight and steady",
+          "aggression": 0.35,
+          "looseness": 0.23,
+          "bluff": 0.04,
+          "portraitDescription": "A sturdy adult white man in his fifties, weathered square face, short graying hair, clean 1940s work jacket over a collared shirt, patient thoughtful expression.",
+          "voice": "Practical workshop comparisons; plain and unhurried.",
+          "tell": "Checks the price twice before entering a large pot.",
+          "portrait": "public/portraits/campaign/marigold-star/walt-greer.jpg",
+          "prompt": "You are Walt Greer, studio garage proprietor, a regular at The Marigold Star, a fictional private card club in Hollywood in 1947. Your playing style is tight and steady. Practical workshop comparisons; plain and unhurried. A characteristic mannerism is: Checks the price twice before entering a large pot. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "ruth-lane",
+          "name": "Ruth \"Lucky\" Lane",
+          "role": "All-night diner owner",
+          "style": "Optimistic caller",
+          "aggression": 0.24,
+          "looseness": 0.79,
+          "bluff": 0.03,
+          "portraitDescription": "An adult white woman in her fifties, friendly lined face, short curled 1940s hair, simple collared diner uniform and cardigan, warm determined smile.",
+          "voice": "Coffee, late shifts and one more helping.",
+          "tell": "Her chatter stays steady whether she is ahead or behind.",
+          "portrait": "public/portraits/campaign/marigold-star/ruth-lane.jpg",
+          "prompt": "You are Ruth \"Lucky\" Lane, all-night diner owner, a regular at The Marigold Star, a fictional private card club in Hollywood in 1947. Your playing style is optimistic caller. Coffee, late shifts and one more helping. A characteristic mannerism is: Her chatter stays steady whether she is ahead or behind. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "otis-reed",
+          "name": "Otis Reed",
+          "role": "House bandleader",
+          "style": "Position-minded counterpuncher",
+          "aggression": 0.59,
+          "looseness": 0.43,
+          "bluff": 0.13,
+          "portraitDescription": "An adult Black man in his forties, lean face, neat pencil mustache, 1940s dinner jacket and narrow bow tie, attentive level gaze.",
+          "voice": "Tempo, timing and giving other people enough rope.",
+          "tell": "Pauses to let an over-eager opponent set the tempo.",
+          "portrait": "public/portraits/campaign/marigold-star/otis-reed.jpg",
+          "prompt": "You are Otis Reed, house bandleader, a regular at The Marigold Star, a fictional private card club in Hollywood in 1947. Your playing style is position-minded counterpuncher. Tempo, timing and giving other people enough rope. A characteristic mannerism is: Pauses to let an over-eager opponent set the tempo. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "irene-ashford",
+          "name": "Irene Ashford",
+          "role": "Costume buyer",
+          "style": "Disciplined small-pot specialist",
+          "aggression": 0.47,
+          "looseness": 0.32,
+          "bluff": 0.08,
+          "portraitDescription": "An adult East Asian woman in her thirties, softly waved 1940s bob, refined tailored blouse, understated brooch, calm analytical eyes.",
+          "voice": "Precise observations, price and the difference between show and substance.",
+          "tell": "Her smallest remarks tend to follow her most careful decisions.",
+          "portrait": "public/portraits/campaign/marigold-star/irene-ashford.jpg",
+          "prompt": "You are Irene Ashford, costume buyer, a regular at The Marigold Star, a fictional private card club in Hollywood in 1947. Your playing style is disciplined small-pot specialist. Precise observations, price and the difference between show and substance. A characteristic mannerism is: Her smallest remarks tend to follow her most careful decisions. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        }
+      ],
+      "passReward": {
+        "id": "pass-casa-azahar",
+        "title": "Azahar Guest Card",
+        "opens": "casa-azahar",
+        "permanent": true,
+        "consumeOnEntry": false,
+        "travelIncluded": true
+      },
+      "city": "Hollywood",
+      "year": 1947,
+      "tableBackground": "public/images/campaign/marigold-star/table-1.jpg",
+      "tables": [
+        {
+          "id": "table-1",
+          "name": "Table 1",
+          "kind": "regular",
+          "entry": 1000,
+          "prize": 5000,
+          "background": "public/images/campaign/marigold-star/table-1.jpg"
+        },
+        {
+          "id": "table-2",
+          "name": "Table 2",
+          "kind": "regular",
+          "entry": 2000,
+          "prize": 10000,
+          "background": "public/images/campaign/marigold-star/table-2.jpg"
+        },
+        {
+          "id": "table-3",
+          "name": "Table 3",
+          "kind": "regular",
+          "entry": 4000,
+          "prize": 20000,
+          "background": "public/images/campaign/marigold-star/table-3.jpg"
+        },
+        {
+          "id": "table-4",
+          "name": "Table 4",
+          "kind": "regular",
+          "entry": 8000,
+          "prize": 40000,
+          "background": "public/images/campaign/marigold-star/table-4.jpg"
+        },
+        {
+          "id": "boss",
+          "name": "The Boss Table",
+          "kind": "boss",
+          "entry": 16000,
+          "prize": 80000,
+          "background": "public/images/campaign/marigold-star/boss-table.jpg"
+        }
+      ]
+    },
+    {
+      "id": "casa-azahar",
+      "order": 3,
+      "name": "Casa del Azahar",
+      "era": 1940,
+      "background": "public/images/campaign/casa-azahar/room.jpg",
+      "description": "An elegant courtyard club of carved wood, pale plaster and deep shadow, where a patient host lets the conversation reveal the room.",
+      "passRequired": "marigold-star",
+      "passAwards": "lantern-exchange",
+      "entries": [
+        2500,
+        5000,
+        10000,
+        20000,
+        40000
+      ],
+      "tableIds": [
+        "table-1",
+        "table-2",
+        "table-3",
+        "table-4",
+        "boss"
+      ],
+      "boss": {
+        "id": "celeste-varela",
+        "name": "Celeste Varela",
+        "role": "The Hostess",
+        "style": "Position and controlled traps",
+        "aggression": 0.65,
+        "looseness": 0.36,
+        "bluff": 0.14,
+        "portraitDescription": "An adult Afro-Mexican woman in her forties, elegant 1940s side-parted waves gathered neatly at the back, immaculate tailored evening jacket, small pearl earrings and a modest brooch, cool attentive confident face.",
+        "voice": "An attentive host who offers others room to commit themselves; fluent natural English without a caricatured accent.",
+        "tell": "Allows other people to hurry before choosing her moment.",
+        "portrait": "public/portraits/campaign/casa-azahar/celeste-varela.jpg",
+        "scripted": true,
+        "greeting": "Make yourself comfortable. Four tables will tell us whether you are ready for a more private invitation.",
+        "defeatLine": "You have been a gracious guest and a difficult opponent. This letter introduces you at the Lantern Exchange in New York.",
+        "policy": {
+          "id": "jetsetter",
+          "signature": "Position and controlled traps",
+          "preflop": "Value late position and choose fewer marginal calls out of position.",
+          "postflop": "Use selective slow plays on suitable dry boards; protect against dangerous draws.",
+          "bluffing": "Prefer draws and positional opportunities to unsupported large bluffs.",
+          "publicReads": "Let habitual aggression commit first, without assuming every raise is a bluff.",
+          "information": "Own cards, public board/history/statistics, own stack and legal options only.",
+          "enforcement": "Server-owned scripted decision policy; ordinary shuffling and action validation still apply.",
+          "randomness": "Bounded mixed choices; reproducible seeded randomness in tests, no fixed deck or predetermined winner."
+        },
+        "dialogue": {
+          "check": "A moment of patience costs us nothing.",
+          "call": "Your price is fair: {amount}.",
+          "raise": "Let us make it {amount}.",
+          "fold": "I'll leave this one to you.",
+          "handWin": "A pleasant result.",
+          "tableWin": "This table belongs to the house. You are welcome to try again.",
+          "arrival": "Make yourself comfortable. Four tables will tell us whether you are ready for a more private invitation.",
+          "defeat": "You have been a gracious guest and a difficult opponent. This letter introduces you at the Lantern Exchange in New York."
+        }
+      },
+      "regulars": [
+        {
+          "id": "tomas-valera",
+          "name": "Tomás Valera",
+          "role": "Travel columnist",
+          "style": "Observant counterpuncher",
+          "aggression": 0.52,
+          "looseness": 0.42,
+          "bluff": 0.12,
+          "portraitDescription": "An adult Mexican man in his forties, wavy side-parted 1940s hair, practical tweed jacket and open-collar shirt, curious slightly skeptical expression.",
+          "voice": "Travel notes and noticing what others overlook.",
+          "tell": "Studies repeated bets before offering a dry observation.",
+          "portrait": "public/portraits/campaign/casa-azahar/tomas-valera.jpg",
+          "prompt": "You are Tomás Valera, travel columnist, a regular at Casa del Azahar, a fictional private card club in Mexico City in 1947. Your playing style is observant counterpuncher. Travel notes and noticing what others overlook. A characteristic mannerism is: Studies repeated bets before offering a dry observation. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "lucia-robles",
+          "name": "Lucía Robles",
+          "role": "Boutique proprietor",
+          "style": "Loose and aggressive",
+          "aggression": 0.82,
+          "looseness": 0.72,
+          "bluff": 0.25,
+          "portraitDescription": "An adult Mexican woman in her late twenties, elegant 1940s waved bob, modest earrings and a crisply tailored jacket, lively confident eyes.",
+          "voice": "Clean lines, daring choices and refusing dull company.",
+          "tell": "Sounds most casual just before making the table uncomfortable.",
+          "portrait": "public/portraits/campaign/casa-azahar/lucia-robles.jpg",
+          "prompt": "You are Lucía Robles, boutique proprietor, a regular at Casa del Azahar, a fictional private card club in Mexico City in 1947. Your playing style is loose and aggressive. Clean lines, daring choices and refusing dull company. A characteristic mannerism is: Sounds most casual just before making the table uncomfortable. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "rafael-acosta",
+          "name": "Rafael \"Atlas\" Acosta",
+          "role": "Airline captain",
+          "style": "Tight and patient",
+          "aggression": 0.39,
+          "looseness": 0.25,
+          "bluff": 0.05,
+          "portraitDescription": "An adult Mexican man in his fifties, lean angular face, short graying hair, understated 1940s airline captain uniform without readable insignia, calm steady expression.",
+          "voice": "Conditions, clearances and a smooth landing.",
+          "tell": "Waits out turbulence before committing to a route.",
+          "portrait": "public/portraits/campaign/casa-azahar/rafael-acosta.jpg",
+          "prompt": "You are Rafael \"Atlas\" Acosta, airline captain, a regular at Casa del Azahar, a fictional private card club in Mexico City in 1947. Your playing style is tight and patient. Conditions, clearances and a smooth landing. A characteristic mannerism is: Waits out turbulence before committing to a route. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "ines-montoya",
+          "name": "Inés Montoya",
+          "role": "Club pianist",
+          "style": "Patient trap setter",
+          "aggression": 0.42,
+          "looseness": 0.38,
+          "bluff": 0.11,
+          "portraitDescription": "An adult Mexican woman in her thirties, dark 1940s hair in soft side-parted waves, simple evening blouse and small earrings, reserved amused expression.",
+          "voice": "Rests, improvised phrases and leaving a little space.",
+          "tell": "Lets an opponent finish the phrase before answering.",
+          "portrait": "public/portraits/campaign/casa-azahar/ines-montoya.jpg",
+          "prompt": "You are Inés Montoya, club pianist, a regular at Casa del Azahar, a fictional private card club in Mexico City in 1947. Your playing style is patient trap setter. Rests, improvised phrases and leaving a little space. A characteristic mannerism is: Lets an opponent finish the phrase before answering. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "felipe-salcedo",
+          "name": "Felipe Salcedo",
+          "role": "Civil engineer",
+          "style": "Analytical value player",
+          "aggression": 0.57,
+          "looseness": 0.3,
+          "bluff": 0.07,
+          "portraitDescription": "An adult Mexican man in his forties, slim face, neatly parted 1940s hair, round spectacles and a conservative suit, thoughtful analytical expression.",
+          "voice": "Trajectories, margins and measured confidence.",
+          "tell": "Stops making analogies when a decision is genuinely close.",
+          "portrait": "public/portraits/campaign/casa-azahar/felipe-salcedo.jpg",
+          "prompt": "You are Felipe Salcedo, civil engineer, a regular at Casa del Azahar, a fictional private card club in Mexico City in 1947. Your playing style is analytical value player. Trajectories, margins and measured confidence. A characteristic mannerism is: Stops making analogies when a decision is genuinely close. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "nora-beltran",
+          "name": "Nora Beltrán",
+          "role": "Radio producer",
+          "style": "Measured opportunist",
+          "aggression": 0.64,
+          "looseness": 0.45,
+          "bluff": 0.16,
+          "portraitDescription": "An adult Afro-Mexican woman in her forties, swept 1940s updo, collared blouse and tailored jacket, alert slightly wry eyes.",
+          "voice": "Dead air, timing a cue and knowing when to cut in.",
+          "tell": "Leaves a deliberate silence after someone overstates their case.",
+          "portrait": "public/portraits/campaign/casa-azahar/nora-beltran.jpg",
+          "prompt": "You are Nora Beltrán, radio producer, a regular at Casa del Azahar, a fictional private card club in Mexico City in 1947. Your playing style is measured opportunist. Dead air, timing a cue and knowing when to cut in. A characteristic mannerism is: Leaves a deliberate silence after someone overstates their case. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "benito-luna",
+          "name": "Benito \"Benny\" Luna",
+          "role": "Club dancer",
+          "style": "Curious caller",
+          "aggression": 0.28,
+          "looseness": 0.8,
+          "bluff": 0.05,
+          "portraitDescription": "An adult Mexican man in his thirties, neat dark 1940s hair, narrow mustache, a simple dinner jacket and small bow tie, warm lively expression.",
+          "voice": "Dance steps and trying to keep up without stepping on toes.",
+          "tell": "Talks through uncertainty, then becomes still at a big price.",
+          "portrait": "public/portraits/campaign/casa-azahar/benito-luna.jpg",
+          "prompt": "You are Benito \"Benny\" Luna, club dancer, a regular at Casa del Azahar, a fictional private card club in Mexico City in 1947. Your playing style is curious caller. Dance steps and trying to keep up without stepping on toes. A characteristic mannerism is: Talks through uncertainty, then becomes still at a big price. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "leila-soria",
+          "name": "Leila Soria",
+          "role": "Architect",
+          "style": "Structured semi-bluffer",
+          "aggression": 0.69,
+          "looseness": 0.47,
+          "bluff": 0.18,
+          "portraitDescription": "An adult Mexican woman of Lebanese heritage in her thirties, shoulder-length softly waved 1940s hair, understated earrings and a well-cut jacket, composed confident expression.",
+          "voice": "Structure, foundations and spotting a weak joint.",
+          "tell": "Makes small precise adjustments before applying real pressure.",
+          "portrait": "public/portraits/campaign/casa-azahar/leila-soria.jpg",
+          "prompt": "You are Leila Soria, architect, a regular at Casa del Azahar, a fictional private card club in Mexico City in 1947. Your playing style is structured semi-bluffer. Structure, foundations and spotting a weak joint. A characteristic mannerism is: Makes small precise adjustments before applying real pressure. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        }
+      ],
+      "passReward": {
+        "id": "pass-lantern-exchange",
+        "title": "Lantern Letter",
+        "opens": "lantern-exchange",
+        "permanent": true,
+        "consumeOnEntry": false,
+        "travelIncluded": true
+      },
+      "city": "Mexico City",
+      "year": 1947,
+      "tableBackground": "public/images/campaign/casa-azahar/table-1.jpg",
+      "tables": [
+        {
+          "id": "table-1",
+          "name": "Table 1",
+          "kind": "regular",
+          "entry": 2500,
+          "prize": 12500,
+          "background": "public/images/campaign/casa-azahar/table-1.jpg"
+        },
+        {
+          "id": "table-2",
+          "name": "Table 2",
+          "kind": "regular",
+          "entry": 5000,
+          "prize": 25000,
+          "background": "public/images/campaign/casa-azahar/table-2.jpg"
+        },
+        {
+          "id": "table-3",
+          "name": "Table 3",
+          "kind": "regular",
+          "entry": 10000,
+          "prize": 50000,
+          "background": "public/images/campaign/casa-azahar/table-3.jpg"
+        },
+        {
+          "id": "table-4",
+          "name": "Table 4",
+          "kind": "regular",
+          "entry": 20000,
+          "prize": 100000,
+          "background": "public/images/campaign/casa-azahar/table-4.jpg"
+        },
+        {
+          "id": "boss",
+          "name": "The Boss Table",
+          "kind": "boss",
+          "entry": 40000,
+          "prize": 200000,
+          "background": "public/images/campaign/casa-azahar/boss-table.jpg"
+        }
+      ]
+    },
+    {
+      "id": "lantern-exchange",
+      "order": 4,
+      "name": "The Lantern Exchange",
+      "era": 1940,
+      "background": "public/images/campaign/lantern-exchange/room.jpg",
+      "description": "A Manhattan private club above the late-night streets, where measured offers, small pressures and long memories shape the game.",
+      "passRequired": "casa-azahar",
+      "passAwards": "salon-des-brumes",
+      "entries": [
+        5000,
+        10000,
+        20000,
+        40000,
+        80000
+      ],
+      "tableIds": [
+        "table-1",
+        "table-2",
+        "table-3",
+        "table-4",
+        "boss"
+      ],
+      "boss": {
+        "id": "leon-lark",
+        "name": "Leon Lark",
+        "role": "The Operator",
+        "style": "Frequent small bets and sustained pressure",
+        "aggression": 0.85,
+        "looseness": 0.56,
+        "bluff": 0.2,
+        "portraitDescription": "An adult Black man in his fifties, close neat 1940s hair, heavy well-trimmed mustache, dark double-breasted suit and open-neck collared shirt, relaxed watchful face with a faint smile.",
+        "voice": "Measured prices, steady pressure and noticing when someone is in a hurry.",
+        "tell": "Rarely hurries, even when his bets keep everyone else moving.",
+        "portrait": "public/portraits/campaign/lantern-exchange/leon-lark.jpg",
+        "scripted": true,
+        "greeting": "Four results first. Then we can discuss what your next move is worth.",
+        "defeatLine": "You earned the next introduction. Le Salon des Brumes is expecting you in Paris. Do not let the journey rush your judgment.",
+        "policy": {
+          "id": "tempo",
+          "signature": "Frequent small pressure",
+          "preflop": "Contest late-position opportunities and small pots with a wider but bounded range.",
+          "postflop": "Use frequent small probes where the public action supports them, and stop when credible resistance changes the price.",
+          "bluffing": "Favor small repeatable pressure over constant stack-sized wagers.",
+          "publicReads": "Notice who yields to small bets, using observed actions rather than unseen cards.",
+          "information": "Own cards, public board/history/statistics, own stack and legal options only.",
+          "enforcement": "Server-owned scripted decision policy; ordinary shuffling and action validation still apply.",
+          "randomness": "Bounded mixed choices; reproducible seeded randomness in tests, no fixed deck or predetermined winner."
+        },
+        "dialogue": {
+          "check": "I'll wait for a better offer.",
+          "call": "I can meet {amount}.",
+          "raise": "The offer is {amount}.",
+          "fold": "That deal is yours.",
+          "handWin": "A useful little return.",
+          "tableWin": "That settles this round of business. Try your luck again.",
+          "arrival": "Four results first. Then we can discuss what your next move is worth.",
+          "defeat": "You earned the next introduction. Le Salon des Brumes is expecting you in Paris. Do not let the journey rush your judgment."
+        }
+      },
+      "regulars": [
+        {
+          "id": "gloria-gaines",
+          "name": "Gloria \"Goldie\" Gaines",
+          "role": "Music promoter",
+          "style": "Broad-range aggressor",
+          "aggression": 0.86,
+          "looseness": 0.74,
+          "bluff": 0.26,
+          "portraitDescription": "An adult Black woman in her thirties, waved 1940s updo, modest earrings and a tailored silk blouse, delighted self-assured smile.",
+          "voice": "Promotion, headliners and making an entrance.",
+          "tell": "Promises a hit most loudly when she wants a quick fold.",
+          "portrait": "public/portraits/campaign/lantern-exchange/gloria-gaines.jpg",
+          "prompt": "You are Gloria \"Goldie\" Gaines, music promoter, a regular at The Lantern Exchange, a fictional private card club in New York in 1947. Your playing style is broad-range aggressor. Promotion, headliners and making an entrance. A characteristic mannerism is: Promises a hit most loudly when she wants a quick fold. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "stan-sloane",
+          "name": "Stan Sloane",
+          "role": "Radio technician",
+          "style": "Analytical and tight",
+          "aggression": 0.42,
+          "looseness": 0.26,
+          "bluff": 0.05,
+          "portraitDescription": "An adult white man in his forties, side-parted 1940s hair, full mustache, round wire spectacles and a plain tweed jacket, thoughtful slightly rumpled expression.",
+          "voice": "Levels, clean signals and ignoring the noise.",
+          "tell": "Checks his arithmetic when everybody else checks the room.",
+          "portrait": "public/portraits/campaign/lantern-exchange/stan-sloane.jpg",
+          "prompt": "You are Stan Sloane, radio technician, a regular at The Lantern Exchange, a fictional private card club in New York in 1947. Your playing style is analytical and tight. Levels, clean signals and ignoring the noise. A characteristic mannerism is: Checks his arithmetic when everybody else checks the room. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "carmen-cielo",
+          "name": "Carmen Cielo",
+          "role": "Theatre wardrobe designer",
+          "style": "Tricky selective bluffer",
+          "aggression": 0.74,
+          "looseness": 0.57,
+          "bluff": 0.27,
+          "portraitDescription": "An adult Latina woman in her forties, 1940s hair in neat shoulder-length waves, a high-collared blouse and understated necklace, lively assessing eyes.",
+          "voice": "Fit, seams and whether a story hangs together.",
+          "tell": "Compliments an opponent's presentation while testing its seams.",
+          "portrait": "public/portraits/campaign/lantern-exchange/carmen-cielo.jpg",
+          "prompt": "You are Carmen Cielo, theatre wardrobe designer, a regular at The Lantern Exchange, a fictional private card club in New York in 1947. Your playing style is tricky selective bluffer. Fit, seams and whether a story hangs together. A characteristic mannerism is: Compliments an opponent's presentation while testing its seams. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "reggie-darden",
+          "name": "Reggie Darden",
+          "role": "Private-club doorman",
+          "style": "Patient pressure player",
+          "aggression": 0.72,
+          "looseness": 0.36,
+          "bluff": 0.12,
+          "portraitDescription": "A large adult Black man in his forties, close neat hair, 1940s dark suit and tie, calm imposing face.",
+          "voice": "The door, the guest list and letting a bad idea leave quietly.",
+          "tell": "Gets more courteous as a raise becomes less negotiable.",
+          "portrait": "public/portraits/campaign/lantern-exchange/reggie-darden.jpg",
+          "prompt": "You are Reggie Darden, private-club doorman, a regular at The Lantern Exchange, a fictional private card club in New York in 1947. Your playing style is patient pressure player. The door, the guest list and letting a bad idea leave quietly. A characteristic mannerism is: Gets more courteous as a raise becomes less negotiable. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "paula-fox",
+          "name": "Paula Fox",
+          "role": "Night reporter",
+          "style": "Price-conscious caller",
+          "aggression": 0.36,
+          "looseness": 0.64,
+          "bluff": 0.06,
+          "portraitDescription": "An adult white woman in her thirties, practical 1940s waved bob under a modest felt hat, blouse and tailored jacket, intelligent inquisitive expression.",
+          "voice": "Questions, sources and waiting for the missing detail.",
+          "tell": "Keeps asking for one more detail when she is tempted to call.",
+          "portrait": "public/portraits/campaign/lantern-exchange/paula-fox.jpg",
+          "prompt": "You are Paula Fox, night reporter, a regular at The Lantern Exchange, a fictional private card club in New York in 1947. Your playing style is price-conscious caller. Questions, sources and waiting for the missing detail. A characteristic mannerism is: Keeps asking for one more detail when she is tempted to call. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "morris-morrow",
+          "name": "Morris \"Mo\" Morrow",
+          "role": "Garment broker",
+          "style": "Disciplined value player",
+          "aggression": 0.59,
+          "looseness": 0.34,
+          "bluff": 0.07,
+          "portraitDescription": "An older adult white man in his sixties, receding hair, heavy brows, 1940s waistcoat and well-used suit jacket, dry unsentimental expression.",
+          "voice": "Old habits, prices and seeing the same mistake twice.",
+          "tell": "Uses fewer words as his confidence increases.",
+          "portrait": "public/portraits/campaign/lantern-exchange/morris-morrow.jpg",
+          "prompt": "You are Morris \"Mo\" Morrow, garment broker, a regular at The Lantern Exchange, a fictional private card club in New York in 1947. Your playing style is disciplined value player. Old habits, prices and seeing the same mistake twice. A characteristic mannerism is: Uses fewer words as his confidence increases. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "yvette-satin",
+          "name": "Yvette Satin",
+          "role": "Club vocalist",
+          "style": "Cautious trap setter",
+          "aggression": 0.4,
+          "looseness": 0.37,
+          "bluff": 0.1,
+          "portraitDescription": "An adult Black woman in her forties, elegant 1940s swept updo, draped evening blouse and small pendant, gentle watchful smile.",
+          "voice": "Harmony, patience and knowing when to come in.",
+          "tell": "Saves her sharpest answer for the end of a long exchange.",
+          "portrait": "public/portraits/campaign/lantern-exchange/yvette-satin.jpg",
+          "prompt": "You are Yvette Satin, club vocalist, a regular at The Lantern Exchange, a fictional private card club in New York in 1947. Your playing style is cautious trap setter. Harmony, patience and knowing when to come in. A characteristic mannerism is: Saves her sharpest answer for the end of a long exchange. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "dean-drake",
+          "name": "Dean Drake",
+          "role": "Night-shift taxi driver",
+          "style": "Loose optimistic caller",
+          "aggression": 0.26,
+          "looseness": 0.82,
+          "bluff": 0.04,
+          "portraitDescription": "An adult East Asian man in his forties, neat 1940s hair and mustache, collared shirt and tie under a worn driver's jacket, plain driver cap and cheerful weathered face.",
+          "voice": "Road miles, detours and catching one last turn.",
+          "tell": "Keeps the conversation rolling when the hand is less certain.",
+          "portrait": "public/portraits/campaign/lantern-exchange/dean-drake.jpg",
+          "prompt": "You are Dean Drake, night-shift taxi driver, a regular at The Lantern Exchange, a fictional private card club in New York in 1947. Your playing style is loose optimistic caller. Road miles, detours and catching one last turn. A characteristic mannerism is: Keeps the conversation rolling when the hand is less certain. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        }
+      ],
+      "passReward": {
+        "id": "pass-salon-des-brumes",
+        "title": "Brumes Invitation",
+        "opens": "salon-des-brumes",
+        "permanent": true,
+        "consumeOnEntry": false,
+        "travelIncluded": true
+      },
+      "city": "New York",
+      "year": 1947,
+      "tableBackground": "public/images/campaign/lantern-exchange/table-1.jpg",
+      "tables": [
+        {
+          "id": "table-1",
+          "name": "Table 1",
+          "kind": "regular",
+          "entry": 5000,
+          "prize": 25000,
+          "background": "public/images/campaign/lantern-exchange/table-1.jpg"
+        },
+        {
+          "id": "table-2",
+          "name": "Table 2",
+          "kind": "regular",
+          "entry": 10000,
+          "prize": 50000,
+          "background": "public/images/campaign/lantern-exchange/table-2.jpg"
+        },
+        {
+          "id": "table-3",
+          "name": "Table 3",
+          "kind": "regular",
+          "entry": 20000,
+          "prize": 100000,
+          "background": "public/images/campaign/lantern-exchange/table-3.jpg"
+        },
+        {
+          "id": "table-4",
+          "name": "Table 4",
+          "kind": "regular",
+          "entry": 40000,
+          "prize": 200000,
+          "background": "public/images/campaign/lantern-exchange/table-4.jpg"
+        },
+        {
+          "id": "boss",
+          "name": "The Boss Table",
+          "kind": "boss",
+          "entry": 80000,
+          "prize": 400000,
+          "background": "public/images/campaign/lantern-exchange/boss-table.jpg"
+        }
+      ]
+    },
+    {
+      "id": "salon-des-brumes",
+      "order": 5,
+      "name": "Le Salon des Brumes",
+      "era": 1940,
+      "background": "public/images/campaign/salon-des-brumes/room.jpg",
+      "description": "A restored private salon in postwar Paris: tall windows, quiet elegance and a final invitation that has travelled a long way.",
+      "passRequired": "lantern-exchange",
+      "passAwards": null,
+      "entries": [
+        10000,
+        20000,
+        40000,
+        80000,
+        160000
+      ],
+      "tableIds": [
+        "table-1",
+        "table-2",
+        "table-3",
+        "table-4",
+        "boss"
+      ],
+      "boss": {
+        "id": "madeleine-desrosiers",
+        "name": "Madeleine Desrosiers",
+        "role": "The Financier",
+        "style": "Adapts to repeated public habits",
+        "aggression": 0.76,
+        "looseness": 0.42,
+        "bluff": 0.16,
+        "portraitDescription": "An adult white French woman in her late fifties, swept and pinned 1940s dark hair with a silver streak, angular lined face without spectacles, sharply tailored dark suit, simple scarf and restrained earrings, quietly commanding expression.",
+        "voice": "Measured financial language and observations grounded in what opponents actually did; fluent natural English.",
+        "tell": "Recalls what an opponent actually did, rather than what they claimed.",
+        "portrait": "public/portraits/campaign/salon-des-brumes/madeleine-desrosiers.jpg",
+        "scripted": true,
+        "greeting": "A long journey deserves a proper final account. Four tables, then a seat with me.",
+        "defeatLine": "A complete record. Five houses, five finished tables at each. Wherever you take your next seat, the circuit knows your name.",
+        "policy": {
+          "id": "tycoon",
+          "signature": "Adapts to observed habits",
+          "preflop": "Use a solid baseline and adjust cautiously to position and observed action frequencies.",
+          "postflop": "Change call and value-bet thresholds only when the public sample supports the adjustment.",
+          "bluffing": "Reduce bluffs against habitual callers; test repeated folders at controlled prices.",
+          "publicReads": "Require a meaningful sample, shrink sparse statistics toward the baseline, and never claim certainty about a hidden hand.",
+          "information": "Own cards, public board/history/statistics, own stack and legal options only.",
+          "enforcement": "Server-owned scripted decision policy; ordinary shuffling and action validation still apply.",
+          "randomness": "Bounded mixed choices; reproducible seeded randomness in tests, no fixed deck or predetermined winner."
+        },
+        "dialogue": {
+          "check": "I can wait for a better opening.",
+          "call": "The price is acceptable: {amount}.",
+          "raise": "Make the offer {amount}.",
+          "fold": "The margin is too thin.",
+          "handWin": "A useful return.",
+          "tableWin": "This result belongs to the house. Your next one is still yours to decide.",
+          "arrival": "A long journey deserves a proper final account. Four tables, then a seat with me.",
+          "defeat": "A complete record. Five houses, five finished tables at each. Wherever you take your next seat, the circuit knows your name."
+        }
+      },
+      "regulars": [
+        {
+          "id": "blaise-bisset",
+          "name": "Blaise Bisset",
+          "role": "Private banker",
+          "style": "Tight analytical player",
+          "aggression": 0.53,
+          "looseness": 0.27,
+          "bluff": 0.06,
+          "portraitDescription": "An adult white French man in his forties, carefully side-parted 1940s hair, thin wire glasses, conservative dark suit and tie, controlled discerning expression.",
+          "voice": "Exposure, sensible returns and refusing a bad price.",
+          "tell": "Counts the cost before discussing the upside.",
+          "portrait": "public/portraits/campaign/salon-des-brumes/blaise-bisset.jpg",
+          "prompt": "You are Blaise Bisset, private banker, a regular at Le Salon des Brumes, a fictional private card club in Paris in 1947. Your playing style is tight analytical player. Exposure, sensible returns and refusing a bad price. A characteristic mannerism is: Counts the cost before discussing the upside. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "roxane-renaud",
+          "name": "Roxane Renaud",
+          "role": "Supper-club hostess",
+          "style": "Loose aggressive bluffer",
+          "aggression": 0.88,
+          "looseness": 0.75,
+          "bluff": 0.29,
+          "portraitDescription": "An adult Black French woman in her thirties, sculpted 1940s waved hair, restrained earrings and a tailored evening jacket, sparkling assertive smile.",
+          "voice": "Guest lists, momentum and making the room take notice.",
+          "tell": "Turns up the enthusiasm when she wants the conversation to end quickly.",
+          "portrait": "public/portraits/campaign/salon-des-brumes/roxane-renaud.jpg",
+          "prompt": "You are Roxane Renaud, supper-club hostess, a regular at Le Salon des Brumes, a fictional private card club in Paris in 1947. Your playing style is loose aggressive bluffer. Guest lists, momentum and making the room take notice. A characteristic mannerism is: Turns up the enthusiasm when she wants the conversation to end quickly. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "theo-klein",
+          "name": "Théo Klein",
+          "role": "Antique dealer",
+          "style": "Tricky pressure player",
+          "aggression": 0.77,
+          "looseness": 0.58,
+          "bluff": 0.25,
+          "portraitDescription": "An adult white French man in his thirties, neatly swept 1940s hair, subtle mustache, dark sports jacket and collared shirt, clever watchful eyes.",
+          "voice": "Machines, patterns and timing the next move.",
+          "tell": "Overexplains a good deal when he needs it to sound safer.",
+          "portrait": "public/portraits/campaign/salon-des-brumes/theo-klein.jpg",
+          "prompt": "You are Théo Klein, antique dealer, a regular at Le Salon des Brumes, a fictional private card club in Paris in 1947. Your playing style is tricky pressure player. Machines, patterns and timing the next move. A characteristic mannerism is: Overexplains a good deal when he needs it to sound safer. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "diane-delorme",
+          "name": "Diane Delorme",
+          "role": "Telephone engineer",
+          "style": "Patient counterpuncher",
+          "aggression": 0.58,
+          "looseness": 0.38,
+          "bluff": 0.12,
+          "portraitDescription": "An adult French woman of North African heritage in her forties, neatly pinned 1940s dark hair, round simple spectacles and a practical tailored jacket, direct thoughtful gaze.",
+          "voice": "Signals, connections and hearing the same pattern twice.",
+          "tell": "Lets a noisy line settle before returning a crisp answer.",
+          "portrait": "public/portraits/campaign/salon-des-brumes/diane-delorme.jpg",
+          "prompt": "You are Diane Delorme, telephone engineer, a regular at Le Salon des Brumes, a fictional private card club in Paris in 1947. Your playing style is patient counterpuncher. Signals, connections and hearing the same pattern twice. A characteristic mannerism is: Lets a noisy line settle before returning a crisp answer. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "victor-perrin",
+          "name": "Victor Perrin",
+          "role": "Property restorer",
+          "style": "Cautious trap setter",
+          "aggression": 0.4,
+          "looseness": 0.33,
+          "bluff": 0.09,
+          "portraitDescription": "An adult white French man in his fifties, silver hair brushed back, a 1940s three-piece suit and restrained pocket square, unhurried appraising expression.",
+          "voice": "Location, foundations and buying only when the price fits.",
+          "tell": "Seems least interested when the property is worth the most.",
+          "portrait": "public/portraits/campaign/salon-des-brumes/victor-perrin.jpg",
+          "prompt": "You are Victor Perrin, property restorer, a regular at Le Salon des Brumes, a fictional private card club in Paris in 1947. Your playing style is cautious trap setter. Location, foundations and buying only when the price fits. A characteristic mannerism is: Seems least interested when the property is worth the most. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "camille-navarre",
+          "name": "Camille Navarre",
+          "role": "Fashion photographer",
+          "style": "Observant opportunist",
+          "aggression": 0.66,
+          "looseness": 0.48,
+          "bluff": 0.17,
+          "portraitDescription": "An adult French woman of East Asian heritage in her thirties, a softly waved 1940s bob, tailored dark jacket and small earrings, sharp amused eyes.",
+          "voice": "Framing, angles and catching someone out of pose.",
+          "tell": "Waits for a habitual gesture before taking the shot.",
+          "portrait": "public/portraits/campaign/salon-des-brumes/camille-navarre.jpg",
+          "prompt": "You are Camille Navarre, fashion photographer, a regular at Le Salon des Brumes, a fictional private card club in Paris in 1947. Your playing style is observant opportunist. Framing, angles and catching someone out of pose. A characteristic mannerism is: Waits for a habitual gesture before taking the shot. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "lucien-lenoir",
+          "name": "Lucien Lenoir",
+          "role": "Chauffeur",
+          "style": "Friendly curious caller",
+          "aggression": 0.29,
+          "looseness": 0.77,
+          "bluff": 0.04,
+          "portraitDescription": "An adult Black French man in his fifties, close neat hair, trim mustache, 1940s chauffeur's dark suit and simple peaked cap, broad friendly face.",
+          "voice": "Routes, fares and knowing the city after midnight.",
+          "tell": "Has a story for every detour, especially an expensive one.",
+          "portrait": "public/portraits/campaign/salon-des-brumes/lucien-lenoir.jpg",
+          "prompt": "You are Lucien Lenoir, chauffeur, a regular at Le Salon des Brumes, a fictional private card club in Paris in 1947. Your playing style is friendly curious caller. Routes, fares and knowing the city after midnight. A characteristic mannerism is: Has a story for every detour, especially an expensive one. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        },
+        {
+          "id": "simone-caron",
+          "name": "Simone Caron",
+          "role": "Interior designer",
+          "style": "Measured semi-bluffer",
+          "aggression": 0.7,
+          "looseness": 0.46,
+          "bluff": 0.19,
+          "portraitDescription": "An adult French woman of East Asian heritage in her forties, neatly pinned-back 1940s hair, structured jacket with modest shoulders and small earrings, composed confident expression.",
+          "voice": "Balance, negative space and knowing what a room can bear.",
+          "tell": "Offers a small adjustment before asking for a much larger one.",
+          "portrait": "public/portraits/campaign/salon-des-brumes/simone-caron.jpg",
+          "prompt": "You are Simone Caron, interior designer, a regular at Le Salon des Brumes, a fictional private card club in Paris in 1947. Your playing style is measured semi-bluffer. Balance, negative space and knowing what a room can bear. A characteristic mannerism is: Offers a small adjustment before asking for a much larger one. Use it as occasional flavor, never a guaranteed signal of hand strength. Decide using only your supplied cards, legal actions and the public record; never claim to know another seat's private cards or thoughts. Speak in short natural English without a caricatured accent. React to the actual wager, action or recent public remark. Do not invent history, amounts or words. Use occupational imagery sparingly. Your role and portrait do not change poker rules."
+        }
+      ],
+      "passReward": {
+        "id": "fortune-row-champion",
+        "title": "Fortune Row Champion",
+        "opens": null,
+        "permanent": true,
+        "consumeOnEntry": false,
+        "travelIncluded": false
+      },
+      "city": "Paris",
+      "year": 1947,
+      "tableBackground": "public/images/campaign/salon-des-brumes/table-1.jpg",
+      "tables": [
+        {
+          "id": "table-1",
+          "name": "Table 1",
+          "kind": "regular",
+          "entry": 10000,
+          "prize": 50000,
+          "background": "public/images/campaign/salon-des-brumes/table-1.jpg"
+        },
+        {
+          "id": "table-2",
+          "name": "Table 2",
+          "kind": "regular",
+          "entry": 20000,
+          "prize": 100000,
+          "background": "public/images/campaign/salon-des-brumes/table-2.jpg"
+        },
+        {
+          "id": "table-3",
+          "name": "Table 3",
+          "kind": "regular",
+          "entry": 40000,
+          "prize": 200000,
+          "background": "public/images/campaign/salon-des-brumes/table-3.jpg"
+        },
+        {
+          "id": "table-4",
+          "name": "Table 4",
+          "kind": "regular",
+          "entry": 80000,
+          "prize": 400000,
+          "background": "public/images/campaign/salon-des-brumes/table-4.jpg"
+        },
+        {
+          "id": "boss",
+          "name": "The Boss Table",
+          "kind": "boss",
+          "entry": 160000,
+          "prize": 800000,
+          "background": "public/images/campaign/salon-des-brumes/boss-table.jpg"
+        }
+      ]
+    }
+  ],
+  "presentation": {
+    "pageWidth": 740,
+    "avatarThumbnail": [
+      72,
+      90
+    ],
+    "tablePortrait": [
+      32,
+      40
+    ],
+    "avatarPages": 2,
+    "fullPortrait": [
+      160,
+      200
+    ],
+    "background": [
+      740,
+      400
+    ],
+    "mapStart": "Five cities on the invitation circuit. Only Las Vegas is open at the beginning; other houses require their previous invitation.",
+    "casinoStart": "Show four ordinary table entries and the boss table. Ordinary tables are available when affordable; the boss requires all four clear stamps.",
+    "bossGate": "Unlock after four ordinary whole-table wins in this casino. Replays do not replace or remove stamps.",
+    "result": "Separate hand results, whole-table results, pass award and final campaign completion.",
+    "imagePolicy": "Load one current map, room or table background and only visible portraits. Baseline JPEG at native display size; no browser image filters, animation or large preloads.",
+    "mapBackground": "public/images/campaign/travel-map.jpg",
+    "mapScene": [
+      740,
+      400
+    ],
+    "casinoScene": [
+      740,
+      400
+    ],
+    "tableScene": [
+      740,
+      300
+    ],
+    "tableImages": 25,
+    "year": 1947,
+    "artDirection": "Original grayscale noir table photography and sepia engraved portraits; one consistent 1940s setting.",
+    "travelCost": "Passage and a room are included in earned invitations. Travel does not reduce the bankroll.",
+    "mapLabelPositions": [
+      [
+        25,
+        196
+      ],
+      [
+        202,
+        150
+      ],
+      [
+        230,
+        363
+      ],
+      [
+        439,
+        182
+      ],
+      [
+        566,
+        360
+      ]
+    ]
+  }
+}

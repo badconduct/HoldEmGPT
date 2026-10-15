@@ -5,6 +5,9 @@
 !server.js
 !lib/
 !lib/**
+!content/
+!content/v2/
+!content/v2/campaign.json
 !public/
 !public/**
 !LICENSE

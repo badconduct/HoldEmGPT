@@ -1,7 +1,8 @@
 (function () {
   var revision = 0, requestBusy = false, timer = null, amountRevision = -1, pollNeeded = false, lastState = '', historyNodes = null;
-  var seatTalk = [];
-  var perspectiveView = true;
+  var seatTalk = [], campaignMode = false;
+  function chips(n) { return campaignMode ? n+' chips' : '$'+n; }
+  var perspectiveView = true, currentBackground = '';
   function el(id) { return document.getElementById(id); }
   function escape(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
   function value(node) { return node ? (typeof node.text !== 'undefined' ? node.text : node.textContent) : ''; }
@@ -26,7 +27,20 @@
     var status=tag(g,'status'), thinkingSeat=Number(attr(g,'actor'));
     if(busy && players[thinkingSeat] && !tag(g,'error')) status=attr(players[thinkingSeat],'name')+' is thinking...';
     revision=Number(attr(g,'revision')); el('notice').innerHTML=escape(status);
-    if(!players.length) {window.location.href='/';return;}
+    if(!players.length) {window.location.href=attr(g,'campaign')==='1'?'/map.html':'/';return;}
+    campaignMode=attr(g,'campaign')==='1';
+    var background=attr(g,'background') || '/images/table-room.jpg';
+    if(currentBackground!==background) {el('roomimage').src=background;currentBackground=background;}
+    el('raiseunit').innerHTML=campaignMode?'To':'To $';
+    el('gamename').innerHTML=campaignMode?'FORTUNE ROW':'THE MIDNIGHT ROOM';
+    el('campaigninfo').style.display=campaignMode?'inline':'none';
+    el('campaignnav').style.display=campaignMode?'block':'none';
+    el('tableresult').style.display=campaignMode && attr(g,'finished')==='1'?'inline':'none';
+    el('campaignresultbutton').style.display=campaignMode && attr(g,'finished')==='1'?'inline':'none';
+    el('campaigninfo').innerHTML=escape(attr(g,'casinoName') || '')+' / '+escape(attr(g,'tableName') || '')+' / Cash entry $'+attr(g,'buyin')+' / Prize $'+attr(g,'prize')+' / 1,000 chips; 10/20';
+    el('recoverypanel').style.display=campaignMode?'block':'none';
+    el('recoverycode').value=attr(g,'recoveryCode') || '';
+    if(campaignMode)el('gamehelp').innerHTML='<p>Bets and stacks are table chips. Every entry starts with 1,000 chips and 10/20 blinds. Win the entire table to collect its cash prize. Four ordinary table stamps unlock the boss; win its entire table to earn the next invitation.</p><p>Stamps and passes survive losses. House stakes are available from the map when you cannot afford the cheapest table. After a loss, you may retry from the pre-table checkpoint with a fresh deck.</p>';
     el('bankroll').innerHTML='Cash $'+attr(g,'cash')+' &nbsp; | &nbsp; Wins '+attr(g,'wins');
     receiveQuotes(g);
     var currentMoves=moveLabels(g,players);
@@ -39,10 +53,10 @@
     el('buy').style.display=attr(g,'canBuy')==='1'?'inline':'none';
     el('next').style.display=attr(g,'canNext')==='1'?'inline':'none';
     if(legal && !busy) {
-      el('fold').disabled=false; el('check').disabled=attr(legal,'check')!=='true'; el('call').disabled=Number(attr(legal,'toCall'))===0; el('call').innerHTML='Call $'+attr(legal,'call');
+      el('fold').disabled=false; el('check').disabled=attr(legal,'check')!=='true'; el('call').disabled=Number(attr(legal,'toCall'))===0; el('call').innerHTML='Call '+chips(attr(legal,'call'));
       el('raise').disabled=attr(legal,'raise')!=='true'; el('allin').disabled=attr(legal,'allin')!=='true';
       if(amountRevision!==revision) {el('amount').value=attr(legal,'min'); amountRevision=revision;}
-      el('limits').innerHTML=attr(legal,'raise')==='true'?'Raise TO $'+attr(legal,'min')+' through $'+attr(legal,'max')+'.':'Check, call, or fold as available.';
+      el('limits').innerHTML=attr(legal,'raise')==='true'?'Raise TO '+chips(attr(legal,'min'))+' through '+chips(attr(legal,'max'))+'.':'Check, call, or fold as available.';
     } else el('limits').innerHTML=busy?'Waiting for independent opponent decisions.':'';
     historyNodes=g.getElementsByTagName('event');
     fitChat();
@@ -56,15 +70,15 @@
       p=players[i]; seat=Number(attr(p,'seat')); html='';
       var speech=seatTalk[seat];el(prefix+'quote'+seat).innerHTML=escape(speech?speech.text:'');el(prefix+'quote'+seat).title=speech?speech.text:'';el(prefix+'quote'+seat).className=speech?'seatquote speaking':'seatquote';
       html+='<div class="name" title="'+escape(attr(p,'name'))+' / '+escape(attr(p,'style'))+'">'+escape(attr(p,'name'))+'</div>';
-      html+='<table class="seatinfo" cellpadding="0" cellspacing="0" summary="Portrait and chips"><tr><td class="facecell"><img class="portrait" src="/portraits/'+(seat===0?'players/':'')+escape(attr(p,'portrait') || (seat===0?'drifter':attr(p,'id')))+'.jpg" width="32" height="40" alt=""></td><td>';
-      html+='<div class="stack">'+(seat===0 && attr(g,'paid')==='1'?'Paid $':'$')+attr(p,'stack')+'</div>';
-      html+='<div class="badge">'+(seat===Number(attr(g,'dealer'))?'D &nbsp; ':'')+(seat===Number(attr(g,'sb'))?'SB $10':seat===Number(attr(g,'bb'))?'BB $20':'')+'</div></td></tr></table>';
-      html+='<div class="action">'+escape(currentMoves[seat] || '')+(Number(attr(p,'bet'))>0?' &nbsp; / &nbsp; $'+attr(p,'bet')+' wagered':'')+'</div>';
+      html+='<table class="seatinfo" cellpadding="0" cellspacing="0" summary="Portrait and chips"><tr><td class="facecell"><img class="portrait" src="'+escape(attr(p,'image') || ('/portraits/'+(seat===0?'players/':'')+(attr(p,'portrait') || (seat===0?'drifter':attr(p,'id')))+'.jpg'))+'" width="32" height="40" alt=""></td><td>';
+      html+='<div class="stack">'+(campaignMode?attr(p,'stack'):(seat===0 && attr(g,'paid')==='1'?'Paid $':'$')+attr(p,'stack'))+'</div>';
+      html+='<div class="badge">'+(seat===Number(attr(g,'dealer'))?'D &nbsp; ':'')+(seat===Number(attr(g,'sb'))?(campaignMode?'SB 10':'SB $10'):seat===Number(attr(g,'bb'))?(campaignMode?'BB 20':'BB $20'):'')+'</div></td></tr></table>';
+      html+='<div class="action">'+escape(currentMoves[seat] || '')+(Number(attr(p,'bet'))>0?' &nbsp; / &nbsp; '+chips(attr(p,'bet'))+' wagered':'')+'</div>';
       el(prefix+'seat'+seat).innerHTML=html; el(prefix+'seat'+seat).className=(seat===0?'human':'seat')+(seat===Number(attr(g,'actor'))?' active':'')+(attr(p,'folded')==='1'?' folded':'');
       el(prefix+'holes'+seat).innerHTML=cards(p);
       el(prefix+'holes'+seat).style.visibility=prefix==='p' && seat!==0 && attr(p,'folded')==='1'?'hidden':'visible';
     }
-    el(prefix+'board').innerHTML=cards(g.getElementsByTagName('board')[0]); el(prefix+'pot').innerHTML='POT $'+attr(g,'pot');
+    el(prefix+'board').innerHTML=cards(g.getElementsByTagName('board')[0]); el(prefix+'pot').innerHTML='POT '+chips(attr(g,'pot'));
     el(prefix+'handlabel').innerHTML=Number(attr(g,'hand'))?'HAND '+attr(g,'hand')+' &nbsp; / &nbsp; '+escape(attr(g,'phase')).toUpperCase():'YOUR TABLE AWAITS';
   }
   function request(path, body) {
@@ -85,7 +99,7 @@
     for(i=0;i<players.length;i++) {var p=players[i],seat=Number(attr(p,'seat'));labels[seat]='';if(attr(p,'actionHand')===hand && attr(p,'actionStreet')===street)labels[seat]=attr(p,'action') || '';}
     // Existing live dealers/saves have no street tag. Derive current moves from their public ledger.
     for(i=0;i<events.length;i++) {m=/^Hand ([0-9]+) \/ (preflop|flop|turn|river): (.*)$/.exec(value(events[i]));if(!m || m[1]!==hand || m[2]!==street)continue;
-      for(j=0;j<players.length;j++) {var name=attr(players[j],'name');if(m[3].indexOf(name+' ')!==0)continue;var action=m[3].substring(name.length+1);if(/^(?:folds|checks|calls \$[0-9]+|raises to \$[0-9]+)(?: \(all-in\))?\.$/.test(action))labels[Number(attr(players[j],'seat'))]=action.substring(0,action.length-1);}
+      for(j=0;j<players.length;j++) {var name=attr(players[j],'name');if(m[3].indexOf(name+' ')!==0)continue;var action=m[3].substring(name.length+1);if(/^(?:folds|checks|calls (?:\$[0-9]+|[0-9]+ chips)|raises to (?:\$[0-9]+|[0-9]+ chips))(?: \(all-in\))?\.$/.test(action))labels[Number(attr(players[j],'seat'))]=action.substring(0,action.length-1);}
     }
     for(i=0;i<players.length;i++) {var player=players[i],s=Number(attr(player,'seat'));if(attr(player,'out')==='1' || (attr(g,'phase')==='complete' && Number(attr(player,'stack'))===0))labels[s]='Eliminated';else if(attr(player,'folded')==='1')labels[s]='Folded';else if(attr(g,'phase')!=='complete' && Number(attr(player,'stack'))===0)labels[s]='All-in';}
     return labels;
@@ -105,12 +119,12 @@
       var hand=match[1],street=match[2],body=match[3],speaker=null,rest='',seat=-1;
       for(j=0;j<players.length;j++) {var name=attr(players[j],'name');if(body.indexOf(name+' ')===0 && (!speaker || name.length>speaker.length)) {speaker=name;rest=body.substring(name.length+1);seat=Number(attr(players[j],'seat'));}}
       if(speaker && /^says "/.test(rest)) {speech(speaker,rest.substring(6).replace(/"\.$/,''),hand,street,seat,street==='result');continue;}
-      if(speaker && /^(?:folds|checks|calls \$[0-9]+|raises to \$[0-9]+)(?: \(all-in\))?\.$/.test(rest)) {add(speaker,/\(all-in\)/.test(rest)?'all-in':rest.split(' ')[0],rest.charAt(0).toUpperCase()+rest.substring(1),hand,street,'move',seat);continue;}
-      if(speaker && /^posts (?:small|big) blind \$[0-9]+\.$/.test(rest)) {add(speaker,'blind',rest.charAt(0).toUpperCase()+rest.substring(1),hand,street,'move',seat);continue;}
+      if(speaker && /^(?:folds|checks|calls (?:\$[0-9]+|[0-9]+ chips)|raises to (?:\$[0-9]+|[0-9]+ chips))(?: \(all-in\))?\.$/.test(rest)) {add(speaker,/\(all-in\)/.test(rest)?'all-in':rest.split(' ')[0],rest.charAt(0).toUpperCase()+rest.substring(1),hand,street,'move',seat);continue;}
+      if(speaker && /^posts (?:small|big) blind (?:\$[0-9]+|[0-9]+ chips)\.$/.test(rest)) {add(speaker,'blind',rest.charAt(0).toUpperCase()+rest.substring(1),hand,street,'move',seat);continue;}
       if(speaker && /^shows /.test(rest)) {add(speaker,'showdown',rest.charAt(0).toUpperCase()+rest.substring(1),hand,'result','move',seat);continue;}
       if(/^New shuffled deck\./.test(body)) {add('Dealer','new hand','Shuffles a fresh deck and deals hole cards. '+body.substring(19),hand,'preflop','dealer',-1);continue;}
       if(/^Board: /.test(body)) {add('Dealer','new round','Burns a card and deals the '+street.toUpperCase()+'. New betting round.',hand,street,'dealer',-1);continue;}
-      if(/^(?:Main pot|Side pot|Uncalled return) \$/.test(body)) {add('Dealer','settled',body,hand,'result','win',-1);if(hand===attr(g,'hand'))settlement=rows.length-1;}
+      if(/^(?:Main pot|Side pot|Uncalled return) (?:\$|[0-9]+ chips)/.test(body)) {add('Dealer','settled',body,hand,'result','win',-1);if(hand===attr(g,'hand'))settlement=rows.length-1;}
     }
     for(i=0;i<quotes.length;i++) {
       q=quotes[i];var win=attr(q,'kind')==='result' || attr(q,'action')==='win',text=value(q),qHand=attr(q,'hand'),qStreet=attr(q,'street'),qName=attr(q,'name');
@@ -122,7 +136,7 @@
       // Older running dealers supply public settlement but no victory events; keep the current game intact.
       if(!hasResult) {
         var parts=result.split('. '),names=[],k,voice={rail:'A profitable journey.',ruby:'That deserves an encore.',dusty:'Found a little gold after all.',ada:'Profit recorded. Account settled.',ace:'And that concludes the act.',nell:'There is my headline.',jack:'I will take that pot.',pearl:'A most agreeable conclusion.'};
-        for(j=0;j<parts.length;j++) {var pot=/^(?:Main pot|Side pot) \$[0-9]+: (.*?)(?:\.)?$/.exec(parts[j]);if(pot)names=names.concat(pot[1].split(' & '));}
+        for(j=0;j<parts.length;j++) {var pot=/^(?:Main pot|Side pot) (?:\$[0-9]+|[0-9]+ chips): (.*?)(?:\.)?$/.exec(parts[j]);if(pot)names=names.concat(pot[1].split(' & '));}
         for(i=0;i<players.length;i++) {var p=players[i],pName=attr(p,'name'),found=false,duplicates=0;for(j=0;j<players.length;j++)if(attr(players[j],'name')===pName)duplicates++;for(k=0;k<names.length;k++)if(names[k]===pName)found=true;if(found && duplicates===1) {var message=Number(attr(p,'seat'))===0?'The pot is yours.':voice[attr(p,'id')];seatTalk[Number(attr(p,'seat'))]={text:message};add(pName,'win',message,attr(g,'hand'),'result','win',Number(attr(p,'seat')));}}
       }
     }

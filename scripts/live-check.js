@@ -16,7 +16,8 @@ async function idle() {
   throw new Error('Opponents did not finish before the spot-check deadline.');
 }
 assert.equal((await fetch(base+'/')).status,200);
-let xml=await request('/api/new','name=Spot+Check&portrait=pilot');assert.equal(attr(xml,'mode'),'api');assert.equal(attr(xml,'cash'),'2000');
+let xml=await request('/api/campaign/new','name=Spot+Check&portrait=pilot');assert.equal(attr(xml,'mode'),'api');assert.equal(attr(xml,'cash'),'1000');
+xml=await request('/api/campaign/buy','casino=gilded-alibi&table=table-1');assert.equal(attr(xml,'cash'),'750');
 xml=await idle();console.log('Configured API opponents reached the player turn.');
 assert(xml.includes('<quote'),'No public character dialogue was returned');
 for(const q of xml.matchAll(/<quote[^>]*name="([^"]*)"[^>]*>([^<]*)<\/quote>/g))console.log(q[1]+': '+q[2]);

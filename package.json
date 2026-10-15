@@ -1,7 +1,19 @@
 {
-  "name": "holdemgpt", "version": "1.0.0", "private": true, "type": "module",
-  "description": "Server-dealt Texas Hold'em for Internet Explorer 6", "license": "GPL-3.0-only",
-  "engines": { "node": ">=22.9" },
-  "scripts": { "start": "node --env-file-if-exists=.env server.js", "test": "node --test", "check": "node --check server.js && node --check public/client.js && node --test" },
-  "devDependencies": { "acorn": "8.15.0" }
+  "name": "holdemgpt",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Server-dealt Texas Hold'em for Internet Explorer 6",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test",
+    "check": "node --check server.js && node --check public/client.js && node --test"
+  },
+  "devDependencies": {
+    "acorn": "8.15.0"
+  }
 }
