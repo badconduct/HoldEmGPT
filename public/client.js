@@ -9,11 +9,12 @@
   function attr(node, name) { return node.getAttribute(name); }
   function xhr() { if (window.XMLHttpRequest) return new XMLHttpRequest(); try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch (e) { return new ActiveXObject('Microsoft.XMLHTTP'); } }
   function card(code) {
-    if (code === '??') return '<span class="card back"><span class="backpattern">+ +<br>+ +</span></span>';
+    if (code === '??') return '<div class="card back"><span class="backpattern">+ +<br>+ +</span></div>';
     var suit = code.charAt(1), rank = code.charAt(0), symbols = { c: '&#9827;', d: '&#9830;', h: '&#9829;', s: '&#9824;' };
-    return '<span class="card' + (suit === 'd' || suit === 'h' ? ' red' : '') + '">' + (rank === 'T' ? '10' : escape(rank)) + '<br>' + symbols[suit] + '</span>';
+    return '<div class="card' + (suit === 'd' || suit === 'h' ? ' red' : '') + '">' + (rank === 'T' ? '10' : escape(rank)) + '<br>' + symbols[suit] + '</div>';
   }
-  function cards(node) { var list = node.getElementsByTagName('card'), html = '', i; for (i = 0; i < list.length; i++) html += card(value(list[i])); return html; }
+  // Real table cells and block frames keep IE6 card borders out of inline text layout.
+  function cards(node) { var list = node.getElementsByTagName('card'), html = '', i; for (i = 0; i < list.length; i++) html += '<td>'+card(value(list[i]))+'</td>'; return html?'<table class="handcards" cellpadding="0" cellspacing="0" align="center" summary="Playing cards"><tr>'+html+'</tr></table>':''; }
   function disableActions() { var ids = ['fold','check','call','raise','allin','next','retry','save','buy'], i; for (i=0;i<ids.length;i++) el(ids[i]).disabled=true; }
   function render(doc) {
     var g=doc.getElementsByTagName('game')[0]; if(!g) { el('notice').innerHTML=escape(value(doc.documentElement) || 'The server returned an invalid reply.'); return; }

@@ -203,6 +203,8 @@ them; it does not reposition the same table cells, reload the page, or send a
 game action. Both stay synchronized with the dealer. Portraits and names use
 fixed table cells, quotes reserve their own space, and card backs use an ASCII
 pattern that does not depend on an extra symbol font.
+Cards use block frames in ordinary HTML table cells so their four borders do
+not depend on IE6 inline text layout. Face-up cards use the same frames.
 
 The layout is 740 pixels wide for 800 x 600 screens. The table has a compact
 header, smaller portraits/cards, cash display, betting controls, and one latest

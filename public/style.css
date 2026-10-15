@@ -29,7 +29,9 @@ input { background:#ebe2cd; color:#27231b; border:1px solid #aa9367; padding:3px
 #felt { background:#143b30; border:3px double #9d8450; text-align:center; padding:5px; }
 #handlabel { font:10px Arial,sans-serif; letter-spacing:1px; color:#c6cbb4; }
 #board { height:43px; padding:4px 0; }
-.card { display:inline-block; vertical-align:middle; background:#f2ecd9; color:#24231e; border:1px solid #b5a77c; width:28px; height:36px; margin:0 2px; text-align:center; font:bold 16px/18px Georgia,serif; }
+.handcards { margin:0 auto; }
+.handcards td { padding:0; vertical-align:top; font-size:0; line-height:0; }
+.card { display:block; background:#f2ecd9; color:#24231e; border:1px solid #b5a77c; width:28px; height:36px; margin:0 2px; text-align:center; font:bold 16px/18px Georgia,serif; }
 .seatspot .card { width:22px; height:28px; font-size:12px; line-height:14px; }
 #spot0 .card { width:28px; height:36px; font-size:16px; line-height:18px; }
 .red { color:#9b362b; }
