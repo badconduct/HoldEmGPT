@@ -91,6 +91,7 @@ const castMarkdown=['# Fortune Row: cast and portrait catalog','',
   'Content and artwork for [Last Seat on Fortune Row](V2-CONTENT-AND-FLOW.md).',
   'Generated from [the content definitions](../content/v2/campaign.json) by',
   '`node scripts/build-v2-content-preview.js`. The server loads these profiles for the campaign.',
+  '', 'The current campaign has 25 male and 15 female regulars, four male bosses and one female boss. Each casino draws from five men and three women. Player choices include six men and four women.',
   '', '## Player characters', '', '| Character | Background | Portrait |', '| --- | --- | --- |',
   ...content.avatars.map(a=>'| '+a.title+' | '+a.description+' | ['+a.id+'.jpg](../'+a.portrait+') |'), ''];
 for(const c of content.casinos) {
@@ -104,12 +105,12 @@ for(const c of content.casinos) {
     'Reward: **'+c.passReward.title+'**.');
 }
 castMarkdown.push('', '## Artwork provenance', '',
-  'The built-in imagegen tool generated four eight-person portrait atlases, five',
-  'separate bosses and five separate player avatars on 2026-10-15, using the original',
-  'Ada and Rail portraits as style references. [Full prompts](artwork/v2-1947-prompts.json).',
-  'The 42 new derivatives are opaque 160 x 200 baseline JPEGs. The original eight',
-  'regulars and five player avatars remain in use. Master PNG copies and export',
-  'hashes/crop coordinates are preserved under ignored `artifacts/v2-1947-art/`.', '');
+  'The built-in imagegen tool supplied the original 1947 set and the individual cast refresh.',
+  '[Original prompts](artwork/v2-1947-prompts.json) and [refresh prompts](artwork/cast-refresh-1947-prompts.json) record the style references and each distinct face.',
+  'The refresh replaces 27 portraits and the title collage. Current portraits remain opaque',
+  '160 x 200 baseline JPEGs. Superseded profiles and images have been removed;',
+  'campaign and free-play tables use the current cast. Player portraits are cosmetic.',
+  'PNG masters and export records remain under ignored `artifacts/cast-refresh-1947/`.', '');
 await writeFile(join(root,'docs/V2-CAST.md'),castMarkdown.join('\n'),'utf8');
 function cards(faces) {
   return '<table class="handcards" cellpadding="0" cellspacing="0" summary="Sample cards"><tr>'+faces.map(face=>'<td><div class="card'+(face==='back'?' back':face.red?' red':'')+'">'+(face==='back'?'<span class="backpattern">+ +<br>+ +</span>':face.rank+'<br>'+face.suit)+'</div></td>').join('')+'</tr></table>';

@@ -35,11 +35,11 @@ loading a save restores the recorded identity and progression.
 
 | Order | Casino / city | Year | Boss | Signature | Reward |
 | --- | --- | --- | --- | --- | --- |
-| 1 | The Gilded Alibi / Las Vegas | 1947 | Evelyn "The Count" Rook | Value-led patience | Marigold Invitation |
+| 1 | The Gilded Alibi / Las Vegas | 1947 | Victor "The House" Maddox | Value-led patience | Marigold Invitation |
 | 2 | The Marigold Star / Hollywood | 1947 | Vincent "Velvet" Vale | Measured theatrical bluffs | Azahar Guest Card |
 | 3 | Casa del Azahar / Mexico City | 1947 | Celeste Varela | Position and controlled traps | Lantern Letter |
 | 4 | The Lantern Exchange / New York | 1947 | Leon Lark | Frequent small pressure | Brumes Invitation |
-| 5 | Le Salon des Brumes / Paris | 1947 | Madeleine Desrosiers | Adapts to observed habits | Fortune Row Champion |
+| 5 | Le Salon des Brumes / Paris | 1947 | Marcel "Le Patron" Duvall | Adapts to observed habits | Fortune Row Champion |
 
 These are fictional houses in a single 1947 world. Fortune Row is a nickname
 for the invitation circuit rather than a literal street. Paris is postwar.

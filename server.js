@@ -24,7 +24,7 @@ export function stateXml(g,config,extra={}) {
   for(const c of s.board) xml+='<card>'+c+'</card>';
   xml+='</board><players>';
   for(const [i,p] of s.players.entries()) {
-    const c=characterFor(p.id),avatar=playerCharacters.find(c=>c.id===p.portrait),image=i===0?'/portraits/players/'+(avatar?.id || 'drifter')+'.jpg':c?.portraitUrl;
+    const c=characterFor(p.id),avatar=playerCharacters.find(c=>c.id===p.portrait),image=i===0?(avatar?.portraitUrl || '/portraits/players/drifter.jpg'):c?.portraitUrl;
     xml+='<player'+attrs({seat:i,id:p.id,name:p.name,portrait:p.portrait,stack:p.stack,bet:p.bet,folded:p.folded?1:0,out:p.out?1:0,title:c?.title || avatar?.title || 'Your seat',style:c?.style || 'Make your own luck',action:p.lastAction,actionStreet:p.actionStreet,actionHand:p.actionHand,image})+'>';
     for(const card of p.cards) xml+='<card>'+card+'</card>';xml+='</player>';
   }

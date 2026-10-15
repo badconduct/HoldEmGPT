@@ -1,0 +1,317 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "generatedDate": "2026-10-15",
+  "setting": "1947",
+  "references": [
+    "public/portraits/ada.jpg",
+    "public/portraits/rail.jpg"
+  ],
+  "commonPrompt": "Use case: historical-scene. Generate ONE individual fictional 1947 poker-game character portrait, vertical 4:5 head-and-shoulders, on plain softly aged cream paper. The two supplied images are STYLE REFERENCES ONLY: match their detailed sepia ink engraving, fine crosshatching, warm monochrome tones, dark clothing, evenly lit readable face, slight period print grain and close bust crop. Do NOT copy either reference face, hairstyle, identity or head shape. This is a new replacement face, not an identity-preserving edit. The specific anatomy and silhouette below are essential. Give the person a memorable human character, with natural asymmetry and visible age, rather than a standardized handsome/pretty model. All of the head, hat and hair must fit inside the image with a small margin; lower crop at the chest. One person only, plain background, no frame, writing, labels, lettering, logos or watermark. Period 1940s clothing only. Keep all face features clearly readable after export at 160x200 and as a 32x40 game thumbnail. Do not default to soft waved bob hair, pearl earrings and a generic suit. Do not add hands. Render a single portrait around 1024x1280. SUBJECT: ",
+  "export": {
+    "portrait": [
+      160,
+      200
+    ],
+    "encoding": "opaque 8-bit RGB baseline JPEG",
+    "maxPortraitBytes": 20000
+  },
+  "targetCast": {
+    "regularMen": 25,
+    "regularWomen": 15,
+    "bossMen": 4,
+    "bossWomen": 1,
+    "playerMen": 6,
+    "playerWomen": 4
+  },
+  "assets": [
+    {
+      "id": "victor-maddox",
+      "casino": "gilded-alibi",
+      "replace": "evelyn-rook",
+      "kind": "boss",
+      "gender": "man",
+      "name": "Victor \"The House\" Maddox",
+      "role": "Desert bookmaker",
+      "look": "A broad, stocky Nevada man aged 58. Deep-set watchful eyes, heavy square jaw, pitted sun-weathered cheeks, a once-broken nose, deeply receding slick dark hair with gray temples and a clean-shaven chin. A short unlit cigar held at one corner of his closed mouth. Cream 1940s linen jacket, dark waistcoat, narrow Western string tie with a small horseshoe clasp. A dry, intimidating half-smile; the face of a former desert sports bookmaker who now owns the room.",
+      "voice": "Dry desert understatement. Quietly quotes the actual price and lets silence do the pressing.",
+      "tell": "Smooths his waistcoat when the room gets loud; never treats it as proof of his cards.",
+      "file": "public/portraits/campaign/gilded-alibi/victor-maddox.jpg"
+    },
+    {
+      "id": "marcel-duvall",
+      "casino": "salon-des-brumes",
+      "replace": "madeleine-desrosiers",
+      "kind": "boss",
+      "gender": "man",
+      "name": "Marcel \"Le Patron\" Duvall",
+      "role": "Montmartre cabaret proprietor",
+      "look": "A lean Parisian man aged 63 with a completely bald crown, close-cut silver hair at the sides, very long angular face, long aquiline nose, thin carefully waxed black mustache, prominent ears and a raised left eyebrow. White wing collar, patterned silk cravat and impeccably worn dark evening jacket with a small carnation. An amused, assessing sideways smile: a postwar Montmartre cabaret proprietor who has heard every story.",
+      "voice": "A dry Parisian host with an exact memory for public behavior. Polite, amused, and difficult to impress; natural English.",
+      "tell": "Raises one eyebrow at a repeated betting habit, without pretending to know hidden cards.",
+      "file": "public/portraits/campaign/salon-des-brumes/marcel-duvall.jpg"
+    },
+    {
+      "id": "wade-pritchard",
+      "casino": "gilded-alibi",
+      "replace": "pearl",
+      "kind": "regular",
+      "gender": "man",
+      "name": "Wade \"Coyote\" Pritchard",
+      "role": "Desert motorcoach operator",
+      "look": "A wiry Nevada man aged 52. Narrow sunburnt face with deeply etched smile lines, large ears, a crooked narrow nose, thick drooping sandy mustache, one slightly chipped front tooth, shrewd amused eyes. Worn broad-brim Western hat with a braided band, faded canvas jacket and open-neck checked shirt. A skeptical lopsided grin; instantly recognizable desert road veteran.",
+      "voice": "Wry and unhurried. Sizes up the actual wager as carefully as a bad stretch of road.",
+      "tell": "His grin gets smaller, rather than bigger, when the price becomes interesting.",
+      "file": "public/portraits/campaign/gilded-alibi/wade-pritchard.jpg"
+    },
+    {
+      "id": "eddie-kovacs",
+      "casino": "marigold-star",
+      "replace": "irene-ashford",
+      "kind": "regular",
+      "gender": "man",
+      "name": "Eddie \"Splice\" Kovacs",
+      "role": "Studio film editor",
+      "look": "A gaunt Hollywood man aged 47 with a high forehead, a severely receding widow's peak, hollow cheeks, heavy black eyebrows, small square wire spectacles and a long clean-shaven chin. Rumpled white shirt, loosely knotted skinny tie and checked waistcoat. A skeptical squint and one corner of his mouth drawn down; an exhausted, exacting studio film editor.",
+      "voice": "Terse, sardonic, and precise. Notices what was left out of an opponent's betting story.",
+      "tell": "Pauses to inspect a public contradiction before answering.",
+      "file": "public/portraits/campaign/marigold-star/eddie-kovacs.jpg"
+    },
+    {
+      "id": "arturo-salgado",
+      "casino": "casa-azahar",
+      "replace": "leila-soria",
+      "kind": "regular",
+      "gender": "man",
+      "name": "Arturo \"El Toro\" Salgado",
+      "role": "Retired boxer and fight promoter",
+      "look": "A burly Mexico City man aged 58 with a shaved bald head, broad crooked boxer's nose, cauliflower left ear, an old scar through one eyebrow, a rough square jaw and a thick salt-and-pepper mustache. Heavy 1940s dark pinstripe suit and open pale collar. A surprisingly gentle, close-mouthed smile beneath the battered face; a retired prizefighter turned local fight promoter.",
+      "voice": "Patient and plainspoken. Respects a credible punch but is hard to move with noise alone.",
+      "tell": "Offers a small nod after an opponent makes a disciplined fold.",
+      "file": "public/portraits/campaign/casa-azahar/arturo-salgado.jpg"
+    },
+    {
+      "id": "frank-callahan",
+      "casino": "lantern-exchange",
+      "replace": "yvette-satin",
+      "kind": "regular",
+      "gender": "man",
+      "name": "Frank \"Ferry\" Callahan",
+      "role": "Harbor tugboat captain",
+      "look": "A stocky New York harbor man aged 61. Broad wind-chapped rectangular face, massive hooked nose, tired blue-gray eyes, bushy pale eyebrows, a thick bristly gray beard with a short broad mustache. Dark wool sailor's cap and heavy peacoat with the collar turned down. A calm, battered, deeply practical face; no smile, no glamour, a lifetime in harbor weather.",
+      "voice": "Gruff, practical, and sparing with words. Talks about the bet in front of him, not grand predictions.",
+      "tell": "Falls very quiet after several oversized bets at the same table.",
+      "file": "public/portraits/campaign/lantern-exchange/frank-callahan.jpg"
+    },
+    {
+      "id": "gaston-roussel",
+      "casino": "salon-des-brumes",
+      "replace": "simone-caron",
+      "kind": "regular",
+      "gender": "man",
+      "name": "Gaston \"Le Zinc\" Roussel",
+      "role": "Cafe keeper and racecourse regular",
+      "look": "A round-faced Parisian man aged 65 with heavy jowls, a large bulbous nose, a magnificent drooping white walrus mustache, lively hooded eyes and thick untidy white hair under a soft worn beret. Checked jacket, frayed knitted scarf and unbuttoned waistcoat. A broad, slightly gap-toothed mischievous grin; a retired neighborhood cafe keeper and regular at the racecourse.",
+      "voice": "Warm, teasing, and skeptical of a sure thing. Makes one concise observation rather than a speech.",
+      "tell": "Lets out a quiet chuckle when an opponent tells the same betting story twice.",
+      "file": "public/portraits/campaign/salon-des-brumes/gaston-roussel.jpg"
+    },
+    {
+      "id": "ruby",
+      "casino": "gilded-alibi",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A full-cheeked white lounge singer aged 44, broad rounded face, strong cupid's-bow lips, a deep dimple on one cheek, one slightly raised eyebrow. Long dark hair falling straight over one shoulder with a single broad victory roll above the opposite temple, rather than a curled bob. Satin stage neckline and a small feather-trimmed wrap. A big, knowing, slightly crooked smile and the presence of a veteran performer.",
+      "voice": "Warm, raspy stage confidence with a dry sense of humor. Playful, but quite capable of a blunt answer.",
+      "tell": "Drops the theatrics and answers very plainly when the table becomes serious.",
+      "file": "public/portraits/campaign/gilded-alibi/ruby-v2.jpg"
+    },
+    {
+      "id": "ada",
+      "casino": "gilded-alibi",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A very slender white bookkeeper aged 57. Long beak-like nose, narrow chin, compressed lips, deep vertical brow crease, small round wire spectacles. Straight gray hair pulled tightly into a small low bun, absolutely no waved bob or styled curls. High-neck prim blouse, severe knitted cardigan and a pencil tucked behind one ear. A stern, intensely focused sidelong look.",
+      "voice": "Exact and unsentimental. Names the actual amount, spots bad arithmetic, and does not decorate a simple fold.",
+      "tell": "Looks over her spectacles before declining a price she dislikes.",
+      "file": "public/portraits/campaign/gilded-alibi/ada-v2.jpg"
+    },
+    {
+      "id": "nell",
+      "casino": "gilded-alibi",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A freckled white night columnist aged 31 with a broad irregular face, short turned-up nose, strong brows, a small nick in the left eyebrow and a crooked grin. Messy short blonde crop beneath a battered felt fedora tilted well back. Rumpled trench coat over a plain dark shirt. Wry, alert, and untidy; visibly a working reporter, never a polished society beauty.",
+      "voice": "Sharp, impatient with vague claims, and amused by a good correction. Responds to what somebody actually did.",
+      "tell": "Raises a skeptical eyebrow when public actions contradict a boast.",
+      "file": "public/portraits/campaign/gilded-alibi/nell-v2.jpg"
+    },
+    {
+      "id": "della-marigold",
+      "casino": "marigold-star",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A tall angular Black studio actress aged 45. Very high sharp cheekbones, long face, broad arched brows, narrow chin and a tiny gap between the front teeth. Very short natural tightly curled hair close to the head, not an updo or finger waves. Broad-collared velvet evening coat and long narrow beaded earrings. A formidable deadpan stare with a hint of amusement.",
+      "voice": "Dry deadpan and perfectly timed pauses. A compliment may be sincere or gently barbed; never reliably a card tell.",
+      "tell": "Waits until an opponent finishes the performance before making one short reply.",
+      "file": "public/portraits/campaign/marigold-star/della-marigold-v2.jpg"
+    },
+    {
+      "id": "june-jukebox",
+      "casino": "marigold-star",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A Latina club vocalist aged 29 with a strongly heart-shaped face, broad cheerful mouth, sharp little chin and large lively dark eyes. Thick dark hair in one long braid draped over her right shoulder, with a small fabric flower tucked above the left ear; no short waves. Plain embroidered blouse beneath a cropped bolero. A bright, irreverent, openly mischievous grin.",
+      "voice": "Fast, irreverent, and happy to laugh at her own bad timing. Can answer directly without turning every line into a song.",
+      "tell": "Her jokes become shorter when a wager forces a real decision.",
+      "file": "public/portraits/campaign/marigold-star/june-jukebox-v2.jpg"
+    },
+    {
+      "id": "ruth-lane",
+      "casino": "marigold-star",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A sturdy white diner owner aged 64, broad pudgy face, heavy freckling, deep crow's-feet, small round nose, slightly uneven front teeth and a huge warm grin. Frizzy gray hair tucked under a checked work kerchief. Plain blouse and a visibly well-worn diner apron. An exhausted, formidable, cheerful older working woman; no jewelry, evening jacket, salon curls or glamour.",
+      "voice": "Practical, warm, and impossible to fluster. Gives a straight answer and occasionally a pointed little joke.",
+      "tell": "Calls a bluff boast a tall order, without claiming she knows the cards.",
+      "file": "public/portraits/campaign/marigold-star/ruth-lane-v2.jpg"
+    },
+    {
+      "id": "lucia-robles",
+      "casino": "casa-azahar",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A compact Mexican shop proprietor aged 52, broad straight nose, square short jaw, a visible beauty mark beside the left nostril, strong straight eyebrows and round dark-rim glasses worn high. Ruler-straight black chin-length bob with a blunt short fringe, no curls. Patterned high collar and a large geometric brooch. A small, sharp, businesslike smile.",
+      "voice": "An astute merchant: brisk, amused, and unwilling to haggle over the same offer twice.",
+      "tell": "Pushes her glasses up before asking what a raise actually costs.",
+      "file": "public/portraits/campaign/casa-azahar/lucia-robles-v2.jpg"
+    },
+    {
+      "id": "ines-montoya",
+      "casino": "casa-azahar",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A slender Mexican pianist aged 34, unusually long narrow face, aquiline nose, prominent chin, deep-set dark eyes and thin straight eyebrows. Sleek center-parted dark hair pulled into one long heavy braid over the left shoulder, no waves or earrings. Plain high-neck black musician's blouse with a narrow pale scarf. Serious, reserved, and quietly intense, with a nearly invisible wry smile.",
+      "voice": "Reserved and quietly funny. Comfortable with silence; her brief comments need not use musical imagery.",
+      "tell": "Lets a boast hang in the air before answering its actual wager.",
+      "file": "public/portraits/campaign/casa-azahar/ines-montoya-v2.jpg"
+    },
+    {
+      "id": "nora-beltran",
+      "casino": "casa-azahar",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "An Afro-Mexican radio producer aged 48 with a broad forehead, round cheeks, a wide upturned nose, strong mouth and one eyebrow held sharply higher than the other. Tight small natural curls visible under a practical headscarf tied high. A pair of unmistakably 1940s round radio headphones resting around her neck, collared blouse and utility waistcoat. A wry, appraising, slightly tired expression.",
+      "voice": "Clipped, observant, and quick to interrupt a contradiction. Keeps the conversation moving without inventing what was said.",
+      "tell": "Waits through an opponent's flourish, then asks one practical question.",
+      "file": "public/portraits/campaign/casa-azahar/nora-beltran-v2.jpg"
+    },
+    {
+      "id": "gloria-gaines",
+      "casino": "lantern-exchange",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "ONE unmistakably adult Black WOMAN, a music promoter aged 45. Broad round feminine face with full cheeks, a wide nose, small lively eyes and an enormous slightly gap-toothed grin. She is heavyset and commanding. NO mustache, NO beard, NO facial stubble, and NO necktie. A tilted broad-brim felt hat with a single small feather; most hair concealed. A rugged broad-lapelled wool coat worn open over a pleated feminine blouse with a large soft collar and a simple leaf brooch. Big, expansive streetwise presence and a joyful expression. A memorable mature woman, not a pinup and not a man.",
+      "voice": "Big-hearted, blunt, and quick with a teasing comeback. Reads the mood but pays attention to the price.",
+      "tell": "Her grin fades briefly when someone makes a well-timed small bet.",
+      "file": "public/portraits/campaign/lantern-exchange/gloria-gaines-v2.jpg"
+    },
+    {
+      "id": "carmen-cielo",
+      "casino": "lantern-exchange",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A Puerto Rican theatre wardrobe designer aged 57. Long thin face, pointed chin, small tightly set mouth, prominent cheekbones and a deeply lined forehead. Thick black hair with a broad white streak, short straight bangs and a tight practical chignon; no loose waves. Small tortoiseshell spectacles, striped work smock, pencil behind the right ear. A piercing, thoroughly unimpressed stare.",
+      "voice": "Acerbic, economical, and hard to impress. Notices the fit between a wager and the earlier public action.",
+      "tell": "Gives a tiny disbelieving sniff at a particularly extravagant story.",
+      "file": "public/portraits/campaign/lantern-exchange/carmen-cielo-v2.jpg"
+    },
+    {
+      "id": "paula-fox",
+      "casino": "lantern-exchange",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A young white New York night reporter aged 26 with a broad pug nose, prominent front teeth, dense freckles, a strong square jaw and thick unruly eyebrows. Very short dark tousled crop under a soft battered newsboy cap. Wide-striped open-collar shirt and suspenders under a rumpled jacket. A quick, challenging, toothy grin; scrappy rather than glamorous.",
+      "voice": "Fast, curious, and willing to challenge an unsupported claim. Asks short follow-ups about real table action.",
+      "tell": "Leans into the conversation when somebody changes their public betting story.",
+      "file": "public/portraits/campaign/lantern-exchange/paula-fox-v2.jpg"
+    },
+    {
+      "id": "roxane-renaud",
+      "casino": "salon-des-brumes",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A Black French supper-club hostess aged 39 with a long bony face, high angular cheekbones, broad long nose, full lips and dark skeptical eyes. A tall sculptural patterned headwrap, with no coiffed waves, and large plain hoop earrings. Dark velvet dress with a square neckline. A richly amused, unmistakably sideways smirk and a commanding upright posture.",
+      "voice": "Poised, sharply funny, and used to managing noisy rooms. Her courtesy has a clear edge.",
+      "tell": "Offers a very polite smile when an opponent repeats a weak excuse.",
+      "file": "public/portraits/campaign/salon-des-brumes/roxane-renaud-v2.jpg"
+    },
+    {
+      "id": "diane-delorme",
+      "casino": "salon-des-brumes",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "An Algerian-French telephone engineer aged 49. Wide square jaw, broad heavy brow, small deep-set eyes, slightly crooked straight nose and a firm unsmiling mouth. Straight black hair center-parted into two tight braids pinned behind the ears, absolutely no finger waves. Thick round spectacles and a practical utility jacket over an open-neck work shirt. A patient, deeply serious, analytical stare.",
+      "voice": "Calm, literal, and allergic to needless drama. Follows the sequence of public actions before drawing a conclusion.",
+      "tell": "Corrects an amount softly, without turning it into a lecture.",
+      "file": "public/portraits/campaign/salon-des-brumes/diane-delorme-v2.jpg"
+    },
+    {
+      "id": "camille-navarre",
+      "casino": "salon-des-brumes",
+      "kind": "regular",
+      "gender": "woman",
+      "look": "A French woman of East Asian heritage aged 23. Small round face, faint acne scars at the temples, wide curious eyes, thin high eyebrows and a small mischievous mouth. Pin-straight extremely short blunt dark bob ending above the jaw, held by one visible simple hairpin. A worn trench coat over a dark turtleneck, with the leather strap and top edge of a period box camera visible at chest level. An alert, cheeky half-smile.",
+      "voice": "Quietly mischievous and visually observant. Likes an unexpected angle but does not narrate every move as a photograph.",
+      "tell": "Tilts her head when a public action does not fit the earlier pattern.",
+      "file": "public/portraits/campaign/salon-des-brumes/camille-navarre-v2.jpg"
+    },
+    {
+      "id": "heiress",
+      "kind": "avatar",
+      "gender": "woman",
+      "look": "A wealthy white traveler aged 62, regal bony face, striking large aquiline nose, pale narrow eyes, pronounced cheekbones and a restrained, sly, asymmetrical smile. Straight silver jaw-length bob tucked tightly behind the ears beneath a small dark 1940s cocktail hat with a raised veil that does not obscure the face. Dark fur-collared coat and one long strand of pearls. Worldly, imposing and amused, not a youthful pinup.",
+      "file": "public/portraits/players/heiress-v2.jpg"
+    },
+    {
+      "id": "reporter",
+      "kind": "avatar",
+      "gender": "woman",
+      "look": "ONE adult white WOMAN working as a reporter in 1947, aged 28. Clearly a woman with a strong rectangular freckled face, a crooked narrow nose, heavy eyebrows, an expressive wide mouth and a sharp open grin. Short rough blonde crop and a cowlick under a small narrow-brim felt hat tipped back, with a simple hairclip visible at one temple. Plain collared blouse with the top button open, a loosely tied thin patterned neck scarf and a battered wool jacket. NO facial hair, beard or stubble. Alert, irreverent, visibly tired and independent, never a glamorous curled-bob beauty.",
+      "file": "public/portraits/players/reporter-v2.jpg"
+    },
+    {
+      "id": "mechanic",
+      "kind": "avatar",
+      "gender": "man",
+      "look": "A rugged white male mechanic aged 43. Big square jaw, flattened crooked nose, thick dark stubble, short bristly dark hair, heavy brows and a grease smudge on his left cheek. Battered canvas work cap and dark oil-marked coveralls over a plain undershirt, with the small end of a wrench visible in a breast pocket. One eyebrow raised in a dry, confident squint.",
+      "file": "public/portraits/players/mechanic-v2.jpg"
+    },
+    {
+      "id": "dancer",
+      "kind": "avatar",
+      "gender": "woman",
+      "look": "A Black stage dancer aged 32 with a strong athletic neck, very sharp cheekbones, broad nose, small dimpled chin and a bright wide smile showing slightly uneven teeth. Hair tightly slicked flat into a small low bun, a narrow patterned headband tied in a small knot by the right ear, no waved coiffure. Simple sleeveless stage blouse with a striped shawl around the shoulders. Spirited, physically confident and full of character.",
+      "file": "public/portraits/players/dancer-v2.jpg"
+    },
+    {
+      "id": "nurse",
+      "kind": "avatar",
+      "gender": "woman",
+      "look": "A white night nurse aged 55. Broad heavy jaw, small round nose, deep under-eye shadows, strong gray eyebrows and a deeply lined, kind but no-nonsense face. Short frizzy gray hair pinned flat beneath a plain folded 1940s white nurse's cap, with no insignia or red-cross symbol. Simple period nursing collar and dark cardigan. A tired, crooked, encouraging smile, no glamour or salon waves.",
+      "file": "public/portraits/players/nurse-v2.jpg"
+    }
+  ],
+  "titleCollage": {
+    "file": "public/images/campaign/boss-collage-v2.jpg",
+    "nativeDisplay": [
+      740,
+      250
+    ],
+    "references": [
+      "public/images/campaign/boss-collage.jpg",
+      "public/portraits/campaign/gilded-alibi/victor-maddox.jpg",
+      "public/portraits/campaign/salon-des-brumes/marcel-duvall.jpg"
+    ],
+    "prompt": "Use case: compositing, identity-preserving edit. Image 1 is the existing wide title-screen collage to EDIT. Image 2 is the new Las Vegas boss Victor Maddox, and image 3 is the new Paris boss Marcel Duvall; these are exact identity references for the two replacements. Replace ONLY the leftmost woman with Victor from image 2 and the rightmost woman with Marcel from image 3. Victor is the stocky weathered Nevada bookmaker with receding slick hair, a cigar, cream linen jacket, dark waistcoat and horseshoe Western string tie. Marcel is the lean balding Paris cabaret proprietor with a thin waxed mustache, amused raised eyebrow, dark evening jacket, silk cravat and carnation. Keep Victor and Marcel's new distinctive faces recognizable. Preserve the three middle characters from image 1 precisely: Vincent Vale second from left (slick hair and bow tie), Celeste Varela in the center (dark waved updo, pearl earrings and tailored jacket), and Leon Lark fourth (Black man, short hair, neat mustache, open collar). Retain their facial identities, clothing, positions, relative prominence and proportions. Preserve the original coherent sepia engraved 1947 noir poster treatment, five city backdrops in the same left-to-right order, dark curved poker table rim, chips and closed card deck at the bottom. One seamless ensemble image, exactly five distinct people, all faces and heads fully inside the image. The new cast is four men and one woman. Keep a very wide approximately 3:1 landscape format for native 740 by 250 display, ideally 2220x750. No words, numbers, letters, signs with writing, title, logos, watermark, portrait frames or UI. Do not change the three central identities or add extra people."
+  }
+}
