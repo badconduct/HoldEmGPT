@@ -198,6 +198,12 @@ The background is one cached opaque JPEG with no canvas, transforms, SVG,
 alpha transparency or image animation. See `docs/TABLE-ARTWORK.md` for the
 generated artwork and its prompt.
 
+The two views have separate, stable HTML layouts. Switching only shows or hides
+them; it does not reposition the same table cells, reload the page, or send a
+game action. Both stay synchronized with the dealer. Portraits and names use
+fixed table cells, quotes reserve their own space, and card backs use an ASCII
+pattern that does not depend on an extra symbol font.
+
 The layout is 740 pixels wide for 800 x 600 screens. The table has a compact
 header, smaller portraits/cards, cash display, betting controls, and one latest
 action line. Help, History, and the saved code open only when requested. Character
@@ -236,7 +242,7 @@ npm run check
 
 Tests cover hand ranking, dealing, betting, all-ins, pot settlement, random
 full-table chip conservation, repeated bankroll payouts/buy-ins, private context isolation, HTTP sessions and
-saves, and ES3 parsing of the client. Actual IE6 rendering and a live configured
+saves, repeated view switching with cards/quotes intact, and ES3 parsing of the client. Actual IE6 rendering and a live configured
 model connection require testing on those systems.
 
 `node scripts/live-check.js` exercises the running API-mode server with real

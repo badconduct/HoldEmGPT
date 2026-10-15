@@ -9,7 +9,7 @@
   function attr(node, name) { return node.getAttribute(name); }
   function xhr() { if (window.XMLHttpRequest) return new XMLHttpRequest(); try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch (e) { return new ActiveXObject('Microsoft.XMLHTTP'); } }
   function card(code) {
-    if (code === '??') return '<span class="card back">&#9670;</span>';
+    if (code === '??') return '<span class="card back"><span class="backpattern">+ +<br>+ +</span></span>';
     var suit = code.charAt(1), rank = code.charAt(0), symbols = { c: '&#9827;', d: '&#9830;', h: '&#9829;', s: '&#9824;' };
     return '<span class="card' + (suit === 'd' || suit === 'h' ? ' red' : '') + '">' + (rank === 'T' ? '10' : escape(rank)) + '<br>' + symbols[suit] + '</span>';
   }
@@ -17,7 +17,7 @@
   function disableActions() { var ids = ['fold','check','call','raise','allin','next','retry','save','buy'], i; for (i=0;i<ids.length;i++) el(ids[i]).disabled=true; }
   function render(doc) {
     var g=doc.getElementsByTagName('game')[0]; if(!g) { el('notice').innerHTML=escape(value(doc.documentElement) || 'The server returned an invalid reply.'); return; }
-    var busy=attr(g,'busy')==='1', players=g.getElementsByTagName('player'), i, p, seat, html, legal=g.getElementsByTagName('legal')[0], mode=attr(g,'mode');
+    var busy=attr(g,'busy')==='1', players=g.getElementsByTagName('player'), legal=g.getElementsByTagName('legal')[0];
     pollNeeded=busy || (Number(attr(g,'actor'))>0 && !tag(g,'error'));
     var signature=attr(g,'revision')+'|'+attr(g,'busy')+'|'+attr(g,'cash')+'|'+tag(g,'status')+'|'+attr(g,'hand');
     if(signature===lastState && !tag(g,'save')) return;
@@ -29,19 +29,8 @@
     el('bankroll').innerHTML='Cash $'+attr(g,'cash')+' &nbsp; | &nbsp; Wins '+attr(g,'wins');
     receiveQuotes(g);
     var currentMoves=moveLabels(g,players);
-    for(i=0;i<5;i++) { el('seat'+i).innerHTML=i===0?'Your seat': '<span class="occupation">OPEN SEAT</span><p>The house is waiting.</p>'; el('seat'+i).className=i===0?'human':'seat';el('quote'+i).innerHTML='';el('quote'+i).title='';el('quote'+i).className='seatquote'; }
-    for(i=0;i<players.length;i++) {
-      p=players[i]; seat=Number(attr(p,'seat')); html='';
-      var speech=seatTalk[seat];el('quote'+seat).innerHTML=escape(speech?speech.text:'');el('quote'+seat).title=speech?speech.text:'';el('quote'+seat).className=speech?'seatquote speaking':'seatquote';
-      html+='<img class="portrait" src="/portraits/'+(seat===0?'players/':'')+escape(attr(p,'portrait') || (seat===0?'drifter':attr(p,'id')))+'.jpg" alt="'+escape(attr(p,'name'))+'">';
-      html+='<span class="name" title="'+escape(attr(p,'name'))+' / '+escape(attr(p,'style'))+'">'+escape(attr(p,'name'))+'</span>';
-      html+='<div class="stack">'+(seat===0 && attr(g,'paid')==='1'?'Paid $':'$')+attr(p,'stack')+'</div><div class="holes">'+cards(p)+'</div>';
-      html+='<div class="badge">'+(seat===Number(attr(g,'dealer'))?'D &nbsp; ':'')+(seat===Number(attr(g,'sb'))?'SB $10':seat===Number(attr(g,'bb'))?'BB $20':'')+'</div>';
-      html+='<div class="action">'+escape(currentMoves[seat] || '')+(Number(attr(p,'bet'))>0?' &nbsp; / &nbsp; $'+attr(p,'bet')+' wagered':'')+'</div>';
-      el('seat'+seat).innerHTML=html; el('seat'+seat).className=(seat===0?'human':'seat')+(seat===Number(attr(g,'actor'))?' active':'')+(attr(p,'folded')==='1'?' folded':'');
-    }
-    el('board').innerHTML=cards(g.getElementsByTagName('board')[0]); el('pot').innerHTML='POT $'+attr(g,'pot');
-    el('handlabel').innerHTML=Number(attr(g,'hand'))?'HAND '+attr(g,'hand')+' &nbsp; / &nbsp; '+escape(attr(g,'phase')).toUpperCase():'YOUR TABLE AWAITS';
+    renderTable(g,players,currentMoves,'');
+    renderTable(g,players,currentMoves,'p');
     disableActions();
     el('save').disabled=busy || !players.length; el('next').disabled=busy || attr(g,'canNext')!=='1'; el('retry').disabled=busy || !tag(g,'error');
     el('retry').style.display=tag(g,'error')?'inline':'none';
@@ -58,6 +47,24 @@
     fitChat();
     if(el('historypanel').style.display!=='none') renderHistory();
     if(tag(g,'save')) {el('savecode').value=tag(g,'save');el('savepanel').style.display='block';el('savecode').focus();el('savecode').select();}
+  }
+  function renderTable(g,players,currentMoves,prefix) {
+    var i,p,seat,html;
+    for(i=0;i<5;i++) { el(prefix+'seat'+i).innerHTML=i===0?'Your seat': '<span class="occupation">OPEN SEAT</span><p>The house is waiting.</p>'; el(prefix+'seat'+i).className=i===0?'human':'seat';el(prefix+'quote'+i).innerHTML='';el(prefix+'quote'+i).title='';el(prefix+'quote'+i).className='seatquote';el(prefix+'holes'+i).innerHTML='';el(prefix+'holes'+i).style.visibility='visible'; }
+    for(i=0;i<players.length;i++) {
+      p=players[i]; seat=Number(attr(p,'seat')); html='';
+      var speech=seatTalk[seat];el(prefix+'quote'+seat).innerHTML=escape(speech?speech.text:'');el(prefix+'quote'+seat).title=speech?speech.text:'';el(prefix+'quote'+seat).className=speech?'seatquote speaking':'seatquote';
+      html+='<div class="name" title="'+escape(attr(p,'name'))+' / '+escape(attr(p,'style'))+'">'+escape(attr(p,'name'))+'</div>';
+      html+='<table class="seatinfo" cellpadding="0" cellspacing="0" summary="Portrait and chips"><tr><td class="facecell"><img class="portrait" src="/portraits/'+(seat===0?'players/':'')+escape(attr(p,'portrait') || (seat===0?'drifter':attr(p,'id')))+'.jpg" width="32" height="40" alt=""></td><td>';
+      html+='<div class="stack">'+(seat===0 && attr(g,'paid')==='1'?'Paid $':'$')+attr(p,'stack')+'</div>';
+      html+='<div class="badge">'+(seat===Number(attr(g,'dealer'))?'D &nbsp; ':'')+(seat===Number(attr(g,'sb'))?'SB $10':seat===Number(attr(g,'bb'))?'BB $20':'')+'</div></td></tr></table>';
+      html+='<div class="action">'+escape(currentMoves[seat] || '')+(Number(attr(p,'bet'))>0?' &nbsp; / &nbsp; $'+attr(p,'bet')+' wagered':'')+'</div>';
+      el(prefix+'seat'+seat).innerHTML=html; el(prefix+'seat'+seat).className=(seat===0?'human':'seat')+(seat===Number(attr(g,'actor'))?' active':'')+(attr(p,'folded')==='1'?' folded':'');
+      el(prefix+'holes'+seat).innerHTML=cards(p);
+      el(prefix+'holes'+seat).style.visibility=prefix==='p' && seat!==0 && attr(p,'folded')==='1'?'hidden':'visible';
+    }
+    el(prefix+'board').innerHTML=cards(g.getElementsByTagName('board')[0]); el(prefix+'pot').innerHTML='POT $'+attr(g,'pot');
+    el(prefix+'handlabel').innerHTML=Number(attr(g,'hand'))?'HAND '+attr(g,'hand')+' &nbsp; / &nbsp; '+escape(attr(g,'phase')).toUpperCase():'YOUR TABLE AWAITS';
   }
   function request(path, body) {
     if(requestBusy) return; requestBusy=true; if(timer) window.clearTimeout(timer);
@@ -131,7 +138,9 @@
     if(follow)log.scrollTop=log.scrollHeight;
   }
   function toggle(id) {el(id).style.display=el(id).style.display==='none'?'block':'none';}
-  function setView(perspective) {perspectiveView=perspective;el('tableview').className=perspective?'perspective':'classic';el('viewtoggle').innerHTML=perspective?'View: Perspective':'View: Classic';fitChat();}
+  // Keep both layout trees stable. IE6 can lose positioned descendants when the
+  // same table cells are switched between absolute positioning and normal flow.
+  function setView(perspective) {perspectiveView=perspective;el('classicview').style.display=perspective?'none':'block';el('perspectiveview').style.display=perspective?'block':'none';el('viewtoggle').innerHTML=perspective?'View: Perspective':'View: Classic';fitChat();}
   el('viewtoggle').onclick=function(){setView(!perspectiveView);document.cookie='holdemview='+(perspectiveView?'perspective':'classic')+'; path=/; max-age=31536000; expires='+new Date(new Date().getTime()+31536000000).toUTCString();};
   if(/(?:^|;\s*)holdemview=classic(?:;|$)/.test(document.cookie || ''))setView(false);
   el('roomimage').onerror=function(){setView(false);el('viewtoggle').title='Background unavailable. Classic view remains usable.';};

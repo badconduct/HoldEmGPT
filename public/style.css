@@ -13,28 +13,31 @@ input { background:#ebe2cd; color:#27231b; border:1px solid #aa9367; padding:3px
 #notice { background:#28261d; border:1px solid #5f5436; padding:5px 7px; line-height:16px; }
 #table { width:100%; table-layout:fixed; }
 .seatcell { vertical-align:top; width:25%; }
-.seatspot { position:relative; }
+.seatspot { position:relative; zoom:1; }
 .seat { background:#25231c; border:1px solid #4d4735; padding:5px 3px; text-align:center; }
 .seat.active, .human.active { border-color:#d3b168; background:#302d20; }
-.portrait { width:32px; height:40px; border:1px solid #8e784c; vertical-align:middle; float:left; margin:0 5px 2px 0; }
-.name { display:block; height:16px; overflow:hidden; white-space:nowrap; font-size:12px; color:#ead8ad; }
+.seatinfo { width:100%; height:42px; table-layout:fixed; }
+.seatinfo td { vertical-align:middle; text-align:center; }
+.seatinfo .facecell { width:36px; }
+.portrait { display:block; width:32px; height:40px; border:1px solid #8e784c; }
+.name { display:block; height:16px; overflow:hidden; white-space:nowrap; font-size:12px; color:#ead8ad; zoom:1; }
 .stack { font:bold 15px Georgia,serif; color:#f0dfb6; margin:3px 0; }
-.holes { clear:both; }
+.holes { clear:both; text-align:center; }
 .badge { color:#efd18e; font:10px Arial,sans-serif; height:12px; padding-top:2px; }
 .action { color:#b9ac8b; font:11px Arial,sans-serif; height:12px; overflow:hidden; white-space:nowrap; }
 .folded { color:#898478; }
 #felt { background:#143b30; border:3px double #9d8450; text-align:center; padding:5px; }
 #handlabel { font:10px Arial,sans-serif; letter-spacing:1px; color:#c6cbb4; }
 #board { height:43px; padding:4px 0; }
-.card { display:inline-block; vertical-align:middle; background:#f2ecd9; color:#24231e; border:1px solid #b5a77c; width:28px; height:36px; margin:0 2px; text-align:center; font:bold 16px Georgia,serif; }
-.seat .card { width:22px; height:27px; font-size:12px; }
+.card { display:inline-block; vertical-align:middle; background:#f2ecd9; color:#24231e; border:1px solid #b5a77c; width:28px; height:36px; margin:0 2px; text-align:center; font:bold 16px/18px Georgia,serif; }
+.seatspot .card { width:22px; height:28px; font-size:12px; line-height:14px; }
+#spot0 .card { width:28px; height:36px; font-size:16px; line-height:18px; }
 .red { color:#9b362b; }
 .back { background:#634533; color:#d5b777; }
+.backpattern { font:bold 10px/14px "Courier New",monospace; }
 #pot { font-size:20px; color:#e4d09b; }
 .human { background:#25231c; border:1px solid #776241; padding:5px; text-align:center; }
-.human .portrait { float:none; width:28px; height:35px; margin:0 8px 0 0; }
-.human .name, .human .stack, .human .holes, .human .badge { display:inline; margin-right:12px; }
-.human .action { display:none; }
+#classicview .human { width:300px; margin:0 auto; }
 #controls { text-align:center; padding:6px 0 0; font:12px Arial,sans-serif; }
 #limits { color:#ada17e; font:11px Arial,sans-serif; height:14px; padding-top:4px; }
 #lastaction { font:11px Arial,sans-serif; color:#b9ac8b; height:16px; overflow:hidden; white-space:nowrap; padding:3px 7px; }
@@ -67,38 +70,31 @@ input { background:#ebe2cd; color:#27231b; border:1px solid #aa9367; padding:3px
 .lobby .panel { text-align:center; }
 #resume { margin-left:12px; }
 #footer { padding:8px; text-align:center; font:10px Arial,sans-serif; color:#8c8269; }
-#tableview { position:relative; }
-#tableart { display:none; }
-.perspective { width:740px; height:300px; overflow:hidden; background:#252525; }
-.perspective #tableart { display:block; position:absolute; left:0; top:0; width:740px; height:300px; }
-.perspective #roomimage { display:block; width:740px; height:300px; }
-.perspective #table { position:static; }
-.perspective .seatspot { position:absolute; z-index:2; width:130px; }
-.perspective .seat, .perspective .human { position:static; width:120px; padding:4px; background:#202020; border:1px solid #958d78; }
-.perspective .active { border:1px solid #f4e0ab; background:#30302a; }
-.perspective #spot1 { left:18px; top:177px; }
-.perspective #spot2 { left:92px; top:6px; }
-.perspective #spot3 { left:305px; top:4px; }
-.perspective #spot4 { left:528px; top:8px; }
-.perspective #spot0 { left:523px; top:192px; width:194px; }
-.perspective #seat0 { width:184px; }
-.perspective .name { font-size:11px; }
-.perspective .stack { font-size:14px; margin:2px 0; }
-.perspective .seatquote { height:24px; line-height:12px; font-size:10px; }
-.perspective .holes { position:absolute; width:78px; height:40px; margin:0; }
-.perspective #seat1 .holes { left:138px; top:10px; }
-.perspective #seat2 .holes { left:32px; top:96px; }
-.perspective #seat3 .holes { left:22px; top:94px; }
-.perspective #seat4 .holes { left:-23px; top:96px; }
-.perspective #seat0 .holes { left:-106px; top:22px; visibility:visible; }
-.perspective .seat .card { width:26px; height:34px; font-size:15px; }
-.perspective .human .card { width:30px; height:40px; font-size:17px; }
-.perspective .human .name, .perspective .human .stack { display:block; margin:0; }
-.perspective .human .badge { display:block; margin:0; }
-.perspective .human .portrait { float:left; margin:0 6px 0 0; }
-.perspective .human .action { display:block; }
-.perspective #felt { position:absolute; left:250px; top:142px; z-index:1; width:240px; padding:0; border:0; background:transparent; }
-.perspective #handlabel, .perspective #pot { background:#282823; padding:1px 5px; color:#f1e5cc; }
-.perspective #board { height:45px; padding:5px 0; }
-.perspective #pot { font-size:17px; }
-.perspective .seat.folded .holes { visibility:hidden; }
+#tableview, #classicview { width:740px; zoom:1; }
+#perspectiveview { position:relative; width:740px; height:300px; overflow:hidden; background:#252525; zoom:1; }
+#tableart { position:absolute; left:0; top:0; width:740px; height:300px; }
+#roomimage { display:block; width:740px; height:300px; }
+#perspectiveview .seatspot { position:absolute; z-index:2; width:130px; }
+#perspectiveview .seat, #perspectiveview .human { width:120px; height:68px; padding:4px; background:#202020; border:1px solid #958d78; }
+#perspectiveview .active { border-color:#f4e0ab; background:#30302a; }
+#pspot1 { left:18px; top:177px; }
+#pspot2 { left:92px; top:4px; }
+#pspot3 { left:305px; top:4px; }
+#pspot4 { left:528px; top:4px; }
+#perspectiveview #pspot0 { left:523px; top:192px; width:194px; }
+#perspectiveview #pseat0 { width:184px; }
+#perspectiveview .name { width:120px; height:14px; font-size:11px; line-height:14px; }
+#perspectiveview #pseat0 .name { width:184px; }
+#perspectiveview .stack { font-size:14px; margin:2px 0; }
+#perspectiveview .seatquote { height:24px; line-height:12px; font-size:10px; }
+#perspectiveview .action { font-size:10px; }
+#perspectiveview .holes { position:absolute; width:78px; height:36px; margin:0; }
+#pholes1 { left:138px; top:52px; }
+#pholes2, #pholes3, #pholes4 { left:30px; top:108px; }
+#pholes0 { left:-102px; top:51px; height:44px; }
+#perspectiveview .card { width:26px; height:34px; font-size:15px; line-height:16px; }
+#perspectiveview #pholes0 .card { width:30px; height:40px; font-size:17px; line-height:19px; }
+#pfelt { position:absolute; left:250px; top:151px; z-index:1; width:240px; text-align:center; }
+#phandlabel { height:12px; font:10px/12px Arial,sans-serif; letter-spacing:1px; color:#f1e5cc; }
+#pboard { height:44px; padding:3px 0; }
+#ppot { height:20px; font-size:17px; line-height:20px; color:#f1e5cc; }
