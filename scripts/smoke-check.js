@@ -36,5 +36,8 @@ if(process.argv.includes('--restore')) {
   cookie='';xml=await request('/api/load','code='+code);assert.equal(attr(xml,'cash'),cash);assert(xml.includes('name="Deployment Check" portrait="pilot"'));
   console.log('Routed game, independent opponent dialogue, hidden cards and save/load passed.');
 }
-for(const path of ['/table.html','/portraits/players/pilot.jpg','/portraits/ada.jpg','/images/table-room.jpg','/music/midnight-ledger.mid'])assert.equal((await fetch(base+path)).status,200);
-assert.equal((await fetch(base+'/.env')).status,404);
+// Drain every response so the HTTP pool can release its sockets on all hosts.
+for(const path of ['/table.html','/portraits/players/pilot.jpg','/portraits/ada.jpg','/images/table-room.jpg','/music/midnight-ledger.mid','/.env']) {
+  const response=await fetch(base+path,{signal:AbortSignal.timeout(15000)});
+  assert.equal(response.status,path==='/.env'?404:200);await response.arrayBuffer();
+}
