@@ -43,7 +43,7 @@ if(process.argv.includes('--restore')) {
   console.log('Campaign flow, independent opponent dialogue, hidden cards and save/load passed.');
 }
 // Drain every response so the HTTP pool can release its sockets on all hosts.
-for(const path of ['/table.html','/campaign.js','/campaign.css','/portraits/players/pilot.jpg','/portraits/ada.jpg','/images/table-room.jpg','/images/campaign/gilded-alibi/table-1.jpg','/music/midnight-ledger.mid','/.env']) {
+for(const path of ['/table.html','/campaign.js','/campaign.css','/portraits/players/pilot.jpg','/portraits/campaign/gilded-alibi/ada-v2.jpg','/images/table-room.jpg','/images/campaign/gilded-alibi/table-1.jpg','/music/midnight-ledger.mid','/.env']) {
   const response=await fetch(base+path,{signal:AbortSignal.timeout(15000)});
   assert.equal(response.status,path==='/.env'?404:200);await response.arrayBuffer();
 }

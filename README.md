@@ -12,6 +12,11 @@ Hollywood, Mexico City, New York and postwar Paris in 1947. Each house has four
 ordinary tables, a scripted boss, its own eight-person regular cast and five
 unique table backgrounds. Ten cosmetic player characters are available.
 
+Each current casino has five male and three female regulars. Four bosses are men;
+Celeste Varela hosts Mexico City. Portraits use distinct ages, faces, silhouettes
+and period workwear. The player choices include six men and four women. Campaign
+and free-play tables both use the current cast; superseded profiles are removed.
+
 Start with $1,000 cash. Win four whole tables to unlock the house boss, then win
 its entire table to earn the next invitation. Passes include travel and a room,
 are permanent, and survive losses. Cleared tables remain replayable.
@@ -89,19 +94,90 @@ aggression, looseness and bluff frequencies. They estimate equity by sampling
 unknown cards from their own information, never from the dealer's actual deck
 or opponents' private hands. Local bots require no credentials.
 
-To use a model, copy `.env.example` to `.env` and choose one connection:
+The server supports three providers. Choose one in the server environment or
+an optional `.env` file; provider selection adds no browser setting.
+
+| `AI_MODE` | Ordinary opponents | Requirements |
+| --- | --- | --- |
+| `local` | Built-in strategy bots | No model service or login |
+| `chatgpt` or `codex` | Installed Codex CLI, using its ChatGPT login | Modern server CLI installation, authenticated server account and Internet access |
+| `api` | Compatible Chat Completions or Responses endpoint | Provider URL/model and any required bearer credential |
+
+The defaults remain local bots for native development and the included Compose
+example. Existing deployments keep their configured provider until their operator
+changes it. Bosses remain scripted in every mode.
+
+### Installed Codex / ChatGPT CLI
+
+Install and authenticate the CLI **as the OS account that runs the game server**:
+
+```text
+npm install -g @openai/codex
+codex --version
+codex login
+codex login status
+```
+
+The command is still `codex`; `codex login` opens ChatGPT sign-in. On a headless
+server, `codex login --device-auth` is another option when available to the
+account. See the official [CLI installation](https://developers.openai.com/codex/cli/)
+and [command reference](https://learn.chatgpt.com/docs/developer-commands?surface=cli#codex-login).
+Use a current CLI that supports the adapter's non-interactive flags.
+
+Copy `.env.example` to `.env` if needed, then set:
 
 ```dotenv
-AI_MODE=codex
+AI_MODE=chatgpt
 AI_MODEL=default
 CODEX_COMMAND=codex
 AI_TIMEOUT_MS=180000
 ```
 
-Authenticate the installed Codex CLI under the server's account with
-`codex login`. Optional `CODEX_JS_PATH` points to its JS entry on Windows;
-`AI_REASONING` selects a supported reasoning effort. Each decision is an
-ephemeral, tool-disabled call with an independent character prompt and memory.
+Start with `npm start` and open the usual game URL. `AI_MODE=codex` is an alias
+for the same provider; health/state report its canonical name, `codex`.
+`AI_MODEL=default` leaves model selection to the CLI. An explicit model ID
+must be available to that CLI login. `AI_REASONING`, if set, must be an effort
+supported by the chosen model. API URL/token settings are unused in CLI mode.
+
+`CODEX_COMMAND` accepts an executable name on the service's `PATH` or a full
+executable path. It is a path, not a shell command with arguments. Windows npm
+`codex.cmd` shims are resolved to their JS entry without launching a shell.
+If discovery fails, set `CODEX_JS_PATH` to the installed npm JS entry instead:
+
+```dotenv
+CODEX_JS_PATH=C:/Users/poker/AppData/Roaming/npm/node_modules/@openai/codex/bin/codex.js
+```
+
+For a one-session PowerShell launch without editing `.env`:
+
+```powershell
+$env:AI_MODE = 'chatgpt'
+$env:AI_MODEL = 'default'
+$env:AI_TIMEOUT_MS = '180000'
+npm start
+```
+
+Process environment variables take precedence over `.env`. A service must have
+the same login and `CODEX_HOME` as the account used during authentication; if a
+custom `CODEX_HOME` is needed, set it before both `codex login` and server startup.
+That private directory must be writable so the CLI can refresh authentication.
+The application never copies login credentials into prompts or saves.
+
+The CLI runs on the modern server and calls the model service; it is not offline
+inference. Each move is a separate, serialized `codex exec` invocation with an
+ephemeral session, a disposable working directory, a read-only sandbox and
+disabled tool features. The app supplies only that seat's cards, prompt, public
+history and private memory; it never resumes another seat's CLI session. Output
+is requested through a JSON schema and validated by the dealer. Temporary files
+are removed after success or failure. See [official non-interactive usage](https://learn.chatgpt.com/docs/non-interactive-mode).
+
+Startup checks `codex login status` before listening. A missing executable,
+expired login, unsupported CLI flag or model failure needs operator attention;
+the current opponent pauses for Retry rather than switching providers. A CLI
+decision defaults to 180 seconds; `AI_TIMEOUT_MS` overrides it. Local/API modes
+retain their 60-second default.
+
+### Compatible API
 
 ```dotenv
 AI_MODE=api
@@ -249,8 +325,8 @@ header, smaller portraits/cards, cash display, betting controls, and one latest
 action line. Help, History, and the saved code open only when requested. Character
 styles remain available as name tooltips. The table loads no player-picker images.
 
-All 55 portraits are baseline, opaque 160 x 200 JPEGs. Original files are
-12–17 KB; the 42 new portraits are about 10–12 KB each.
+All 55 current portraits are baseline, opaque 160 x 200 JPEGs. The 27 refreshed
+portraits are about 9–12 KB each; retained originals are at most 17 KB.
 The picker initially loads five portraits (about 65 KB); the active table uses
 four opponent portraits plus the chosen player portrait. Campaign tables are
 740 x 300 baseline JPEGs at 31–38 KB each; map/room pages load their own
@@ -271,11 +347,12 @@ computer; it renders bounded XML state and ordinary HTML controls.
 | Felix “Ace” Marlow | Tricky bluff artist |
 | Nell Nightingale | Observant counterpuncher |
 | Jack “Iron” Doyle | Relentless pressure |
-| Pearl Beaumont | Cautious trap setter |
+| Wade “Coyote” Pritchard | Cautious trap setter |
 
 These are fictional occupational archetypes. Modern Hold'em rules are used;
 the setting is atmosphere rather than a historical reconstruction. All portrait
-assets are opaque JPEGs suitable for IE6; see `docs/ARTWORK.md` for provenance.
+assets are opaque JPEGs suitable for IE6. See [the full current cast](docs/V2-CAST.md)
+and [campaign artwork](docs/V2-ARTWORK.md) for the five houses and provenance.
 
 ## Verify
 
@@ -285,7 +362,10 @@ npm run check
 
 Tests cover hand ranking, dealing, betting, all-ins, pot settlement, random
 full-table chip conservation, repeated bankroll payouts/buy-ins, private context isolation, HTTP sessions and
-saves, repeated view switching with cards/quotes intact, and ES3 parsing of the client. Actual IE6 rendering and a live configured
+saves, repeated view switching with cards/quotes intact, CLI process execution,
+per-seat context isolation, structured output, failure/timeout recovery, Windows
+npm shim lookup, and ES3 parsing of the client. CLI tests use a subprocess fixture
+and require no account or model calls. Actual IE6 rendering and a live configured
 model connection require testing on those systems.
 
 `node scripts/live-check.js` exercises the running API-mode server with real
@@ -294,15 +374,17 @@ session. It makes model calls and creates one save snapshot.
 
 `CHECK_URL` selects a different running server for the live check.
 `node scripts/smoke-check.js` checks page identity, game setup, hidden cards,
-opponent dialogue and saves in either local or API mode. It also creates a save.
+opponent dialogue and saves with local, API or installed CLI opponents. It also
+creates a save. Optional `CHECK_MODE=codex` asserts the CLI provider; `CHECK_URL`
+selects the server. A CLI smoke check makes real calls under the server's login.
 
 ## Containers and hosting
 
 The Dockerfile uses a digest-pinned Node 24 base, runs as UID/GID 1000 and
 includes only application code, compressed assets and the license. Environment
 files, saved games, logs, tests and workstation artifacts are excluded from the
-build context. The image supports local bots and compatible API providers;
-Codex CLI mode requires a separately installed and authenticated CLI.
+build context. The standard image supports local bots and compatible API
+providers. It does not bundle a CLI installation or login credentials.
 
 For a standalone local installation with Docker Compose:
 
@@ -317,6 +399,18 @@ LAN address. Keep legacy HTTP access on a trusted network. For API mode, add
 your own environment configuration and mount a credential file read-only at
 the path specified by `AI_TOKEN_FILE`. Avoid putting a token in an image or
 Compose manifest. Bind-mounted data must be writable by UID/GID 1000.
+
+For CLI mode in a container, create a derived image with a compatible Linux
+Codex CLI installed **inside that container**, authenticate as its runtime user,
+and configure `AI_MODE=chatgpt` (or `codex`), `AI_MODEL=default` and an appropriate
+timeout. Mount a private, writable `CODEX_HOME` for that user's login state and
+provide writable temporary storage, such as a `/tmp` tmpfs with a read-only root.
+The CLI needs outbound model access and more resources than the lightweight
+bot/API runtime may need. A Windows host installation cannot run inside a Linux
+container. Override the included Compose `environment.AI_MODE: local` explicitly;
+the container starts `node server.js` and does not automatically load a host `.env`
+as application configuration. The shipped image, Compose defaults and existing
+provider configuration are unchanged.
 
 `GET /healthz` reports process readiness without allocating a game session.
 When `AI_MODELS_URL` is configured, startup must pass that check before listening.

@@ -61,6 +61,35 @@ test('a hand win and eliminating a boss alone do not clear or unlock a table',()
   enterTable(s2,c.id,'boss');const g=s2.game,boss=g.players.find(p=>p.id===c.boss.id);boss.stack=0;g.phase='complete';g.actor=-1;
   assert.equal(settleCampaign(s2),false);assert.equal(s2.campaign.unlocked.length,1);
 });
+
+test('the refreshed cast uses current bosses and rejects removed or out-of-casino saved profiles',()=>{
+  for(const casino of casinos) {
+    assert.equal(casino.regulars.filter(p=>p.gender==='man').length,5);
+    assert.equal(casino.regulars.filter(p=>p.gender==='woman').length,3);
+  }
+  assert.equal(casinos.filter(c=>c.boss.gender==='man').length,4);
+  const s=newCampaign(),casino=casinos[0];
+  for(const t of casino.tables.slice(0,4)){enterTable(s,casino.id,t.id);win(s);}
+  enterTable(s,casino.id,'boss');
+  const lineup=s.game.players.slice(1).map(p=>p.id);
+  validateCampaignSave(saved(s));
+  assert(s.game.players.some(p=>p.id===casino.boss.id));
+  assert(characterFor(casino.boss.id).scripted);
+  lose(s);validateCampaignSave(saved(s));
+  const result=campaignPage(new URL('http://test/result.html'),s).html;
+  assert(result.includes(casino.boss.portrait.replace(/^public/,'')));
+  assert(result.includes(casino.boss.name.replace(/"/g,'&quot;')));
+  const restored=structuredClone(saved(s));restored.game.players[1].id=casinos[1].boss.id;
+  assert.throws(()=>validateCampaignSave(restored),/cast/);
+  restored.game.players[1].id='removed-cast-member';
+  assert.throws(()=>validateCampaignSave(restored),/cast/);
+  const invalidCheckpoint=structuredClone(saved(s));invalidCheckpoint.campaign.checkpoint.lineup[0]='removed-cast-member';
+  assert.throws(()=>validateCampaignSave(invalidCheckpoint),/checkpoint/);
+  retryTable(s);validateCampaignSave(saved(s));
+  assert.deepEqual(s.game.players.slice(1).map(p=>p.id),lineup);
+  win(s);enterTable(s,casino.id,'boss');
+  assert(s.game.players.some(p=>p.id===casino.boss.id));
+});
 test('the planned loss cushions remain affordable and four opening losses can always recover',()=>{
   for(const scenario of [{every:1,boss:0,expected:1744750},{every:0,boss:2,expected:1726000}]) {
     const s=newCampaign();

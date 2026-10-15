@@ -365,17 +365,6 @@
       "sha256": "d0239c343053385e34637a42c7c19fea80b127fc18bee2e33c7954e28a4adcd7"
     },
     {
-      "id": "della-marigold",
-      "file": "public/portraits/campaign/marigold-star/della-marigold.jpg",
-      "sourceAsset": "marigold-star-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 10255,
-      "quality": 85,
-      "sha256": "5a3b25b020a0609574a8d0b9b9b3f5859dad62740373464f7f05c3a45a1de8c8"
-    },
-    {
       "id": "calvin-price",
       "file": "public/portraits/campaign/marigold-star/calvin-price.jpg",
       "sourceAsset": "marigold-star-regulars-atlas",
@@ -385,17 +374,6 @@
       "bytes": 11650,
       "quality": 85,
       "sha256": "057fd43ad37cfd796493c8080f810ab014f072b7de77ed4ff8ee47f30dcd3b93"
-    },
-    {
-      "id": "june-jukebox",
-      "file": "public/portraits/campaign/marigold-star/june-jukebox.jpg",
-      "sourceAsset": "marigold-star-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 11313,
-      "quality": 85,
-      "sha256": "12f868fac98919ba7dc221f0e8accbd62d5abfc1476188e3e4b2d2f2fc9d48ee"
     },
     {
       "id": "walt-greer",
@@ -409,17 +387,6 @@
       "sha256": "fc02654968ec5a91b3dfdcc6e703d2e5f2fd51f591e2d519e9c68948353c9c02"
     },
     {
-      "id": "ruth-lane",
-      "file": "public/portraits/campaign/marigold-star/ruth-lane.jpg",
-      "sourceAsset": "marigold-star-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 10707,
-      "quality": 85,
-      "sha256": "86f44d335961efb9efb18de8c4b1ad260f8e73a1069f6f2728f10252951d6b4f"
-    },
-    {
       "id": "otis-reed",
       "file": "public/portraits/campaign/marigold-star/otis-reed.jpg",
       "sourceAsset": "marigold-star-regulars-atlas",
@@ -429,17 +396,6 @@
       "bytes": 9567,
       "quality": 85,
       "sha256": "a8c87e67e01d408e9297e997150d1f82ea3465809eb6c6801c734d251d1e2886"
-    },
-    {
-      "id": "irene-ashford",
-      "file": "public/portraits/campaign/marigold-star/irene-ashford.jpg",
-      "sourceAsset": "marigold-star-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 10864,
-      "quality": 85,
-      "sha256": "d123dd02ca3ccf7885b0c9538a59b25582830bb758972d6d06bea301422ad58f"
     },
     {
       "id": "tomas-valera",
@@ -453,17 +409,6 @@
       "sha256": "343e1b3472ab006a797dfc250ae44c3c27211a1d9539a814786007835bd12995"
     },
     {
-      "id": "lucia-robles",
-      "file": "public/portraits/campaign/casa-azahar/lucia-robles.jpg",
-      "sourceAsset": "casa-azahar-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 11027,
-      "quality": 85,
-      "sha256": "4e1c21c61ef6126db23c2ffc77c06bc5ef82ee8524455dc44174e786f31196cd"
-    },
-    {
       "id": "rafael-acosta",
       "file": "public/portraits/campaign/casa-azahar/rafael-acosta.jpg",
       "sourceAsset": "casa-azahar-regulars-atlas",
@@ -473,17 +418,6 @@
       "bytes": 9943,
       "quality": 85,
       "sha256": "aaf603ce3e6f15200a7653395a5b09876df62b2de97e48b8c84c0ca3daa7b0f6"
-    },
-    {
-      "id": "ines-montoya",
-      "file": "public/portraits/campaign/casa-azahar/ines-montoya.jpg",
-      "sourceAsset": "casa-azahar-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 10361,
-      "quality": 85,
-      "sha256": "8ce9baf45aea88ecf7a9ee55f972748e514104ea60e6e3fea43fa3b162cfc9bd"
     },
     {
       "id": "felipe-salcedo",
@@ -497,17 +431,6 @@
       "sha256": "013b31b0b7312826ef409709e5becff9d62d833c37782e8b32e2a2a8f876bbff"
     },
     {
-      "id": "nora-beltran",
-      "file": "public/portraits/campaign/casa-azahar/nora-beltran.jpg",
-      "sourceAsset": "casa-azahar-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 10254,
-      "quality": 85,
-      "sha256": "21e60ec13260b7de89f2938bfe509467e1e836ea73fc36fa98305d83f0cf5f48"
-    },
-    {
       "id": "benito-luna",
       "file": "public/portraits/campaign/casa-azahar/benito-luna.jpg",
       "sourceAsset": "casa-azahar-regulars-atlas",
@@ -517,28 +440,6 @@
       "bytes": 9499,
       "quality": 85,
       "sha256": "2bfe9aa3cc8ab8f358f6f9f69728fb490e5a080cc686bc3fe046f6ca98d0d562"
-    },
-    {
-      "id": "leila-soria",
-      "file": "public/portraits/campaign/casa-azahar/leila-soria.jpg",
-      "sourceAsset": "casa-azahar-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 11023,
-      "quality": 85,
-      "sha256": "2379fe6bd39247aba29f76eee2b961e49557c5aa09bdb080c461412a5b6a2703"
-    },
-    {
-      "id": "gloria-gaines",
-      "file": "public/portraits/campaign/lantern-exchange/gloria-gaines.jpg",
-      "sourceAsset": "lantern-exchange-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 11281,
-      "quality": 85,
-      "sha256": "138458d2e11d89f4339879054ac6d1fe836dad4b828bc99b541bd3acc0cf4ac3"
     },
     {
       "id": "stan-sloane",
@@ -552,17 +453,6 @@
       "sha256": "6bcf0b245d7d56c1d5add9d6f909439e106437549654c82cf6e3ecf4994b861e"
     },
     {
-      "id": "carmen-cielo",
-      "file": "public/portraits/campaign/lantern-exchange/carmen-cielo.jpg",
-      "sourceAsset": "lantern-exchange-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 11187,
-      "quality": 85,
-      "sha256": "f2eceb69a30774a48e1abc71f0e8df3f7bf1277ed18f3d53fba8c2d99b290163"
-    },
-    {
       "id": "reggie-darden",
       "file": "public/portraits/campaign/lantern-exchange/reggie-darden.jpg",
       "sourceAsset": "lantern-exchange-regulars-atlas",
@@ -574,17 +464,6 @@
       "sha256": "7e971013b0f655b7a2eca4caee43f04f42b53109c18105d6dbe81cab00ab4dfe"
     },
     {
-      "id": "paula-fox",
-      "file": "public/portraits/campaign/lantern-exchange/paula-fox.jpg",
-      "sourceAsset": "lantern-exchange-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 11512,
-      "quality": 85,
-      "sha256": "3da30d1873591321c1a1c2c143065b481da00366ce4bf841a2f3469a6b62e089"
-    },
-    {
       "id": "morris-morrow",
       "file": "public/portraits/campaign/lantern-exchange/morris-morrow.jpg",
       "sourceAsset": "lantern-exchange-regulars-atlas",
@@ -594,17 +473,6 @@
       "bytes": 9941,
       "quality": 85,
       "sha256": "bfa3db231fe8a85b33452f3b85ebfcdb6ecb8e235e8d05d6216aa25a19e6b410"
-    },
-    {
-      "id": "yvette-satin",
-      "file": "public/portraits/campaign/lantern-exchange/yvette-satin.jpg",
-      "sourceAsset": "lantern-exchange-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 11383,
-      "quality": 85,
-      "sha256": "635962edb1d233269db78fe2878780c24335df5f5574eb810cd089c5e7dfe233"
     },
     {
       "id": "dean-drake",
@@ -629,17 +497,6 @@
       "sha256": "aeff08c845f7d5a1a9b436568d829dd793974cb67a53f0cf09fcefcee5b34eda"
     },
     {
-      "id": "roxane-renaud",
-      "file": "public/portraits/campaign/salon-des-brumes/roxane-renaud.jpg",
-      "sourceAsset": "salon-des-brumes-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 10444,
-      "quality": 85,
-      "sha256": "6c794fa48eff571150fa7efba2d924901380f9320b226cc989d1355ccb0314fe"
-    },
-    {
       "id": "theo-klein",
       "file": "public/portraits/campaign/salon-des-brumes/theo-klein.jpg",
       "sourceAsset": "salon-des-brumes-regulars-atlas",
@@ -649,17 +506,6 @@
       "bytes": 10780,
       "quality": 85,
       "sha256": "ab5f17f754a46767217608eaa21ec816f596e0ebd900eaa547bcee6e62bbaedb"
-    },
-    {
-      "id": "diane-delorme",
-      "file": "public/portraits/campaign/salon-des-brumes/diane-delorme.jpg",
-      "sourceAsset": "salon-des-brumes-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 10877,
-      "quality": 85,
-      "sha256": "b8b38ee44c3c49e3a76cedcf2f90fd7a949ba06b688a5c9c9879ecd43b2a36e3"
     },
     {
       "id": "victor-perrin",
@@ -673,17 +519,6 @@
       "sha256": "72995e0e5a1c92075a397d4613c41537aebdd2ae91bed44d5ae5866ea33b79f0"
     },
     {
-      "id": "camille-navarre",
-      "file": "public/portraits/campaign/salon-des-brumes/camille-navarre.jpg",
-      "sourceAsset": "salon-des-brumes-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 10195,
-      "quality": 85,
-      "sha256": "b007d392ad1e272cfe5f3fb2ca884106bcbce248d4b0d2fa539d08123d13d581"
-    },
-    {
       "id": "lucien-lenoir",
       "file": "public/portraits/campaign/salon-des-brumes/lucien-lenoir.jpg",
       "sourceAsset": "salon-des-brumes-regulars-atlas",
@@ -693,28 +528,6 @@
       "bytes": 9595,
       "quality": 85,
       "sha256": "62d42f442351fbfda65e6d3674c70f518024424182921d66cdb3a7830c250bd9"
-    },
-    {
-      "id": "simone-caron",
-      "file": "public/portraits/campaign/salon-des-brumes/simone-caron.jpg",
-      "sourceAsset": "salon-des-brumes-regulars-atlas",
-      "kind": "atlas",
-      "width": 160,
-      "height": 200,
-      "bytes": 9781,
-      "quality": 85,
-      "sha256": "3d5a57349af35364b7a2f1455b717008222c58d709f91183963a25b7d0937602"
-    },
-    {
-      "id": "evelyn-rook",
-      "file": "public/portraits/campaign/gilded-alibi/evelyn-rook.jpg",
-      "sourceAsset": "evelyn-rook",
-      "kind": "portrait",
-      "width": 160,
-      "height": 200,
-      "bytes": 10863,
-      "quality": 85,
-      "sha256": "d76657fea832120960d0b4194474dbb1db8041f0ce06222c85ffbd59fbca7504"
     },
     {
       "id": "vincent-vale",
@@ -750,39 +563,6 @@
       "sha256": "248c21a2253cacc25f56133cf7794c0ec679be98c48ff0725c6cffb0a6a73389"
     },
     {
-      "id": "madeleine-desrosiers",
-      "file": "public/portraits/campaign/salon-des-brumes/madeleine-desrosiers.jpg",
-      "sourceAsset": "madeleine-desrosiers",
-      "kind": "portrait",
-      "width": 160,
-      "height": 200,
-      "bytes": 10602,
-      "quality": 85,
-      "sha256": "7a761463ba82d6f929898b6624151da90b1ca6e3c6ae4af0f592e3bf4b196a58"
-    },
-    {
-      "id": "mechanic",
-      "file": "public/portraits/players/mechanic.jpg",
-      "sourceAsset": "player-mechanic",
-      "kind": "portrait",
-      "width": 160,
-      "height": 200,
-      "bytes": 11816,
-      "quality": 85,
-      "sha256": "1a3ae0c6ea736b167a7220aeafe19b90601a918557179517b4c6525c8c3dfe64"
-    },
-    {
-      "id": "dancer",
-      "file": "public/portraits/players/dancer.jpg",
-      "sourceAsset": "player-dancer",
-      "kind": "portrait",
-      "width": 160,
-      "height": 200,
-      "bytes": 11164,
-      "quality": 85,
-      "sha256": "6eaf7a339e5cbe0db47c5547ff5bbc81a122c0fd117a08a704375504a96eec99"
-    },
-    {
       "id": "tailor",
       "file": "public/portraits/players/tailor.jpg",
       "sourceAsset": "player-tailor",
@@ -792,17 +572,6 @@
       "bytes": 10718,
       "quality": 85,
       "sha256": "2385a269afec5776e6da656be7c6fa1451e5cfbe439c00e7ac4bbb11f188dbe0"
-    },
-    {
-      "id": "nurse",
-      "file": "public/portraits/players/nurse.jpg",
-      "sourceAsset": "player-nurse",
-      "kind": "portrait",
-      "width": 160,
-      "height": 200,
-      "bytes": 11120,
-      "quality": 85,
-      "sha256": "e3cd3efbd022e6ed57a4cc17b76a2ee558d95be03da07a7e74358b3019defd06"
     },
     {
       "id": "gambler",
@@ -816,15 +585,317 @@
       "sha256": "24a13fc77f23b27977fc0c0e46aebcb7a894ec0b8ab2459c09fa9254b387be23"
     },
     {
-      "id": "title-boss-collage",
-      "file": "public/images/campaign/boss-collage.jpg",
-      "sourceAsset": "title-boss-collage",
+      "id": "cast-refresh-victor-maddox",
+      "file": "public/portraits/campaign/gilded-alibi/victor-maddox.jpg",
+      "sourceAsset": "victor-maddox",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10028,
+      "quality": 85,
+      "sha256": "24e57c3d8d7a286e6417acbc9eb93d2b2d0237b2d6450e18d820052a4aab3d0c"
+    },
+    {
+      "id": "cast-refresh-marcel-duvall",
+      "file": "public/portraits/campaign/salon-des-brumes/marcel-duvall.jpg",
+      "sourceAsset": "marcel-duvall",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 9490,
+      "quality": 85,
+      "sha256": "24f80074c8e3ddc3d1dab8fdf3d6d12bf44c4634a22b8ff5a77cee58148104ed"
+    },
+    {
+      "id": "cast-refresh-wade-pritchard",
+      "file": "public/portraits/campaign/gilded-alibi/wade-pritchard.jpg",
+      "sourceAsset": "wade-pritchard",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11508,
+      "quality": 85,
+      "sha256": "1093a9ca9f5c93deba23805f36bf10df2825c182f1d7c1198cedcaf59c5bcb68"
+    },
+    {
+      "id": "boss-collage-v2",
+      "file": "public/images/campaign/boss-collage-v2.jpg",
+      "sourceAsset": "boss-collage-v2",
       "kind": "title",
       "width": 740,
       "height": 250,
-      "bytes": 55237,
+      "bytes": 57182,
       "quality": 74,
-      "sha256": "a05ba15d0af2aa96cb8af28387556383f570b905621f48a7aae6ea960e3f84b7"
+      "sha256": "fbfa2fe604ea5d1ceb57ea32d725e159a5c8d9ede30b7ddba99870b407232c82"
+    },
+    {
+      "id": "cast-refresh-eddie-kovacs",
+      "file": "public/portraits/campaign/marigold-star/eddie-kovacs.jpg",
+      "sourceAsset": "eddie-kovacs",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10600,
+      "quality": 85,
+      "sha256": "703b66f6dd62ed8ae35953647e2ea00020e34c91d262294c1067f4c41aadc821"
+    },
+    {
+      "id": "cast-refresh-arturo-salgado",
+      "file": "public/portraits/campaign/casa-azahar/arturo-salgado.jpg",
+      "sourceAsset": "arturo-salgado",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 9977,
+      "quality": 85,
+      "sha256": "9419a499017b4a3c8e4daa1b5718fbdc3f5e4cfb9775b15c20d83efaf455048f"
+    },
+    {
+      "id": "cast-refresh-frank-callahan",
+      "file": "public/portraits/campaign/lantern-exchange/frank-callahan.jpg",
+      "sourceAsset": "frank-callahan",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10213,
+      "quality": 85,
+      "sha256": "a58d5d0a26a834b8a6ae13e3c019d8f5f9fc85946f0cf6d049209374245f18e1"
+    },
+    {
+      "id": "cast-refresh-ruby",
+      "file": "public/portraits/campaign/gilded-alibi/ruby-v2.jpg",
+      "sourceAsset": "ruby",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11015,
+      "quality": 85,
+      "sha256": "56b4d2f07d2111dad068ec89c94ab389a5ea5f5539929f2d0c2f271d6b9579dc"
+    },
+    {
+      "id": "cast-refresh-gaston-roussel",
+      "file": "public/portraits/campaign/salon-des-brumes/gaston-roussel.jpg",
+      "sourceAsset": "gaston-roussel",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11859,
+      "quality": 85,
+      "sha256": "12f23494a62897ee43680ffe120885c987b270de7a088a6e042a3c886950979f"
+    },
+    {
+      "id": "cast-refresh-della-marigold",
+      "file": "public/portraits/campaign/marigold-star/della-marigold-v2.jpg",
+      "sourceAsset": "della-marigold",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 9808,
+      "quality": 85,
+      "sha256": "57c7b0120784aa41a529bf128b76f5cb6936b3915dcff044c990861666786d03"
+    },
+    {
+      "id": "cast-refresh-june-jukebox",
+      "file": "public/portraits/campaign/marigold-star/june-jukebox-v2.jpg",
+      "sourceAsset": "june-jukebox",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11342,
+      "quality": 85,
+      "sha256": "e418339170300745d0e4a51f4019aaf6c2b2240736383279d69c4cdc96e7f268"
+    },
+    {
+      "id": "cast-refresh-ruth-lane",
+      "file": "public/portraits/campaign/marigold-star/ruth-lane-v2.jpg",
+      "sourceAsset": "ruth-lane",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11849,
+      "quality": 85,
+      "sha256": "c0eca82e6d1ef7245ac6a84dd820fd8f7ee4a324ef41a71017b47f3474ca67e0"
+    },
+    {
+      "id": "cast-refresh-ada",
+      "file": "public/portraits/campaign/gilded-alibi/ada-v2.jpg",
+      "sourceAsset": "ada",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10137,
+      "quality": 85,
+      "sha256": "ef80424ec7e94272ae3b41cf5dbdfd7d376c60065d31d72e0c149c6a87d9f41b"
+    },
+    {
+      "id": "cast-refresh-lucia-robles",
+      "file": "public/portraits/campaign/casa-azahar/lucia-robles-v2.jpg",
+      "sourceAsset": "lucia-robles",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10465,
+      "quality": 85,
+      "sha256": "a30832f5303a0d920ba6b8c0e1c55f867a3dfce636555d7bef97e90e34eb644f"
+    },
+    {
+      "id": "cast-refresh-nell",
+      "file": "public/portraits/campaign/gilded-alibi/nell-v2.jpg",
+      "sourceAsset": "nell",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11691,
+      "quality": 85,
+      "sha256": "089a0330065773cf9dbd23507c6906d788e355bfd7e636828fdcd9ba9b3c8a74"
+    },
+    {
+      "id": "cast-refresh-ines-montoya",
+      "file": "public/portraits/campaign/casa-azahar/ines-montoya-v2.jpg",
+      "sourceAsset": "ines-montoya",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10270,
+      "quality": 85,
+      "sha256": "bb74de38b2b693c01de2889be201150662c1175ef8510d0acfff91334c8008ef"
+    },
+    {
+      "id": "cast-refresh-carmen-cielo",
+      "file": "public/portraits/campaign/lantern-exchange/carmen-cielo-v2.jpg",
+      "sourceAsset": "carmen-cielo",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10970,
+      "quality": 85,
+      "sha256": "25a698aa321fe2fc5cffe91a191fb22ee2558a1d7353e35f1e9b4b487ac90f4a"
+    },
+    {
+      "id": "cast-refresh-nora-beltran",
+      "file": "public/portraits/campaign/casa-azahar/nora-beltran-v2.jpg",
+      "sourceAsset": "nora-beltran",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11369,
+      "quality": 85,
+      "sha256": "57eda639818b7e4062917003ff85b73db5d906338ba1e44125ff9109a7bc3786"
+    },
+    {
+      "id": "cast-refresh-paula-fox",
+      "file": "public/portraits/campaign/lantern-exchange/paula-fox-v2.jpg",
+      "sourceAsset": "paula-fox",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11267,
+      "quality": 85,
+      "sha256": "3f76e989c460368f6ce60b4c183f46908020537d5cfc0ee8217c786f88762da2"
+    },
+    {
+      "id": "cast-refresh-gloria-gaines",
+      "file": "public/portraits/campaign/lantern-exchange/gloria-gaines-v2.jpg",
+      "sourceAsset": "gloria-gaines",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10647,
+      "quality": 85,
+      "sha256": "7cd9aca7f656eb569db7401d1f40554f590547ef7b0cb25436d56ca3a9b8df0b"
+    },
+    {
+      "id": "cast-refresh-roxane-renaud",
+      "file": "public/portraits/campaign/salon-des-brumes/roxane-renaud-v2.jpg",
+      "sourceAsset": "roxane-renaud",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10224,
+      "quality": 85,
+      "sha256": "15d21c74e0eb422e5df2b83110028014ee7fb2fd1ff884ee65004d983f66b2a1"
+    },
+    {
+      "id": "cast-refresh-heiress",
+      "file": "public/portraits/players/heiress-v2.jpg",
+      "sourceAsset": "heiress",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10361,
+      "quality": 85,
+      "sha256": "6f561c9fd1782ba0d3c4b4a3ef64884085bd41362e2c3a3f15c670af130868d7"
+    },
+    {
+      "id": "cast-refresh-diane-delorme",
+      "file": "public/portraits/campaign/salon-des-brumes/diane-delorme-v2.jpg",
+      "sourceAsset": "diane-delorme",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10057,
+      "quality": 85,
+      "sha256": "3486957ed22e72e663bee15c8184996fb5c414b4755be71c326bc037aef20cfe"
+    },
+    {
+      "id": "cast-refresh-camille-navarre",
+      "file": "public/portraits/campaign/salon-des-brumes/camille-navarre-v2.jpg",
+      "sourceAsset": "camille-navarre",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 9941,
+      "quality": 85,
+      "sha256": "072ab84aa9d9bbc10c150dee332bf623af40080f5e337551185fd83c4d669491"
+    },
+    {
+      "id": "cast-refresh-reporter",
+      "file": "public/portraits/players/reporter-v2.jpg",
+      "sourceAsset": "reporter",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 11267,
+      "quality": 85,
+      "sha256": "2e005a3f1643988021cab158feb4b0b81342cca949a439ea5992bb27f2705d2f"
+    },
+    {
+      "id": "cast-refresh-mechanic",
+      "file": "public/portraits/players/mechanic-v2.jpg",
+      "sourceAsset": "mechanic",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10846,
+      "quality": 85,
+      "sha256": "b6369d7cdfb44b4f3044e8bad0e824b28a5752a81f1e6ed2b60daf79ba1d1fe2"
+    },
+    {
+      "id": "cast-refresh-dancer",
+      "file": "public/portraits/players/dancer-v2.jpg",
+      "sourceAsset": "dancer",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10551,
+      "quality": 85,
+      "sha256": "47ae7e1b649a895e3dac846ab1dba796fc15e150fb432bf4c0fac8e9f84c9bb8"
+    },
+    {
+      "id": "cast-refresh-nurse",
+      "file": "public/portraits/players/nurse-v2.jpg",
+      "sourceAsset": "nurse",
+      "kind": "portrait",
+      "width": 160,
+      "height": 200,
+      "bytes": 10115,
+      "quality": 85,
+      "sha256": "c40889290d332c977a3469110043368feaee56ca8280f51ea05c48112806fe47"
     }
-  ]
+  ],
+  "additionalPrompts": [
+    "docs/artwork/title-boss-collage.json",
+    "docs/artwork/cast-refresh-1947-prompts.json"
+  ],
+  "castRevision": 2
 }

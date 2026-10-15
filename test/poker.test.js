@@ -11,6 +11,7 @@ import { createGame, startHand, act, legal, settlePots, view } from '../lib/game
 import { contextFor, configuration } from '../lib/ai.js';
 import { createApp, stateXml } from '../server.js';
 import { playerCharacters } from '../lib/player-characters.js';
+import { characters } from '../lib/characters.js';
 import { newWallet, buyTable, cashOut, tableFinished } from '../lib/bankroll.js';
 import { publishQuote, publishWins, safeQuote } from '../lib/table-talk.js';
 const cards=s=>s.split(' ');
@@ -149,8 +150,7 @@ test('browser and per-seat prompts exclude other cards, deck and private memorie
 test('legacy client parses as ES3 and all portraits are JPEGs',async()=>{
   parse(await readFile(new URL('../public/client.js',import.meta.url),'utf8'),{ecmaVersion:3});
   parse(await readFile(new URL('../public/lobby.js',import.meta.url),'utf8'),{ecmaVersion:3});
-  for(const id of ['rail','ruby','dusty','ada','ace','nell','jack','pearl']) {const data=await readFile(new URL('../public/portraits/'+id+'.jpg',import.meta.url));assert.equal(data.readUInt16BE(0),0xffd8);assert(data.length>2000);}
-  for(const c of playerCharacters) {const data=await readFile(new URL('../public/portraits/players/'+c.id+'.jpg',import.meta.url));assert.equal(data.readUInt16BE(0),0xffd8);assert(data.length>2000);}
+  for(const c of [...characters,...playerCharacters]) {const data=await readFile(new URL('../public'+c.portraitUrl,import.meta.url));assert.equal(data.readUInt16BE(0),0xffd8);assert(data.length>2000);}
 });
 test('HTTP sessions, request guards, save/load after restart and hidden state',async()=>{
   const dir=await mkdtemp(join(tmpdir(),'holdem-test-')), config=configuration({AI_MODE:'local'});let app=createApp(config,{saveDir:dir});
@@ -172,10 +172,10 @@ test('HTTP sessions, request guards, save/load after restart and hidden state',a
     await new Promise(r=>app.close(r));app=createApp(config,{saveDir:dir});await new Promise(r=>app.listen(0,'127.0.0.1',r));base='http://127.0.0.1:'+app.address().port;
     r=await request('/api/load','code='+code);assert.equal(r.status,200);assert(r.text.includes('stack="'+stack+'"'));assert(r.text.includes('name="Rae Mercer" portrait="pilot"'));assert(r.text.includes('cash="2000"'));assert(!r.text.includes('<memory>'));
     assert.equal((await request('/api/load','code=../../etc/passwd',r.cookie)).status,400);
-    assert.equal((await request('/portraits/ada.jpg')).status,200);
+    for(const c of characters) assert.equal((await request(c.portraitUrl)).status,200);
     assert.equal((await request('/table.html')).status,200);
     assert.equal((await request('/lobby.js')).status,200);
-    for(const c of playerCharacters) assert.equal((await request('/portraits/players/'+c.id+'.jpg')).status,200);
+    for(const c of playerCharacters) assert.equal((await request(c.portraitUrl)).status,200);
     const portrait=await fetch(base+'/portraits/players/drifter.jpg');assert.equal(portrait.headers.get('cache-control'),'public, max-age=86400');
     const background=await fetch(base+'/images/table-room.jpg');assert.equal(background.status,200);assert.equal(background.headers.get('content-type'),'image/jpeg');assert.equal(background.headers.get('cache-control'),'public, max-age=86400');assert(Number(background.headers.get('content-length'))<100000);
     const music=await fetch(base+'/music/midnight-ledger.mid');assert.equal(music.status,200);assert.equal(music.headers.get('content-type'),'audio/midi');assert.equal(music.headers.get('cache-control'),'public, max-age=86400');assert(Number(music.headers.get('content-length'))<5000);assert.equal((await request('/music.js')).status,200);

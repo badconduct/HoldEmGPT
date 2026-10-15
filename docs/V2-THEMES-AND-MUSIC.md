@@ -8,11 +8,11 @@ costs out of the forgiving bankroll plan.
 
 | City | Casino | Visual identity | Scripted boss |
 | --- | --- | --- | --- |
-| Las Vegas | The Gilded Alibi | Desert hotel, dark walnut, restrained luxury | Evelyn Rook, the Comptroller: patient value betting |
+| Las Vegas | The Gilded Alibi | Desert hotel, dark walnut, restrained luxury | Victor Maddox, desert bookmaker: patient value betting |
 | Hollywood | The Marigold Star | Private studio supper club, theatrical lighting | Vincent Vale, the Headliner: measured bluffs |
 | Mexico City | Casa del Azahar | Urban salon, carved wood, tiles and courtyard details | Celeste Varela, the Hostess: position and controlled traps |
 | New York | The Lantern Exchange | Manhattan private club, tailored Art Deco details | Leon Lark, the Operator: frequent small pressure |
-| Paris | Le Salon des Brumes | Restored postwar salon, paneled walls and muted elegance | Madeleine Desrosiers, the Financier: adapts to public betting habits |
+| Paris | Le Salon des Brumes | Restored postwar salon, paneled walls and muted elegance | Marcel Duvall, cabaret proprietor: adapts to public betting habits |
 
 Each casino has four ordinary table backgrounds, a boss-table background and a
 separate selection room. The cast and room details change while table geometry,
