@@ -814,6 +814,17 @@
       "bytes": 10547,
       "quality": 85,
       "sha256": "24a13fc77f23b27977fc0c0e46aebcb7a894ec0b8ab2459c09fa9254b387be23"
+    },
+    {
+      "id": "title-boss-collage",
+      "file": "public/images/campaign/boss-collage.jpg",
+      "sourceAsset": "title-boss-collage",
+      "kind": "title",
+      "width": 740,
+      "height": 250,
+      "bytes": 55237,
+      "quality": 74,
+      "sha256": "a05ba15d0af2aa96cb8af28387556383f570b905621f48a7aae6ea960e3f84b7"
     }
   ]
 }

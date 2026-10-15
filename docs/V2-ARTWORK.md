@@ -38,15 +38,24 @@ every name, role, style and portrait path.
 | Table backgrounds | 25 | 740 x 300 | 31–38 KB |
 | Casino selection rooms | 5 | 740 x 400 | 56–66 KB |
 | Travel map | 1 | 740 x 400 | 72 KB |
+| Title-screen boss collage | 1 | 740 x 250 | 55 KB |
 | Regular portraits | 32 | 160 x 200 | 9.5–12 KB |
 | Boss portraits | 5 | 160 x 200 | 10–12 KB |
 | Extra player portraits | 5 | 160 x 200 | 10–12 KB |
 
-All 73 exports are opaque, 8-bit, three-channel baseline JPEGs. Table and room
+All 74 exports are opaque, 8-bit, three-channel baseline JPEGs. Table and room
 images are monochrome; portraits retain the original warm paper. Use native
 background dimensions, the existing fixed table/card geometry and small portrait
 display sizes. Load one current background and only visible portraits. No PNG
 transparency, filters, animation or preload of the whole collection is needed.
+
+The opening menu uses one [boss collage](../public/images/campaign/boss-collage.jpg)
+showing all five established bosses against their 1947 city backdrops. It is
+served at its native 740 x 250 size, with New Game and Load side by side below
+the image. Titles, labels and forms remain real HTML. The full
+[collage prompt and portrait references](artwork/title-boss-collage.json) record
+its built-in imagegen provenance; the larger PNG master stays under ignored
+`artifacts/title-screen/`.
 
 ## Review and provenance
 
@@ -57,7 +66,8 @@ The [boss gallery](../artifacts/v2-content/bosses.html) shows all five static
 portraits at native resolution. The [story walkthrough](../artifacts/v2-content/index.html)
 includes the new travel map and separate casino-selection rooms.
 
-The built-in **imagegen** tool generated 45 PNG masters using the original
+The original campaign set used 45 PNG masters from the built-in **imagegen** tool,
+using the original
 table, Ada and Rail portraits as references. Table variants also reference their
 new casino's first table. The [complete prompt set](artwork/v2-1947-prompts.json)
 records every prompt and its project-relative reference images. Mechanical
@@ -76,5 +86,9 @@ seats each, no overlaps or horizontal overflow at 800 pixels, and all four
 border edges visible on 325 sample cards. Original asset hashes are unchanged.
 These checks are useful compatibility evidence; the
 implemented campaign still needs a physical Windows 98SE/IE6 acceptance run.
+The added title-screen collage is a separate built-in generation using all five
+boss portraits as identity references. Its 55,237-byte baseline JPEG was checked
+at native resolution, and MSHTML mode 7 showed New Game and Load within an
+800 x 450 browser area with no horizontal overflow. New Game reaches name entry.
 Runtime navigation uses these same assets, with scripted bosses and version 3
-saves. Production deployment remains separate work.
+saves. Production promotion follows the container deployment workflow.

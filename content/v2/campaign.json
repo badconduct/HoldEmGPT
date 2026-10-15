@@ -1284,6 +1284,11 @@
     "bossGate": "Unlock after four ordinary whole-table wins in this casino. Replays do not replace or remove stamps.",
     "result": "Separate hand results, whole-table results, pass award and final campaign completion.",
     "imagePolicy": "Load one current map, room or table background and only visible portraits. Baseline JPEG at native display size; no browser image filters, animation or large preloads.",
+    "titleBackground": "public/images/campaign/boss-collage.jpg",
+    "titleScene": [
+      740,
+      250
+    ],
     "mapBackground": "public/images/campaign/travel-map.jpg",
     "mapScene": [
       740,
