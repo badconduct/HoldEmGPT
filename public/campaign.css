@@ -2,6 +2,17 @@
 .camp-toolbar button { padding:2px 8px; }
 .camp-tagline { text-align:center; }
 .camp-button { display:inline-block; padding:8px 16px; background:#d9c28b; border:1px solid #ae8c4e; color:#231e14; font:bold 13px Arial,sans-serif; text-decoration:none; }
+.camp-title-art { margin-top:8px; border-top:1px solid #ae8c4e; border-bottom:1px solid #ae8c4e; }
+.camp-title-art img { display:block; width:740px; height:250px; border:0; }
+.camp-menu { width:740px; table-layout:fixed; border-collapse:collapse; background:#25231c; border:1px solid #5f5436; }
+.camp-menu td { padding:8px 12px; vertical-align:middle; }
+.camp-menu p { margin:4px 0; }
+.camp-menu .camp-menu-new { width:44%; }
+.camp-menu-load { border-left:1px solid #5f5436; }
+.camp-menu h2 { margin:0 0 5px; }
+.camp-menu label { display:block; margin-bottom:4px; }
+.camp-menu .campaignpost { margin:0; }
+.camp-menu-footer { text-align:center; margin:7px 0 0; line-height:16px; }
 .campaignpost { margin:4px 0; }
 .camp-choices { width:740px; table-layout:fixed; }
 .camp-choices td { vertical-align:top; text-align:center; background:#25231c; border:1px solid #776241; }

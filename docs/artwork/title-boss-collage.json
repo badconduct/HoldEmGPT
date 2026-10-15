@@ -1,0 +1,20 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "generatedDate": "2026-10-15",
+  "useCase": "historical-scene; identity-preserving compositing",
+  "id": "title-boss-collage",
+  "file": "public/images/campaign/boss-collage.jpg",
+  "nativeDisplay": [
+    740,
+    250
+  ],
+  "references": [
+    "public/portraits/campaign/gilded-alibi/evelyn-rook.jpg",
+    "public/portraits/campaign/marigold-star/vincent-vale.jpg",
+    "public/portraits/campaign/casa-azahar/celeste-varela.jpg",
+    "public/portraits/campaign/lantern-exchange/leon-lark.jpg",
+    "public/portraits/campaign/salon-des-brumes/madeleine-desrosiers.jpg"
+  ],
+  "prompt": "Use case: historical-scene, identity-preserving compositing. Asset: a finished landscape title-screen illustration for the fictional 1947 poker game Last Seat on Fortune Row. Create ONE very wide, approximately 3:1 composition, designed to display at 740 by 250 pixels. This is artwork, not a webpage mockup. The five supplied portraits are the EXACT five fictional casino bosses; preserve their recognizable faces, ages, hairstyles, clothing and identities. Left to right: reference 1 Evelyn Rook, older stern white woman with short waved gray hair, spectacles, dark tailored suit and brooch; reference 2 Vincent Vale, middle-aged white man with slick swept hair, tuxedo and bow tie; reference 3 Celeste Varela, elegant Mexican woman with dark waved updo, pearl earrings and a tailored dark suit, center and slightly forward; reference 4 Leon Lark, middle-aged Black man, short hair and neat moustache, dark suit and open pale shirt; reference 5 Madeleine Desrosiers, older white French woman with short dark finger waves and silk neck scarf. All five are equally prominent, visible as five distinct large head-and-shoulder portraits across the whole width, their shoulders overlapping naturally and faces entirely inside the image. Expressive, confident, watchful, formidable poker opponents; no smiles, no guns. Compose them as a rich 1940s film-noir illustrated ensemble poster, matching the original portraits' fine etched ink engraving, charcoal shading and restrained antique cream/sepia paper, with deep near-black warm brown shadows. Interleave subtle dissolving architectural glimpses from their five cities (1947 Las Vegas neon hotel frontage, Hollywood marquee and palms, Mexico City art-deco arches, Manhattan skyline and postwar Paris rooftops/Eiffel silhouette); keep architecture subordinate and do not put any lettering on signs. At the bottom, naturally integrate a few period poker chips, a closed playing-card deck and a curved dark wood poker-table rim. This bottom still life is a narrow atmospheric foreground, not a dominant table. A continuous coherent composition, no panels, no hard portrait frames, no repeated heads. Sharply readable faces at the small final size, dramatic chiaroscuro, old cinema lobby-card prestige, slightly aged printed texture without distracting damage. Background reaches all four edges. No words, letters, numbers, title, logos, watermark or UI. The page will provide all headings and buttons as real HTML. Render a wide horizontal image, ideally 2220x750 or a similar 3:1 aspect ratio, not a square.",
+  "export": "Mechanical resize to native display size, opaque 8-bit RGB baseline JPEG. No image text; title, navigation and forms remain HTML."
+}
