@@ -13,7 +13,7 @@ import { newCampaign, enterTable, settleCampaign, houseStake, retryTable, valida
 import { campaignPage, campaignPagePaths } from './lib/campaign-pages.js';
 import { saveStore } from './lib/save-store.js';
 import { storyAssets } from './lib/story-catalog.js';
-import { advanceStory, accuse, recordTheory, successorVictim, storyLost } from './lib/story.js';
+import { advanceStory, accuse, recordTheory, successorVictim, storyLost, requireStoryForm } from './lib/story.js';
 import { prepareStoryTalk, commitStoryTalk } from './lib/story-talk.js';
 const root=fileURLToPath(new URL('.',import.meta.url));
 const esc=v=>String(v ?? '').replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));
@@ -129,8 +129,9 @@ export function createApp(config,{saveDir=process.env.SAVE_DIR || join(root,'dat
         case '/api/campaign/stake':houseStake(s);break;
         case '/api/campaign/restart':retryTable(s);run=true;break;
         case '/api/story/advance':advanceStory(s,form.get('scene'));break;
-        case '/api/story/theory':recordTheory(s,Object.fromEntries(form));extra.destination='/evidence.html';break;
+        case '/api/story/theory':requireStoryForm(s,form.get('case'));recordTheory(s,Object.fromEntries(form));extra.destination='/evidence.html?section=notes';break;
         case '/api/story/accuse':
+          requireStoryForm(s,form.get('case'));
           if(form.get('confirm')!=='yes')throw new Error('Review your selections before confirming the final accusation.');
           accuse(s,{boss:form.get('boss'),hotel:form.get('hotel'),weapon:form.get('weapon')});break;
         case '/api/new': {

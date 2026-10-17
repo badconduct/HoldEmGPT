@@ -11,12 +11,19 @@ responsible boss and every false-exhibit category, plus one staged-death variant
 per boss. All suspects can be guilty; the actual hotel need not be their home
 casino. Each variant has five readable records with exactly one false core
 claim. Fresh standalone campaigns have a 20% staged-death chance; successor
-campaigns use genuine murders. Exhibit delivery order is shuffled independently
-of guilt and card dealing, then saved. A server-side hypothesis check enumerates all 150 boss/hotel/weapon-or-no-
-murder answers and requires one supported solution with exactly one false record.
-These first puzzles are deliberately direct. Human reviews should assess pacing,
-clarity, atmosphere and whether the clues are too obvious; an automated predicate
-check does not measure the pleasure or difficulty of a deduction.
+campaigns use genuine murders. The revised version 2 dossiers choose between two
+authored reveal orders per case, then save that order. These comparisons leave
+multiple answers for every proper subset of the exhibits and one answer for the
+complete set. Reference cards translate the initials, seals and hotel marks;
+positive and negative comparisons narrow the possibilities without requiring
+pixel inspection. All five bosses can be genuine victims or stage their deaths.
+The original version 1 rules remain available to load first-draft review saves.
+
+A separate test reads the printed comparison sentences and public reference
+cards without using the private predicates. Both checks enumerate the 150
+boss/hotel/weapon-or-no-murder answers. Neither check measures human enjoyment:
+fresh-reader feedback and natural campaign pacing remain review work. See the
+[review corrections](V3-REVIEW-REVISION.md) and [paper dossiers](design/story-dossiers-v2.md).
 
 The opening always presents the same suitcase, $1,000 and unsigned letter.
 Its three still/text panels lead to a two-panel case briefing. Every first
@@ -28,7 +35,8 @@ old reveal reads it without issuing another award.
 The Evidence Bag is a separate page linked from campaign pages and the table.
 It contains five category slots, 240 x 160 item illustrations, readable attached
 reports/transcripts, the framing letter, reliable suspect/hotel references and
-optional saved working notes. The letter is a personal effect, not a sixth case
+optional saved working notes. Exhibits, references, notes, the briefing and
+comparison help have separate ordinary page links. The letter is a personal effect, not a sixth case
 exhibit. Uncollected forms and descriptions are not sent to the client. Gameplay
 does not advance while the human is reading on their turn.
 
@@ -37,6 +45,8 @@ The weapon list always includes "None - the death was staged." An explicit
 review/confirmation warns that a wrong accusation ends the character's story and
 forfeits their cash. A correct answer keeps the money and opens continued poker
 at every house. Repeated boss wins cannot re-award the case or repeat its finale.
+The confirmation and notebook forms carry the story and recovery-branch identity;
+submitting a page from a different loaded save safely rejects before mutation.
 
 A wrong answer clears the campaign wallet once and closes ambiguously on the
 same suitcase, $1,000 and fixed letter. The End returns to the main menu. The
@@ -61,10 +71,13 @@ An exchange involves at most two regulars and one question/reply pair. A reply
 attaches to that NPC's next real action and can expire if the hand ends.
 
 Topics refer only to generic uncertainty or already-collected evidence. The
-server supplies approved lines; an API/ChatGPT opponent may select an allowed
+server supplies approved lines, with replies restricted to the chosen question;
+an API/ChatGPT opponent may select an allowed
 line ID in its ordinary decision response. The server resolves the ID and uses
 an authored fallback for absent/invalid choices. No extra speech-only call is
-made. Local bots choose an approved variant without a network/model dependency.
+made. Local bots vary approved selections across hands without a network/model dependency.
+Old pending exchanges expire when upgraded; their already published table history
+remains intact. Newly entered open-circuit tables do not schedule unresolved-case talk.
 Boss poker policies remain scripted. No LLM receives the case solution or grades
 the accusation. A conservative filter blocks overt unsolicited mystery claims
 in ordinary model remarks; free-form prose is not a semantic truth guarantee.
@@ -81,6 +94,11 @@ and Elias Rook's portrait are generated with the built-in image tool. Five
 arrival stills reuse prepared crops of the existing casino artwork. Final assets
 live in `public/images/story/`; prompts and an export manifest live in
 `docs/design/story-art-prompts.json` and `docs/design/story-artwork.json`.
+Five revised scene prints show an indistinct covered figure, used in both genuine
+and staged cases. They have separate versioned full/thumbnail files so old review
+saves retain their original room illustrations. Their edit prompts are in
+`docs/design/story-v2-art-prompts.json`. The 68 baseline JPEGs total 530,691 bytes;
+the largest is 42,819 bytes. No high-resolution source is sent to a browser.
 
 Only small baseline JPEG exports ship: evidence 240 x 160, separate 72 x 48
 thumbnails, story stills 740 x 250 and Rook's portrait 72 x 90. HTML supplies all
@@ -111,6 +129,7 @@ Rebuilding art exports is optional development work requiring Python and Pillow:
 
 ```text
 python scripts/prepare-story-art.py --sources PATH-TO-PRIVATE-SOURCE-MANIFEST.json
+python scripts/prepare-story-art.py --revised-scenes PATH-TO-PRIVATE-V2-PHOTO-SOURCES.json
 ```
 
 That manifest maps `w1`..`w5`, `r1`..`r5`, `p1`..`p5`, `l1`..`l5`, `c1`..`c5`,
@@ -137,7 +156,8 @@ dependency and never attaches to an existing browser profile.
 
 Browser and container observations are recorded in the PR after they are run;
 physical IE6 behavior requires a real machine check and is not implied by an ES3
-parse or a modern browser screenshot. The Win98 relay reported the test machine
-offline during this pass. Production model credentials were not used.
+parse or a modern browser screenshot. The first artwork pass found the Win98
+machine offline; the revised story has not been run on physical IE6 hardware.
+Production model credentials were not used.
 
 No Dockernet infrastructure change, merge or deployment is part of this branch.

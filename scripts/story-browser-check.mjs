@@ -35,13 +35,23 @@ try {
     }
     await load('Opening');await check('opening');await click('Read the Letter');
     for(const line of openingLetter)assert((await page.locator('.story-letter').innerText()).includes(line));
-    await click('Close the Suitcase');await click('Begin');await check('briefing');await click('Read the Briefing');await click('Go to the Map');
+    await click('Close the Suitcase');await click('Begin');await check('briefing');await click('Read the Briefing');assert((await page.locator('.story-page').innerText()).includes('courier notice'));await click('Go to the Map');
     assert.equal(await page.locator('a.camp-label').count(),1);
     await load('First evidence reveal');await check('evidence-contact');await click('Open the Packet');await check('evidence-closeup');
     await click('Keep the Record');await click('Continue to the Next House');
     await go('/evidence.html');assert.equal(await page.getByText('Not collected',{exact:true}).count(),4);await check('evidence-bag-one');
-    await page.locator('#theorynotes').fill('Compare the receipt with the signature.');await click('Save Theory');assert.equal(await page.locator('#theorynotes').inputValue(),'Compare the receipt with the signature.');
+    await go('/evidence.html?section=notes');await page.locator('#theorynotes').fill('Compare the receipt with the signature.');await click('Save Theory');assert.equal(await page.locator('#theorynotes').inputValue(),'Compare the receipt with the signature.');await check('notebook');
+    await go('/evidence.html?section=references');await check('reference-cards');
     await load('Complete dossier and accusation');await go('/evidence.html');assert.equal(await page.getByText('Not collected',{exact:true}).count(),0);await check('evidence-bag-five');
+    await go('/evidence.html?item=p2');assert.equal(await page.locator('.story-object img').getAttribute('src'),'/images/story/photo-2-v2.jpg');await check('scene-print');
+    const stale=await context.newPage();
+    await stale.goto(base+'/accuse.html?boss=victor-maddox&hotel=marigold-star&weapon=w3&review=1');
+    await load('Staged-death dossier');const beforeStale=await (await page.request.get(base+'/api/state')).text();
+    await stale.getByRole('button',{name:'Confirm Final Accusation',exact:true}).click();
+    await stale.waitForFunction(()=>document.getElementById('notice').innerText.indexOf('another saved campaign')!==-1);
+    assert.equal(await (await page.request.get(base+'/api/state')).text(),beforeStale,'Stale tab changed the loaded campaign');
+    await stale.close();await check('stale-tab-preserves-cash');
+    await load('Complete dossier and accusation');
     await go('/accuse.html');await page.locator('#accuseboss').selectOption('victor-maddox');await page.locator('#accusehotel').selectOption('marigold-star');await page.locator('#accuseweapon').selectOption('w3');
     await click('Review Accusation');await check('accusation-review');await click('Confirm Final Accusation');await check('success');await click('Continue');await click('Return to Open Circuit');
     assert.equal(await page.locator('a.camp-label').count(),5);
@@ -62,7 +72,11 @@ try {
   const context=await browser.newContext({viewport:{width:800,height:600},javaScriptEnabled:false}),page=await context.newPage();
   await page.goto(base+'/');await page.locator('#loadcode').fill(code('Opening'));await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Load',exact:true}).click()]);
   await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Read the Letter',exact:true}).click()]);
-  assert((await page.locator('.story-letter').innerText()).includes(openingLetter[0]));await context.close();
+  assert((await page.locator('.story-letter').innerText()).includes(openingLetter[0]));
+  await page.goto(base+'/');await page.locator('#loadcode').fill(code('Complete dossier and accusation'));await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Load',exact:true}).click()]);
+  await page.goto(base+'/evidence.html?section=notes');await page.locator('#theorynotes').fill('Native form comparison note.');await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Save Theory',exact:true}).click()]);assert.equal(await page.locator('#theorynotes').inputValue(),'Native form comparison note.');
+  await page.goto(base+'/accuse.html');await page.locator('#accuseboss').selectOption('victor-maddox');await page.locator('#accusehotel').selectOption('marigold-star');await page.locator('#accuseweapon').selectOption('w3');
+  await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Review Accusation',exact:true}).click()]);await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Confirm Final Accusation',exact:true}).click()]);assert((await page.locator('.story-page').innerText()).includes('Victor'));await context.close();
   await writeFile(join(output,'report.json'),JSON.stringify({checks:report,nativeFormsWithoutScript:true,browser:'Chromium; no IE6 emulation claimed'},null,2)+'\n');
   console.log('Browser story checks passed: '+report.length+' page/viewport checks, both endings, live-table evidence access, and native forms without script. Screenshots: artifacts/story-browser/');
 } finally {

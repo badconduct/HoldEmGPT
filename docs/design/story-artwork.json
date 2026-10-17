@@ -407,6 +407,76 @@
       "height": 250,
       "bytes": 39485,
       "sha256": "6c5322fbb333677c76e1fb49224465606b01cd19793998bd4f87d3fbabe9c84e"
+    },
+    {
+      "file": "public/images/story/photo-1-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7844,
+      "sha256": "1f58acbc237143e339cd865252308474ba012d2fd76befd67d0bbf9e233a1e59"
+    },
+    {
+      "file": "public/images/story/photo-1-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1336,
+      "sha256": "e0151ede16e53430500738e908fd94cbe8e686ddeb7e079bcae169fdd9fae1d3"
+    },
+    {
+      "file": "public/images/story/photo-2-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 8482,
+      "sha256": "14ec75bb2aa82558dc84d5e0373ca5f196ba49152a177ec24d2f51c0179ca7d2"
+    },
+    {
+      "file": "public/images/story/photo-2-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1345,
+      "sha256": "64b72bad07b22c09b667b2cc697f4d420084630461650d059916135c9cfb1276"
+    },
+    {
+      "file": "public/images/story/photo-3-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 8873,
+      "sha256": "67740afa33997898c41a7abb73859e93b52ffb5152e048c266b9b6c0aac286ae"
+    },
+    {
+      "file": "public/images/story/photo-3-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1443,
+      "sha256": "92997d5d631f4b439d0a25919589329f67eb70fb3f91003aca24f738217224a2"
+    },
+    {
+      "file": "public/images/story/photo-4-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 10220,
+      "sha256": "f8b31514d0edfddf422b8beeec8e0c2a99a2d0f6aa64cf1a9a7564ff35060ee8"
+    },
+    {
+      "file": "public/images/story/photo-4-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1453,
+      "sha256": "291ba003145e460a881affb7862a80786686c251262b6d4283b27ca29ff4f18f"
+    },
+    {
+      "file": "public/images/story/photo-5-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7412,
+      "sha256": "ffe9558d1b3af32df4012db4379e0c463bba9c5f76480dafa8db6fdc55243c55"
+    },
+    {
+      "file": "public/images/story/photo-5-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1204,
+      "sha256": "275f24601dd8f8bc29b2b90d3c396306d1704bd511b19d918874991d5af8eea1"
     }
   ]
 }

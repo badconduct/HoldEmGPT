@@ -1,0 +1,35 @@
+{
+  "mode": "built-in image_gen",
+  "prompts": [
+    {
+      "id": "p1-v2",
+      "mode": "built-in image_gen edit",
+      "reference": "public/images/story/photo-1.jpg",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied 1947 hotel suite evidence photograph. Preserve the original aged white photo border, dark felt around the print, sepia monochrome silver-gelatin look, furnishings, room perspective and wide 3:2 composition. Add one indistinct adult-sized covered figure lying on the floor beside the bed, wholly draped in a dark coat or plain cloth; no face, skin, limbs or injuries visible. The figure must plausibly be a real covered person OR a dressed mannequin, deliberately ambiguous. Keep it small enough that the hotel room is still clearly visible. This same illustration serves genuine and staged-death mysteries, with facts supplied as HTML, so do not visually label it as fake. No blood, gore, violence in progress, writing, labels, watermark, modern objects or additional people. Finished game evidence illustration, readable at 240x160."
+    },
+    {
+      "id": "p2-v2",
+      "mode": "built-in image_gen edit",
+      "reference": "public/images/story/photo-2.jpg",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied 1947 private card room evidence photograph. Preserve the original aged white photo border, dark felt around the print, sepia monochrome silver-gelatin look, furnishings, room perspective and wide 3:2 composition. Add one indistinct adult-sized covered figure lying on the floor beside an overturned chair at the card table, wholly draped in a dark coat or plain cloth; no face, skin, limbs or injuries visible. The figure must plausibly be a real covered person OR a dressed mannequin, deliberately ambiguous. Keep it small enough that the hotel room is still clearly visible. This same illustration serves genuine and staged-death mysteries, with facts supplied as HTML, so do not visually label it as fake. No blood, gore, violence in progress, writing, labels, watermark, modern objects or additional people. Finished game evidence illustration, readable at 240x160."
+    },
+    {
+      "id": "p3-v2",
+      "mode": "built-in image_gen edit",
+      "reference": "public/images/story/photo-3.jpg",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied 1947 hotel service corridor evidence photograph. Preserve the original aged white photo border, dark felt around the print, sepia monochrome silver-gelatin look, furnishings, room perspective and wide 3:2 composition. Add one indistinct adult-sized covered figure lying on the floor on the corridor floor beside a doorway, leaving the corridor perspective visible, wholly draped in a dark coat or plain cloth; no face, skin, limbs or injuries visible. The figure must plausibly be a real covered person OR a dressed mannequin, deliberately ambiguous. Keep it small enough that the hotel room is still clearly visible. This same illustration serves genuine and staged-death mysteries, with facts supplied as HTML, so do not visually label it as fake. No blood, gore, violence in progress, writing, labels, watermark, modern objects or additional people. Finished game evidence illustration, readable at 240x160."
+    },
+    {
+      "id": "p4-v2",
+      "mode": "built-in image_gen edit",
+      "reference": "public/images/story/photo-4.jpg",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied 1947 1940s hotel balcony evidence photograph. Preserve the original aged white photo border, dark felt around the print, sepia monochrome silver-gelatin look, furnishings, room perspective and wide 3:2 composition. Add one indistinct adult-sized covered figure lying on the floor on the balcony floor beside the wall, entirely within the balcony and safely behind its railing, wholly draped in a dark coat or plain cloth; no face, skin, limbs or injuries visible. The figure must plausibly be a real covered person OR a dressed mannequin, deliberately ambiguous. Keep it small enough that the hotel room is still clearly visible. This same illustration serves genuine and staged-death mysteries, with facts supplied as HTML, so do not visually label it as fake. No blood, gore, violence in progress, writing, labels, watermark, modern objects or additional people. Finished game evidence illustration, readable at 240x160."
+    },
+    {
+      "id": "p5-v2",
+      "mode": "built-in image_gen edit",
+      "reference": "public/images/story/photo-5.jpg",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied 1947 hotel rear stairwell evidence photograph. Preserve the original aged white photo border, dark felt around the print, sepia monochrome silver-gelatin look, furnishings, room perspective and wide 3:2 composition. Add one indistinct adult-sized covered figure lying on the floor on the flat landing below the stairs, entirely on the landing and leaving the stair structure visible, wholly draped in a dark coat or plain cloth; no face, skin, limbs or injuries visible. The figure must plausibly be a real covered person OR a dressed mannequin, deliberately ambiguous. Keep it small enough that the hotel room is still clearly visible. This same illustration serves genuine and staged-death mysteries, with facts supplied as HTML, so do not visually label it as fake. No blood, gore, violence in progress, writing, labels, watermark, modern objects or additional people. Finished game evidence illustration, readable at 240x160."
+    }
+  ]
+}

@@ -19,10 +19,17 @@ $1,000 and letter before returning to the menu. Their name and portrait become
 the victim in the next linked campaign. Save/load preserves the case, scene
 position, notes and this connection. Old campaign saves keep their original flow.
 
-Eleven authored case variants ship in this attempt. Optional, sparse table exchanges
-draw attention to uncertainty and collected records; all necessary facts remain
-readable with built-in bots and no LLM. See the [implementation and local review
-guide](docs/V3-FIRST-ATTEMPT.md) for scope, artwork and quick review saves.
+Eleven revised case variants ship in this attempt. New cases use complementary
+comparisons and a planned final reveal: the five exhibits together support one
+answer, while every incomplete set leaves alternatives. Victim portraits can
+occur in both genuine and staged cases. Optional table exchanges use replies
+matched to the actual question; all necessary facts remain readable with built-in
+bots and no LLM. Accusations and notebook forms are bound to the current case and
+save branch, so a stale tab cannot resolve another loaded campaign.
+
+See the [implementation and local review guide](docs/V3-FIRST-ATTEMPT.md),
+[review corrections](docs/V3-REVIEW-REVISION.md), and
+[paper dossiers](docs/design/story-dossiers-v2.md) for review material.
 
 **Last Seat on Fortune Row** follows five fictional casinos across Las Vegas,
 Hollywood, Mexico City, New York and postwar Paris in 1947. Each house has four
