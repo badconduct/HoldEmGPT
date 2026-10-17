@@ -10,7 +10,9 @@ JSON parser, fetch, canvas, SVG, modern CSS layout, or TLS is required by the cl
 New games now include **The Empty Chair**, a first-pass noir mystery woven
 through the five-house poker campaign. Every character begins with a suitcase,
 $1,000 and the same letter. Boss wins award five illustrated exhibits, exactly
-one with a false claim. Inspect them in the **Evidence Bag**, then name the
+one with a false claim, supplied by the guilty boss's own house. Scene reports
+describe the reported wound or cause of death so you can compare it with the
+weapons. Inspect them in the **Evidence Bag**, then name the
 responsible boss, hotel and actual weapon (or a staged death).
 
 A correct accusation keeps your winnings and opens continued poker at every
@@ -20,8 +22,10 @@ the victim in the next linked campaign. Save/load preserves the case, scene
 position, notes and this connection. Old campaign saves keep their original flow.
 
 Eleven revised case variants ship in this attempt. New cases use complementary
-comparisons and a planned final reveal: the five exhibits together support one
-answer, while every incomplete set leaves alternatives. Victim portraits can
+comparisons and witnessed source labels: the five exhibits together support one
+answer. A careful player may deduce it earlier, but all five records are needed
+to file the accusation. The guilty house always supplies the false exhibit;
+the other four houses supply truthful records. Victim portraits can
 occur in both genuine and staged cases. Optional table exchanges use replies
 matched to the actual question; all necessary facts remain readable with built-in
 bots and no LLM. Accusations and notebook forms are bound to the current case and
@@ -29,7 +33,7 @@ save branch, so a stale tab cannot resolve another loaded campaign.
 
 See the [implementation and local review guide](docs/V3-FIRST-ATTEMPT.md),
 [review corrections](docs/V3-REVIEW-REVISION.md), and
-[paper dossiers](docs/design/story-dossiers-v2.md) for review material.
+[paper dossiers](docs/design/story-dossiers-v3.md) for review material.
 
 **Last Seat on Fortune Row** follows five fictional casinos across Las Vegas,
 Hollywood, Mexico City, New York and postwar Paris in 1947. Each house has four

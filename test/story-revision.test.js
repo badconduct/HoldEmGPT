@@ -14,6 +14,8 @@ import { newDeck } from '../lib/cards.js';
 import { act } from '../lib/game.js';
 import { createApp } from '../server.js';
 import { configuration } from '../lib/ai.js';
+import { campaignPage } from '../lib/campaign-pages.js';
+import { evidenceSourceRule } from '../lib/story-cases.js';
 const snapshot=s=>structuredClone({version:3,kind:'snapshot',game:s.game,campaign:s.campaign,wallet:s.wallet});
 function readScenes(s){while(s.campaign.story.scene)advanceStory(s,sceneToken(s.campaign.story));}
 function win(s){
@@ -21,7 +23,7 @@ function win(s){
   g.players.forEach((p,i)=>p.cards=hands[i]);const used=[...hands.flat(),...runout];g.deck=newDeck().filter(c=>!used.includes(c)).concat(runout.slice().reverse());
   while(g.phase!=='complete')act(g,g.actor,'allin');settleCampaign(s);
 }
-function finish(id,version=2){
+function finish(id,version=3){
   const s=newCampaign({name:'Revision Reader',portrait:'pilot'},{caseId:id,version});readScenes(s);
   for(const c of casinos)for(const t of c.tables){enterTable(s,c.id,t.id);win(s);readScenes(s);validateCampaignSave(snapshot(s));}
   return s;
@@ -53,15 +55,16 @@ function readPrintedClaim(exhibit){
 }
 const candidates=casinos.flatMap(b=>casinos.flatMap(h=>printedDomains.weapon.map(([weapon])=>({boss:b.boss.id,hotel:h.id,weapon}))));
 const holds=(claim,answer)=>Object.entries(claim).every(([key,values])=>key.endsWith('Not')?!values.includes(answer[key.slice(0,-3)]):values.includes(answer[key]));
-function solvePrinted(claims){return candidates.filter(answer=>{
-  const wrong=claims.filter(claim=>!holds(claim,answer)).length;
-  return claims.length===5?wrong===1:wrong<=1;
+function solvePrinted(claims,sources=null){return candidates.filter(answer=>{
+  const wrong=claims.flatMap((claim,i)=>holds(claim,answer)?[]:[i]);
+  if(claims.length===5?wrong.length!==1:wrong.length>1)return false;
+  return !sources || (wrong.length?casinos.find(c=>c.id===sources[wrong[0]]).boss.id===answer.boss:!sources.some(id=>casinos.find(c=>c.id===id).boss.id===answer.boss));
 });}
 
-test('printed dossiers independently solve all cases and every exhibit remains necessary',()=>{
+test('version 2 printed dossiers retain their original deductions and delivery rules',()=>{
   const ordinaryVictims=new Set(),stagedVictims=new Set();
   for(const setup of caseSetups){
-    const s=newCampaign(undefined,{caseId:setup.id}),story=s.campaign.story,file=buildCase(story),claims=file.exhibits.map(readPrintedClaim);
+    const s=newCampaign(undefined,{caseId:setup.id,version:2}),story=s.campaign.story,file=buildCase(story),claims=file.exhibits.map(readPrintedClaim);
     const [boss,hotel,weapon,falseCategory]=expected[setup.id],answer={boss:casinos[boss].boss.id,hotel:casinos[hotel].id,weapon};
     assert.deepEqual(solvePrinted(claims),[answer],setup.id+' printed clues');
     assert.deepEqual(supportedSolutions(file),[{...answer,falseCategory}]);
@@ -75,7 +78,7 @@ test('printed dossiers independently solve all cases and every exhibit remains n
     if(story.victim.bossId)(setup.kind==='murder'?ordinaryVictims:stagedVictims).add(story.victim.bossId);
     if(setup.kind==='murder')for(const claim of claims)assert(!claim.boss?.includes(story.victim.bossId),'Victim is their own visitor in '+setup.id);
     for(let n=0;n<12;n++){
-      const replay=newCampaign(undefined,{caseId:setup.id}),bad=snapshot(replay);
+      const replay=newCampaign(undefined,{caseId:setup.id,version:2}),bad=snapshot(replay);
       [bad.campaign.story.deliveryOrder[0],bad.campaign.story.deliveryOrder[4]]=[bad.campaign.story.deliveryOrder[4],bad.campaign.story.deliveryOrder[0]];
       assert.throws(()=>validateCampaignSave(bad),/Invalid saved story/);
       validateCampaignSave(snapshot(replay));
@@ -91,10 +94,81 @@ test('printed dossiers independently solve all cases and every exhibit remains n
   }
 });
 
-test('historical first-draft saves retain their victims, solutions and completed route',()=>{
+const permutations=values=>values.length?values.flatMap((value,i)=>permutations(values.filter((_,j)=>i!==j)).map(tail=>[value,...tail])):[[]];
+test('new cases link the sole false exhibit to its supplying boss in all 264 possible delivery assignments',()=>{
   for(const setup of caseSetups){
-    const s=finish(setup.id,1),before=buildCase(s.campaign.story).solution;
-    assert.equal(s.campaign.story.version,1);validateCampaignSave(snapshot(s));
+    const s=newCampaign(undefined,{caseId:setup.id}),story=s.campaign.story;
+    assert.equal(story.version,3);
+    const [boss,hotel,weapon,falseCategory]=expected[setup.id],answer={boss:casinos[boss].boss.id,hotel:casinos[hotel].id,weapon};
+    const falseIndex=setup.records.findIndex(r=>r.category===falseCategory);
+    for(const rest of permutations(casinos.filter((_,i)=>i!==boss).map(c=>c.id))){
+      const order=rest.slice();order.splice(falseIndex,0,casinos[boss].id);story.deliveryOrder=order;
+      validateCampaignSave(snapshot(s));
+      const file=buildCase(story),claims=file.exhibits.map(readPrintedClaim);
+      assert.equal(file.sourceRule,true);
+      assert.deepEqual(solvePrinted(claims,order),[answer],setup.id+' public text and source labels');
+      assert.deepEqual(supportedSolutions(file),[{...answer,falseCategory}]);
+      const contradicted=file.exhibits.filter((_,i)=>!holds(claims[i],answer));
+      assert.equal(contradicted.length,1);assert.equal(contradicted[0].awardCasino,casinos[boss].id);
+      // An incomplete case may be deducible, but no delivery can invalidate the
+      // fixed answer. Check the checker against the independent public oracle.
+      let prior=candidates.length;
+      for(let count=0;count<=5;count++){
+        const exhibits=casinos.slice(0,count).map(c=>file.exhibits.find(e=>e.awardCasino===c.id));
+        const printed=solvePrinted(exhibits.map(readPrintedClaim),exhibits.map(e=>e.awardCasino));
+        const checked=supportedSolutions(file,{exhibits}).map(({boss,hotel,weapon})=>({boss,hotel,weapon}));
+        assert.deepEqual(checked,printed);assert(printed.some(c=>JSON.stringify(c)===JSON.stringify(answer)));
+        assert(printed.length<=prior);prior=printed.length;
+      }
+      const bad=snapshot(s),other=(falseIndex+1)%5;
+      [bad.campaign.story.deliveryOrder[falseIndex],bad.campaign.story.deliveryOrder[other]]=[bad.campaign.story.deliveryOrder[other],bad.campaign.story.deliveryOrder[falseIndex]];
+      assert.throws(()=>validateCampaignSave(bad),/Invalid saved story/);
+    }
+    const photo=buildCase(story).exhibits.find(e=>e.category==='photo');
+    assert.match(photo.description[0],/scene (examiner|report)/i);
+    assert.match(photo.description[0],/fatal|death/i);
+    if(setup.kind==='staged'){
+      assert.match(photo.description[0],/possible fatal methods/);
+      assert(!buildCase(story).reflections.clothing.includes('never needed to breathe'),'Random delivery order disclosed staging through the reflection');
+    }
+  }
+});
+
+test('new briefings, exhibit provenance and endings explain injury comparisons without changing old saves',()=>{
+  const render=(s,path)=>campaignPage(new URL('http://test'+path),s).html;
+  for(const version of [2,3]){
+    const s=newCampaign(undefined,{caseId:'last-cashout',version});
+    while(s.campaign.story.scene.id!=='briefing' || s.campaign.story.scene.panel!==1)advanceStory(s,sceneToken(s.campaign.story));
+    const briefing=render(s,'/story.html');
+    assert.equal(briefing.includes('responsible boss supplied the one false exhibit'),version===3);
+    const before=structuredClone(s.campaign.story);
+    for(const section of ['', 'help','references','effects']){
+      const html=render(s,'/evidence.html?section='+section);
+      assert.equal(html.includes('responsible boss supplied the one false exhibit'),version===3);
+      assert(!html.includes('fatal blow to the head'),'Uncollected medical report leaked');
+    }
+    assert.deepEqual(s.campaign.story,before,'Reading provenance changed the case');
+  }
+  assert(evidenceSourceRule.includes('acting steward'));
+  const s=finish('last-cashout'),file=buildCase(s.campaign.story);
+  const photo=file.exhibits.find(e=>e.category==='photo'),house=casinos.find(c=>c.id===photo.awardCasino);
+  const bag=render(s,'/evidence.html?item='+photo.id);
+  assert(bag.includes('Supplied by'));assert(bag.includes(house.boss.name.replaceAll('"','&quot;')));
+  assert(bag.includes('Source witnessed by the circuit clerk'));assert(bag.includes('fatal blow to the head'));
+  assert(file.explanation.includes('fatal blunt-force head injury'));
+  assert(file.explanation.includes('supplied under '+casinos[0].boss.name));
+  const unavailable=finish('own-photograph-1'),packet=buildCase(unavailable.campaign.story).exhibits.find(e=>e.category==='photo');
+  assert.equal(packet.awardCasino,casinos[0].id);assert.equal(unavailable.campaign.story.victim.bossId,casinos[0].boss.id);
+  assert(render(unavailable,'/evidence.html?item='+packet.id).includes('Supplied under Victor'));
+  const handover=render(unavailable,'/story.html?replay='+casinos[0].id);
+  assert(handover.includes('acting steward released this house packet'));
+  assert(!handover.includes('authorized its release when you cleared'),'Reported victim spoke as a present boss');
+});
+
+test('historical version 1 and 2 saves retain their victims, solutions and completed route',()=>{
+  for(const version of [1,2])for(const setup of caseSetups){
+    const s=finish(setup.id,version),before=buildCase(s.campaign.story).solution;
+    assert.equal(s.campaign.story.version,version);assert(!buildCase(s.campaign.story).sourceRule);validateCampaignSave(snapshot(s));
     assert(accuse(s,before));readScenes(s);validateCampaignSave(snapshot(s));
   }
 });

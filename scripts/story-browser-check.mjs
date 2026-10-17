@@ -35,9 +35,9 @@ try {
     }
     await load('Opening');await check('opening');await click('Read the Letter');
     for(const line of openingLetter)assert((await page.locator('.story-letter').innerText()).includes(line));
-    await click('Close the Suitcase');await click('Begin');await check('briefing');await click('Read the Briefing');assert((await page.locator('.story-page').innerText()).includes('courier notice'));await click('Go to the Map');
+    await click('Close the Suitcase');await click('Begin');await check('briefing');await click('Read the Briefing');assert((await page.locator('.story-page').innerText()).includes('courier notice'));assert((await page.locator('.story-page').innerText()).includes('responsible boss supplied the one false exhibit'));await check('briefing-rules');await click('Go to the Map');
     assert.equal(await page.locator('a.camp-label').count(),1);
-    await load('First evidence reveal');await check('evidence-contact');await click('Open the Packet');await check('evidence-closeup');
+    await load('First evidence reveal');await check('evidence-contact');assert((await page.locator('.story-page').innerText()).includes('Supplied under Victor'));await click('Open the Packet');await check('evidence-closeup');
     await click('Keep the Record');await click('Continue to the Next House');
     await go('/evidence.html');assert.equal(await page.getByText('Not collected',{exact:true}).count(),4);await check('evidence-bag-one');
     await go('/evidence.html?section=notes');await page.locator('#theorynotes').fill('Compare the receipt with the signature.');await click('Save Theory');assert.equal(await page.locator('#theorynotes').inputValue(),'Compare the receipt with the signature.');await check('notebook');

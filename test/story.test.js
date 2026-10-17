@@ -158,7 +158,7 @@ test('HTTP story forms, save/load and terminal outcomes preserve lineage and kee
     r=await request('/api/save','');const snapshot=/<save>([a-f0-9]{36})<\/save>/.exec(r.text)[1];
     r=await request('/api/load','code='+snapshot);assert.equal(r.status,200);
     let disk=JSON.parse(await readFile(join(dir,/recoveryCode="([a-f0-9]{36})"/.exec(r.text)[1]+'.json'),'utf8'));assert.equal(disk.campaign.story.scene.panel,1);
-    for(const path of ['/lib/story-cases.js','/lib/story-dossiers.js','/lib/story-cases-v1.js','/docs/design/story-dossiers-v2.md','/docs/design/empty-chair-scenarios.json','/content/v3/story.json','/data/saves/'+recovery+'.json'])assert.equal((await request(path)).status,404);
+    for(const path of ['/lib/story-cases.js','/lib/story-dossiers.js','/lib/story-dossiers-v3.js','/lib/story-cases-v1.js','/docs/design/story-dossiers-v2.md','/docs/design/story-dossiers-v3.md','/docs/design/story-solutions-v3.md','/docs/design/empty-chair-scenarios.json','/content/v3/story.json','/data/saves/'+recovery+'.json'])assert.equal((await request(path)).status,404);
     const fixture=newCampaign({name:'Old Name',portrait:'pilot'},{caseId:'last-cashout'});complete(fixture);
     const code='d'.repeat(36);await writeFile(join(dir,code+'.json'),JSON.stringify(saved(fixture)));
     assert.equal((await request('/api/load','code='+code)).status,200);

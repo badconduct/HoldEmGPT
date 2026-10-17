@@ -11,19 +11,22 @@ responsible boss and every false-exhibit category, plus one staged-death variant
 per boss. All suspects can be guilty; the actual hotel need not be their home
 casino. Each variant has five readable records with exactly one false core
 claim. Fresh standalone campaigns have a 20% staged-death chance; successor
-campaigns use genuine murders. The revised version 2 dossiers choose between two
-authored reveal orders per case, then save that order. These comparisons leave
-multiple answers for every proper subset of the exhibits and one answer for the
-complete set. Reference cards translate the initials, seals and hotel marks;
+campaigns use genuine murders. New story version 3 cases always receive the false
+exhibit from the responsible boss's own house. The other four assignments are
+shuffled, giving 24 valid delivery arrangements per case, fixed when play begins.
+Scene reports describe fatal wounds or disputed causes, which must fit the
+weapon comparisons. All five records support one answer; some incomplete sets
+permit an early deduction, with the final accusation still gated on five records.
+Reference cards translate the initials, seals and hotel marks;
 positive and negative comparisons narrow the possibilities without requiring
 pixel inspection. All five bosses can be genuine victims or stage their deaths.
-The original version 1 rules remain available to load first-draft review saves.
+Version 1 and 2 saves retain their original records, answers and delivery rules.
 
 A separate test reads the printed comparison sentences and public reference
 cards without using the private predicates. Both checks enumerate the 150
 boss/hotel/weapon-or-no-murder answers. Neither check measures human enjoyment:
 fresh-reader feedback and natural campaign pacing remain review work. See the
-[review corrections](V3-REVIEW-REVISION.md) and [paper dossiers](design/story-dossiers-v2.md).
+[review corrections](V3-REVIEW-REVISION.md) and [paper dossiers](design/story-dossiers-v3.md).
 
 The opening always presents the same suitcase, $1,000 and unsigned letter.
 Its three still/text panels lead to a two-panel case briefing. Every first
