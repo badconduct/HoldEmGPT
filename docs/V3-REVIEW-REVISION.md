@@ -1,124 +1,111 @@
 # The Empty Chair: review corrections
 
-This is the revision after the independent review of PR #3, head d60e3a7.
-New campaigns now use story version 3, including the subsequent requested
-cause-of-death descriptions and guilty-house source rule. Story version 2 is
-retained for already-issued review saves. The poker engine, entry prices, payouts,
-five-house route, optional provider settings and IE6 browser target are retained.
+Current new games use story rules version 4. This records the fixes from both
+Astra reviews of PR #3, including the second review at `2df9e92`. The five-house
+poker route, bankroll rules, optional providers and IE6 browser target remain.
 
-## Corrections
+## Second-review findings
 
-| Review finding | Result |
+| Finding | Implemented correction |
 | --- | --- |
-| Stale accusation can end another loaded case | Accusation and notebook submissions carry the story ID and recovery-branch ID. The server checks them before mutation. Both native forms and XHR reject stale pages; a matching duplicate verdict remains idempotent. |
-| Victim selected as their own visitor | Revised ordinary cases have explicit living suspect alternatives. Historical first-draft alternatives also exclude the victim while preserving their original answer. |
-| Travel dialogue expects a dead boss | Story travel/result lines use public absence and resolution state. They name an acting steward where appropriate and never consult hidden guilt to change a pre-verdict line. |
-| Reply does not fit its question | Saved question indexes restrict the available reply IDs and fallback. All question/reply groups and save-shaped continuations are checked. |
-| Exhibits directly repeat the answer | Six revised murders and five disappearance schemes use complementary account, location, method and exclusion comparisons. Reference cards translate marks into suspects/hotels. |
-| Final houses add only duplicate confirmations | Version 2 retains two authored orders and ambiguity for all proper subsets. The later requested rule links the false exhibit to the guilty house in version 3; early deductions are now allowed. All five records remain necessary to file an accusation. |
-| Victim portrait reveals staging on replay | Every boss can now be a genuine murder victim or an apparent victim in a staged case. The separate non-boss auditor and inherited-player victim remain genuine murder cases. A finite authored library can still be learned. |
-| Stakes and motives appear only in the ending | Briefing and retained documents establish the false courier notice, held dispatch, threatened records and distinct financial dispute. Endings explain the specific contradiction and connect the corrected account to clearing the player. |
-| Fake photograph only depicts an empty room | Five versioned scene prints now contain an indistinct covered figure, used in both real and staged cases. A staged print depicts a dressed form; no graphic injury or tiny image detail is required. |
-| Evidence Bag requires excessive scrolling | Separate ordinary links open exhibits, reference cards, notes, the framing letter/briefing and optional comparison help. No modern client layout or scripting dependency was added. |
-| Inflated test headline | npm scripts discover only `test/*.test.js`, excluding ignored exported copies. Report the actual current tests. |
+| Stale selection GET can mint a confirmation for another campaign | Selection forms, review URLs and change-selection links carry a case/recovery hash. The renderer validates it before accepting selections or issuing a confirmation. The review also identifies the reported victim. |
+| Four truthful clues are sufficient but not necessary | Every truthful exhibit now provides a different incident-room exclusion. All four checks are needed to eliminate the other hotels, even after the guilty supplier is known. Identity and injury comparisons still establish the culprit, method and false record. |
+| Shuffled reflections describe evidence not yet received | Reflections concern only the current object. They do not name another exhibit or announce a comparison's result. This also fixes affected historical review saves without changing their puzzle assignments. |
+| Scene forms can cross snapshot branches | Every scene advance validates the case/recovery hash as well as its scene-position token. Repeated matching presses remain idempotent. |
+| Identifying the fake is only an optional note | The bag can set one exhibit aside and restore it, retaining the full text. New-case final accounts require that choice and record it in the verdict. A choice inconsistent with the selected boss's public source is rejected before cash can change. |
 
-## Clue design and checks
+The case/recovery hash is one-way: review URLs do not contain the recovery save
+code. A stale GET, POST, scene advance or set-aside action rejects without
+changing the active wallet, notes, scene or outcome. This includes loading a
+snapshot of the same case as a new recovery branch.
 
-There are still eleven authored variants, with a 20% staged-death chance for new
-standalone campaigns and uniform responsible-boss selection. Successor campaigns
-use genuine murders. Each new case fixes its sole false exhibit to the responsible
-boss's house, then shuffles the four truthful exhibits among the other houses.
-All 24 assignments per case are valid. The assignment is saved and validated;
-loading a game cannot move the false exhibit or change its source.
+## Clue structure
 
-Scene reports describe the reported fatal wound or cause: a gunshot, narrow blade
-injury, blunt blow, or pressure at the throat. Damaged copies explicitly retain
-alternatives rather than claiming a certainty the comparisons cannot support.
-A substituted report can contain a true detail alongside its false attribution.
-Staged-death certifications remain disputed reports, not independent proof of a
-body. The ending states the established cause and identifies the false source.
+There are eleven authored variants: six murders and five staged-death schemes.
+New standalone games retain the 20% staged chance and uniform responsible-boss
+selection; linked successors use genuine murders. Each case has 24 valid
+assignments. The guilty boss's house always supplies the sole false exhibit;
+the four truthful packets are shuffled among the other houses at creation.
 
-The briefing, delivery scenes and Evidence Bag establish the witnessed source
-rule. The guilty boss's house supplies the false exhibit even if an acting
-steward delivers it. The other four houses' records are truthful. Source labels
-are public facts, not extra undisclosed evidence. This allows earlier deductions
-than the version 2 rule, so the implementation no longer claims every incomplete
-set stays ambiguous. All five must still be collected and inspected before the
-final accusation. Generic stage reflections preserve uncertainty even if the
-wardrobe record arrives early.
+The four truthful packets carry separate recovery, room-key deposit,
+photographic border, appointment-route or wardrobe checks. Each rules out one
+different competing hotel. All five packets carry a room check, so a missing field cannot identify the
+forgery. The false packet also misstates the location; its whole report must be
+set aside, rather than selectively trusting an unverified component. Omitting a truthful packet therefore leaves its excluded hotel
+as an alternative, with the same culprit, method and false supplier. This holds
+for all 264 assignments, including public victim facts.
 
-Each report states what its retained comparison allows or excludes. Damaged
-readings can leave alternatives; those alternatives are not a claim that several
-visitors entered. Exactly one exhibit contains an incorrect comparison. The
-remaining four comparisons must all hold. A false exhibit can misattribute a
-real object or supplied photograph. The unsigned invitation and the false courier
-notice are framing documents outside the five-exhibit rule.
+The physical reports still describe gunshots, blade wounds, blunt blows,
+strangulation or a disputed pose. Their alternative readings and the account
+comparisons identify the false record. Last Departure's false print now
+misattributes the visitor; its truthful deposit account supplies the second
+independent comparison needed to discredit that caption. Its actual victim,
+culprit, hotel and weapon are unchanged in new cases.
 
-The new deductions do not simply mark every definite statement false. Some
-genuine records contain exclusions or an intact method comparison, and false
-reports can themselves contain shortlists. Displayed alternatives follow the
-public reference order rather than putting the solution first.
+The reference cards identify account seals and hotel marks. Generic room
+furniture, illustrative images and a paying desk's heading do not identify the
+incident hotel. New scene photographs have a neutral exhibit label. Each
+necessary location comparison appears in readable HTML; no pixel examination
+or LLM statement is required.
 
-The runtime checker enumerates the 150 host/hotel/method answers. An independent
-test reads the printed comparison sentences and public reference cards without
-using the private predicates or declared solution. Both identify the same sole
-complete answer. Version 3 tests cover all 264 delivery assignments and every
-route prefix against the public source rule, including an as-yet uncollected
-false exhibit. Version 2 retains its all-proper-subsets ambiguity checks. The
-tests also reject victim-as-visitor readings
-in ordinary cases and verify public travel lines for all victims.
+All four truthful exhibits are logically necessary. If the guilty house is last,
+the four earlier truthful records can settle the answer before its packet is
+collected; that is a valid deduction. All five deliveries are still needed to
+file the accusation. Every other guilty-house position requires the final
+truthful delivery to settle the location.
 
-These are consistency and information checks. They do not establish human
-enjoyment, realistic forensic precision, or the natural length of a 25-table
-campaign. The tone remains an accessible noir logic puzzle. The new paper packets
-are ready for a fresh reader; a blind human reading remains part of PR review.
+## Evidence and final account
 
-## Review material
+Setting aside an exhibit saves a working assumption, with no correctness
+feedback. The bag marks the choice and keeps its original image and report
+readable. Restoring it clears the choice. Notebook edits and manual snapshots
+preserve this state. The final account asks for boss, hotel, actual weapon or
+staged death, and the rejected exhibit. Its confirmation shows the alleged
+victim and the rejected exhibit's witnessed source.
 
-- [Paper dossiers, without solutions](design/story-dossiers-v3.md).
-- [Separate solutions and reconstructions — spoilers](design/story-solutions-v3.md).
-- Rebuild both with `node scripts/build-story-dossiers.mjs`.
-- Create isolated browser fixtures with `node scripts/story-preview.mjs --serve --port 4183`.
-- Run `npm run check` and `npm run check:browser`.
-- Sample unforced local tables with `node scripts/story-local-playtest.mjs --max-hands=80 --max-ms=90000`.
+A contradiction between the selected boss and rejected exhibit's public
+supplier is a form error, not a forfeiture. A consistent but incorrect account
+still produces the ambiguous loss ending. A correct account retains the cash,
+explains the false assertion, cause, supplier and motive, and opens continued
+poker. Table remarks remain optional context.
 
-The bounded local playtest uses ordinary shuffled decks, the built-in opponents
-and a simulated Ada-style human seat that sees only its own cards and public
-state. It samples one fresh table per house, with public victim absence and
-appropriate prior-exhibit topics. It does not win entries, award campaign
-progress or force a favourable hand. Its ignored transcript is
-`artifacts/story-local-playtest.json`, with legal options, requested/effective
-actions, paid chips, before/after boards and public quotes. A cap is reported as
-incomplete, not a test failure. This is a small mechanical/transcript sample,
-not a human difficulty or win-rate study.
+## Validation and review material
 
-## Compatibility and boundaries
+- `npm run check` includes the dealer, bankroll, provider, campaign and story regressions.
+- An independent oracle reads printed comparisons and public reference cards. It checks all 264 assignments and all 32 observed subsets, with the supplier and public victim rules included.
+- All 1,056 omissions of a truthful exhibit leave competing solutions; all four truths together identify the intended answer. The runtime checker agrees with the independent oracle.
+- HTTP tests cover stale selection/review bookmarks, stale final submissions, notebook and set-aside actions, same-case snapshot branches, scene idempotency, required rejection, and unchanged wallets after rejection.
+- Browser checks at 800x600 and 1024x768 cover set-aside presentation, stale GET selections and final forms, both endings, live-table reading and native forms without JavaScript.
+- Historical story versions 1, 2 and 3 complete their original routes and endings under the current save validator.
+- [Current paper dossiers, without answers](design/story-dossiers-v4.md).
+- [Current reconstructions and solutions ? spoilers](design/story-solutions-v4.md).
+- Rebuild the two current packets with `node scripts/build-story-dossiers.mjs`.
+- Create separate fixtures with `node scripts/story-preview.mjs --serve --port 4186 --save-dir artifacts/story-v4-preview-saves --codes-file artifacts/story-v4-preview-codes.json`.
 
-Existing review saves retain story version 1 or 2, their victim, answer and
-reveal assignment. Their original narrative is not silently replaced by a new
-puzzle. Victim-as-visitor alternate names and public travel contradictions are
-repaired without changing the answer. Old pending story exchanges expire on
-upgrade; their published table history remains. Ordinary legacy campaigns and
-original free-play saves retain their prior flow.
+These checks establish consistency and regressions, not human enjoyment or
+realistic forensic precision. A fresh reader should still assess atmosphere,
+reading burden and difficulty. Chromium checks do not emulate IE6. Physical
+Win98/IE6 and live-provider transcript testing remain separate review work.
 
-Story versions 2 and 3 use revised scene prints at `photo-N-v2.jpg` and separate small
-thumbnails. The originals remain available for version 1. All 68 baseline JPEG
-exports total 530,691 bytes, largest 42,819 bytes. The built-in image tool created
-the five edits, with prompts in [story-v2-art-prompts.json](design/story-v2-art-prompts.json).
-The exporter only resizes/compresses the selected generated sources.
+## Preserved earlier corrections and boundaries
 
-The model still receives only a permitted topic and approved story lines in its
-existing poker decision call. It never receives the solution or grades the
-verdict. Generic hints discuss comparisons in already-collected categories;
-they do not act as witnesses or become additional required evidence. The ordinary
-free-form banter filter now rejects the reported shooting-claim example and
-additional overt crime verbs. It remains a conservative filter, not a semantic
-guarantee; live-model transcript evaluation is still needed.
+Earlier fixes still bind final POSTs and notebook edits, exclude victims from
+ordinary false visitor alternatives, respect absent/arrested hosts in table
+lineups and travel, and pair each permitted story reply with its question.
+Every boss can be a genuine or apparent victim. The opening establishes the
+false courier notice implicating the protagonist; the financial motives are
+present in retained records and the case-specific ending.
 
-Browser checks cover 800x600 and 1024x768, both endings, the live-table bag, stale
-tabs, reference/notes pages and native story forms without JavaScript. They do
-not emulate IE6. This revision still needs a physical Win98/IE6 pass and live
-provider testing. Development uses local bots and mock providers.
+Story versions 1-3 retain their original records, answers, victims, reveal
+assignments and three-answer endings. Only unsafe reflections are replaced
+with order-independent wording. Version 4 applies to new campaigns. Existing
+ordinary campaigns and original free-play saves retain their flow.
 
-This remains an application review PR. No merge, Dockernet infrastructure PR,
-image publication or deployment is part of this revision.
+The 68 baseline JPEG assets remain 530,691 bytes in total, largest 42,819 bytes.
+No new image, browser dependency or provider configuration was added. The model
+receives approved optional lines in its existing action request; it neither
+receives the solution nor grades the verdict. The free-form banter filter is
+still a conservative guard rather than a semantic guarantee.
+
+This is an application review PR. Its workflow verifies a container but skips
+image publication. No merge or Dockernet deployment is part of these fixes.

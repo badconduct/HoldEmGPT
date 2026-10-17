@@ -44,22 +44,32 @@ try {
     await go('/evidence.html?section=references');await check('reference-cards');
     await load('Complete dossier and accusation');await go('/evidence.html');assert.equal(await page.getByText('Not collected',{exact:true}).count(),0);await check('evidence-bag-five');
     await go('/evidence.html?item=p2');assert.equal(await page.locator('.story-object img').getAttribute('src'),'/images/story/photo-2-v2.jpg');await check('scene-print');
-    const stale=await context.newPage();
-    await stale.goto(base+'/accuse.html?boss=victor-maddox&hotel=marigold-star&weapon=w3&review=1');
+    await go('/evidence.html?item=w1');await click('Set Aside This Exhibit');
+    assert((await page.locator('.story-bag').innerText()).includes('Set aside (your theory)'));await check('set-aside-exhibit');
+    await go('/accuse.html');assert.equal(await page.locator('#accusefalse').inputValue(),'weapon');
+    const stale=await context.newPage(),staleSelection=await context.newPage();
+    async function fillAnswer(target,boss='victor-maddox',hotel='marigold-star',weapon='w3',falseCategory='weapon'){
+      await target.goto(base+'/accuse.html');await target.locator('#accuseboss').selectOption(boss);await target.locator('#accusehotel').selectOption(hotel);await target.locator('#accuseweapon').selectOption(weapon);await target.locator('#accusefalse').selectOption(falseCategory);
+    }
+    await fillAnswer(stale);await Promise.all([stale.waitForNavigation({waitUntil:'load'}),stale.getByRole('button',{name:'Review Accusation',exact:true}).click()]);
+    await fillAnswer(staleSelection);
     await load('Staged-death dossier');const beforeStale=await (await page.request.get(base+'/api/state')).text();
+    const [rejectedSelection]=await Promise.all([staleSelection.waitForNavigation({waitUntil:'load'}),staleSelection.getByRole('button',{name:'Review Accusation',exact:true}).click()]);
+    assert.equal(rejectedSelection.status(),400);assert((await staleSelection.locator('body').innerText()).includes('another saved campaign'));
+    assert.equal(await (await page.request.get(base+'/api/state')).text(),beforeStale,'Stale selection changed the loaded campaign');await staleSelection.close();
     await stale.getByRole('button',{name:'Confirm Final Accusation',exact:true}).click();
     await stale.waitForFunction(()=>document.getElementById('notice').innerText.indexOf('another saved campaign')!==-1);
     assert.equal(await (await page.request.get(base+'/api/state')).text(),beforeStale,'Stale tab changed the loaded campaign');
     await stale.close();await check('stale-tab-preserves-cash');
     await load('Complete dossier and accusation');
-    await go('/accuse.html');await page.locator('#accuseboss').selectOption('victor-maddox');await page.locator('#accusehotel').selectOption('marigold-star');await page.locator('#accuseweapon').selectOption('w3');
+    await go('/accuse.html');await page.locator('#accuseboss').selectOption('victor-maddox');await page.locator('#accusehotel').selectOption('marigold-star');await page.locator('#accuseweapon').selectOption('w3');await page.locator('#accusefalse').selectOption('weapon');
     await click('Review Accusation');await check('accusation-review');await click('Confirm Final Accusation');await check('success');await click('Continue');await click('Return to Open Circuit');
     assert.equal(await page.locator('a.camp-label').count(),5);
     await go('/casino.html?id=gilded-alibi');await click('Table 1 / $250');await page.waitForFunction(()=>document.getElementById('notice').innerText==='Your turn.');
     const before=await (await page.request.get(base+'/api/state')).text();
     await page.locator('#evidencebag').click();await page.waitForURL('**/evidence.html');await check('bag-during-table');
     const after=await (await page.request.get(base+'/api/state')).text();assert.equal(/revision="([^"]+)"/.exec(after)[1],/revision="([^"]+)"/.exec(before)[1],'Reading evidence advanced the player turn');
-    await load('Staged-death dossier');await page.locator('#accuseboss').selectOption('marcel-duvall');await page.locator('#accusehotel').selectOption('marigold-star');await page.locator('#accuseweapon').selectOption('none');await click('Review Accusation');await click('Confirm Final Accusation');assert((await page.locator('.story-page').innerText()).includes('There was no murder weapon.'));
+    await load('Staged-death dossier');await page.locator('#accuseboss').selectOption('marcel-duvall');await page.locator('#accusehotel').selectOption('marigold-star');await page.locator('#accuseweapon').selectOption('none');await page.locator('#accusefalse').selectOption('photo');await click('Review Accusation');await click('Confirm Final Accusation');assert((await page.locator('.story-page').innerText()).includes('There was no murder weapon.'));
     await load('Ambiguous failed ending');await click('Continue');await check('ambiguous-ending');
     for(const line of openingLetter)assert((await page.locator('.story-letter').innerText()).includes(line));
     await click('Continue');assert((await page.locator('.story-end').innerText()).includes('The End'));await click('Continue to Main Menu');
@@ -75,7 +85,7 @@ try {
   assert((await page.locator('.story-letter').innerText()).includes(openingLetter[0]));
   await page.goto(base+'/');await page.locator('#loadcode').fill(code('Complete dossier and accusation'));await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Load',exact:true}).click()]);
   await page.goto(base+'/evidence.html?section=notes');await page.locator('#theorynotes').fill('Native form comparison note.');await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Save Theory',exact:true}).click()]);assert.equal(await page.locator('#theorynotes').inputValue(),'Native form comparison note.');
-  await page.goto(base+'/accuse.html');await page.locator('#accuseboss').selectOption('victor-maddox');await page.locator('#accusehotel').selectOption('marigold-star');await page.locator('#accuseweapon').selectOption('w3');
+  await page.goto(base+'/accuse.html');await page.locator('#accuseboss').selectOption('victor-maddox');await page.locator('#accusehotel').selectOption('marigold-star');await page.locator('#accuseweapon').selectOption('w3');await page.locator('#accusefalse').selectOption('weapon');
   await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Review Accusation',exact:true}).click()]);await Promise.all([page.waitForNavigation(),page.getByRole('button',{name:'Confirm Final Accusation',exact:true}).click()]);assert((await page.locator('.story-page').innerText()).includes('Victor'));await context.close();
   await writeFile(join(output,'report.json'),JSON.stringify({checks:report,nativeFormsWithoutScript:true,browser:'Chromium; no IE6 emulation claimed'},null,2)+'\n');
   console.log('Browser story checks passed: '+report.length+' page/viewport checks, both endings, live-table evidence access, and native forms without script. Screenshots: artifacts/story-browser/');

@@ -97,7 +97,7 @@ test('version 2 printed dossiers retain their original deductions and delivery r
 const permutations=values=>values.length?values.flatMap((value,i)=>permutations(values.filter((_,j)=>i!==j)).map(tail=>[value,...tail])):[[]];
 test('new cases link the sole false exhibit to its supplying boss in all 264 possible delivery assignments',()=>{
   for(const setup of caseSetups){
-    const s=newCampaign(undefined,{caseId:setup.id}),story=s.campaign.story;
+    const s=newCampaign(undefined,{caseId:setup.id,version:3}),story=s.campaign.story;
     assert.equal(story.version,3);
     const [boss,hotel,weapon,falseCategory]=expected[setup.id],answer={boss:casinos[boss].boss.id,hotel:casinos[hotel].id,weapon};
     const falseIndex=setup.records.findIndex(r=>r.category===falseCategory);
@@ -165,10 +165,10 @@ test('new briefings, exhibit provenance and endings explain injury comparisons w
   assert(!handover.includes('authorized its release when you cleared'),'Reported victim spoke as a present boss');
 });
 
-test('historical version 1 and 2 saves retain their victims, solutions and completed route',()=>{
-  for(const version of [1,2])for(const setup of caseSetups){
+test('historical version 1, 2 and 3 saves retain their victims, solutions and completed route',()=>{
+  for(const version of [1,2,3])for(const setup of caseSetups){
     const s=finish(setup.id,version),before=buildCase(s.campaign.story).solution;
-    assert.equal(s.campaign.story.version,version);assert(!buildCase(s.campaign.story).sourceRule);validateCampaignSave(snapshot(s));
+    assert.equal(s.campaign.story.version,version);assert.equal(!!buildCase(s.campaign.story).sourceRule,version>=3);validateCampaignSave(snapshot(s));
     assert(accuse(s,before));readScenes(s);validateCampaignSave(snapshot(s));
   }
 });
@@ -216,16 +216,23 @@ test('stale native and scripted forms cannot accuse or overwrite another case or
     const a=finish('last-cashout'),b=finish('quiet-suite'),aCode='a'.repeat(36),bCode='b'.repeat(36);
     await writeFile(join(dir,aCode+'.json'),JSON.stringify(snapshot(a)));await writeFile(join(dir,bCode+'.json'),JSON.stringify(snapshot(b)));
     await request('/api/load',{code:aCode});
-    const review=await request('/accuse.html?'+new URLSearchParams({...buildCase(a.campaign.story).solution,review:'1'}));
+    const oldSelectionCase=/name="case" value="([^"]+)"/.exec((await request('/accuse.html')).text)[1];
+    const oldSelection='/accuse.html?'+new URLSearchParams({...buildCase(a.campaign.story).solution,review:'1',case:oldSelectionCase});
+    const review=await request(oldSelection);
     const oldAccuse=fields(review.text,'/api/story/accuse'),oldTheory=fields((await request('/evidence.html?section=notes')).text,'/api/story/theory');
     await request('/api/load',{code:bCode});const before=(await request('/api/state')).text;
+    assert.equal((await request(oldSelection)).status,400,'Stale selection minted a new confirmation');
+    assert.equal((await request('/accuse.html?review=1&boss=victor-maddox&hotel=marigold-star&weapon=w3')).status,400,'Unscoped bookmark minted a confirmation');
+    assert.equal((await request('/api/story/set-aside',{case:oldSelectionCase,category:'weapon'})).status,400);
     assert.equal((await request('/api/story/accuse',oldAccuse,{native:true})).status,400);
     assert.equal((await request('/api/story/theory',{...oldTheory,notes:'Old case overwritten'})).status,400);
     assert.equal((await request('/api/state')).text,before,'Rejected stale form mutated active case');
     await request('/api/load',{code:aCode});const sameCaseBefore=(await request('/api/state')).text;
     assert.equal((await request('/api/story/accuse',oldAccuse)).status,400,'Old snapshot branch was still accepted');
     assert.equal((await request('/api/state')).text,sameCaseBefore);
-    const current=fields((await request('/accuse.html?'+new URLSearchParams({...buildCase(a.campaign.story).solution,review:'1'}))).text,'/api/story/accuse');
+    assert.equal((await request(oldSelection)).status,400,'Old selection accepted in another snapshot branch');
+    const freshSelectionCase=/name="case" value="([^"]+)"/.exec((await request('/accuse.html')).text)[1];
+    const current=fields((await request('/accuse.html?'+new URLSearchParams({...buildCase(a.campaign.story).solution,review:'1',case:freshSelectionCase}))).text,'/api/story/accuse');
     assert.equal((await request('/api/story/accuse',{...current,case:''})).status,400);
     const accepted=await request('/api/story/accuse',current,{native:true});assert.equal(accepted.status,303);assert.equal(accepted.location,'/story.html');
     const completed=(await request('/api/state')).text;assert(completed.includes('cash="2326000"'));

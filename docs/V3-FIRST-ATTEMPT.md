@@ -11,22 +11,23 @@ responsible boss and every false-exhibit category, plus one staged-death variant
 per boss. All suspects can be guilty; the actual hotel need not be their home
 casino. Each variant has five readable records with exactly one false core
 claim. Fresh standalone campaigns have a 20% staged-death chance; successor
-campaigns use genuine murders. New story version 3 cases always receive the false
+campaigns use genuine murders. New story version 4 cases always receive the false
 exhibit from the responsible boss's own house. The other four assignments are
 shuffled, giving 24 valid delivery arrangements per case, fixed when play begins.
 Scene reports describe fatal wounds or disputed causes, which must fit the
-weapon comparisons. All five records support one answer; some incomplete sets
-permit an early deduction, with the final accusation still gated on five records.
+weapon comparisons. All five records support one answer. Each truthful record
+supplies a different incident-room exclusion; omitting any one leaves a competing
+hotel, even with the supplier rule and public victim facts included.
 Reference cards translate the initials, seals and hotel marks;
 positive and negative comparisons narrow the possibilities without requiring
 pixel inspection. All five bosses can be genuine victims or stage their deaths.
-Version 1 and 2 saves retain their original records, answers and delivery rules.
+Version 1, 2 and 3 saves retain their original records, answers and delivery rules.
 
 A separate test reads the printed comparison sentences and public reference
 cards without using the private predicates. Both checks enumerate the 150
 boss/hotel/weapon-or-no-murder answers. Neither check measures human enjoyment:
 fresh-reader feedback and natural campaign pacing remain review work. See the
-[review corrections](V3-REVIEW-REVISION.md) and [paper dossiers](design/story-dossiers-v3.md).
+[review corrections](V3-REVIEW-REVISION.md) and [paper dossiers](design/story-dossiers-v4.md).
 
 The opening always presents the same suitcase, $1,000 and unsigned letter.
 Its three still/text panels lead to a two-panel case briefing. Every first
@@ -38,18 +39,22 @@ old reveal reads it without issuing another award.
 The Evidence Bag is a separate page linked from campaign pages and the table.
 It contains five category slots, 240 x 160 item illustrations, readable attached
 reports/transcripts, the framing letter, reliable suspect/hotel references and
-optional saved working notes. Exhibits, references, notes, the briefing and
+optional saved working notes. One exhibit can be set aside as a working theory
+without deleting it or receiving correctness feedback. Exhibits, references, notes, the briefing and
 comparison help have separate ordinary page links. The letter is a personal effect, not a sixth case
 exhibit. Uncollected forms and descriptions are not sent to the client. Gameplay
 does not advance while the human is reading on their turn.
 
-The accusation asks for the responsible boss, the hotel and the actual weapon.
+New-case accusations ask for the responsible boss, hotel, actual weapon and
+exhibit set aside. Older story saves retain their original three-answer ending.
 The weapon list always includes "None - the death was staged." An explicit
 review/confirmation warns that a wrong accusation ends the character's story and
 forfeits their cash. A correct answer keeps the money and opens continued poker
 at every house. Repeated boss wins cannot re-award the case or repeat its finale.
-The confirmation and notebook forms carry the story and recovery-branch identity;
-submitting a page from a different loaded save safely rejects before mutation.
+Selection GETs, confirmations, notebook changes, set-aside actions and scene
+controls carry a hash bound to the story and recovery branch. An old selection
+cannot mint a confirmation for another loaded save. The hash keeps the recovery
+code out of review URLs. Confirmation also identifies the reported victim.
 
 A wrong answer clears the campaign wallet once and closes ambiguously on the
 same suitcase, $1,000 and fixed letter. The End returns to the main menu. The

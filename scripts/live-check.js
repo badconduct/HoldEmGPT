@@ -18,8 +18,8 @@ async function idle() {
 assert.equal((await fetch(base+'/')).status,200);
 let xml=await request('/api/campaign/new','name=Spot+Check&portrait=pilot');assert.equal(attr(xml,'mode'),'api');assert.equal(attr(xml,'cash'),'1000');
 for(let n=0;n<5;n++) {
-  const page=await request(n<3?'/intro.html':'/story.html'),token=/name="scene" value="([^"]+)"/.exec(page)?.[1];assert(token);
-  await request('/api/story/advance','scene='+encodeURIComponent(token));
+  const page=await request(n<3?'/intro.html':'/story.html'),token=/name="scene" value="([^"]+)"/.exec(page)?.[1],scope=/name="case" value="([^"]+)"/.exec(page)?.[1];assert(token && scope);
+  await request('/api/story/advance',new URLSearchParams({scene:token,case:scope}).toString());
 }
 xml=await request('/api/campaign/buy','casino=gilded-alibi&table=table-1');assert.equal(attr(xml,'cash'),'750');
 xml=await idle();console.log('Configured API opponents reached the player turn.');

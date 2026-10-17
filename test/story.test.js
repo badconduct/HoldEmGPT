@@ -152,18 +152,18 @@ test('HTTP story forms, save/load and terminal outcomes preserve lineage and kee
   try {
     let r=await request('/api/campaign/new','name=Old+Name&portrait=pilot');assert.equal(r.status,200);
     const recovery=/recoveryCode="([a-f0-9]{36})"/.exec(r.text)[1];
-    r=await request('/intro.html');const token=/name="scene" value="([^"]+)"/.exec(r.text)[1],csrf=/name="csrf" value="([^"]+)"/.exec(r.text)[1];
+    r=await request('/intro.html');const token=/name="scene" value="([^"]+)"/.exec(r.text)[1],csrf=/name="csrf" value="([^"]+)"/.exec(r.text)[1],caseToken=/name="case" value="([^"]+)"/.exec(r.text)[1];
     assert.equal((await request('/api/story/advance','scene='+encodeURIComponent(token),{native:true})).status,403);
-    r=await request('/api/story/advance',new URLSearchParams({scene:token,csrf}).toString(),{native:true});assert.equal(r.status,303);assert.equal(r.location,'/intro.html');
+    r=await request('/api/story/advance',new URLSearchParams({scene:token,csrf,case:caseToken}).toString(),{native:true});assert.equal(r.status,303);assert.equal(r.location,'/intro.html');
     r=await request('/api/save','');const snapshot=/<save>([a-f0-9]{36})<\/save>/.exec(r.text)[1];
     r=await request('/api/load','code='+snapshot);assert.equal(r.status,200);
     let disk=JSON.parse(await readFile(join(dir,/recoveryCode="([a-f0-9]{36})"/.exec(r.text)[1]+'.json'),'utf8'));assert.equal(disk.campaign.story.scene.panel,1);
-    for(const path of ['/lib/story-cases.js','/lib/story-dossiers.js','/lib/story-dossiers-v3.js','/lib/story-cases-v1.js','/docs/design/story-dossiers-v2.md','/docs/design/story-dossiers-v3.md','/docs/design/story-solutions-v3.md','/docs/design/empty-chair-scenarios.json','/content/v3/story.json','/data/saves/'+recovery+'.json'])assert.equal((await request(path)).status,404);
+    for(const path of ['/lib/story-cases.js','/lib/story-dossiers.js','/lib/story-dossiers-v3.js','/lib/story-dossiers-v4.js','/lib/story-cases-v1.js','/docs/design/story-dossiers-v2.md','/docs/design/story-dossiers-v3.md','/docs/design/story-solutions-v3.md','/docs/design/empty-chair-scenarios.json','/content/v3/story.json','/data/saves/'+recovery+'.json'])assert.equal((await request(path)).status,404);
     const fixture=newCampaign({name:'Old Name',portrait:'pilot'},{caseId:'last-cashout'});complete(fixture);
     const code='d'.repeat(36);await writeFile(join(dir,code+'.json'),JSON.stringify(saved(fixture)));
     assert.equal((await request('/api/load','code='+code)).status,200);
-    const notebook=await request('/evidence.html?section=notes'),caseToken=/name="case" value="([^"]+)"/.exec(notebook.text)[1];
-    const wrong={...buildCase(fixture.campaign.story).solution,weapon:'w1',confirm:'yes',case:caseToken};
+    const notebook=await request('/evidence.html?section=notes'),finalCaseToken=/name="case" value="([^"]+)"/.exec(notebook.text)[1];
+    const wrong={...buildCase(fixture.campaign.story).solution,weapon:'w1',confirm:'yes',case:finalCaseToken};
     r=await request('/api/story/accuse',new URLSearchParams(wrong).toString());assert.equal(r.status,200);assert(r.text.includes('cash="0"'));assert(!r.text.includes('nextVictim'));
     assert.equal((await request('/api/next','')).status,400);assert.equal((await request('/api/campaign/stake','')).status,400);
     r=await request('/api/save','');const ended=/<save>([a-f0-9]{36})<\/save>/.exec(r.text)[1];

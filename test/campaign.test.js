@@ -163,8 +163,8 @@ test('HTTP onboarding, gated entries, autosave/restart and manual snapshot branc
     let disk=JSON.parse(await readFile(join(dir,recovery+'.json'),'utf8'));assert.equal(disk.version,3);assert.equal(disk.game,null);
     assert((await request('/intro.html')).text.includes('Mae / The Gambler'));
     for(let n=0;n<5;n++) {
-      const page=await request(n<3?'/intro.html':'/story.html'),token=/name="scene" value="([^"]+)"/.exec(page.text)[1];
-      assert.equal((await request('/api/story/advance','scene='+encodeURIComponent(token))).status,200);
+      const page=await request(n<3?'/intro.html':'/story.html'),token=/name="scene" value="([^"]+)"/.exec(page.text)[1],scope=/name="case" value="([^"]+)"/.exec(page.text)[1];
+      assert.equal((await request('/api/story/advance',new URLSearchParams({scene:token,case:scope}).toString())).status,200);
     }
     r=await request('/map.html');assert.equal((r.text.match(/class="camp-label"/g)||[]).length,1);assert.equal((r.text.match(/Invitation required/g)||[]).length,4);
     assert((await request('/casino.html?id='+casinos[1].id)).text.includes('Invitation required'));

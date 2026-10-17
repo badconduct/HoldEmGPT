@@ -13,7 +13,7 @@ import { newCampaign, enterTable, settleCampaign, houseStake, retryTable, valida
 import { campaignPage, campaignPagePaths } from './lib/campaign-pages.js';
 import { saveStore } from './lib/save-store.js';
 import { storyAssets } from './lib/story-catalog.js';
-import { advanceStory, accuse, recordTheory, successorVictim, storyLost, requireStoryForm } from './lib/story.js';
+import { advanceStory, accuse, recordTheory, setAsideEvidence, successorVictim, storyLost, requireStoryForm } from './lib/story.js';
 import { prepareStoryTalk, commitStoryTalk } from './lib/story-talk.js';
 const root=fileURLToPath(new URL('.',import.meta.url));
 const esc=v=>String(v ?? '').replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));
@@ -128,12 +128,17 @@ export function createApp(config,{saveDir=process.env.SAVE_DIR || join(root,'dat
         case '/api/campaign/buy':enterTable(s,form.get('casino'),form.get('table'));run=true;break;
         case '/api/campaign/stake':houseStake(s);break;
         case '/api/campaign/restart':retryTable(s);run=true;break;
-        case '/api/story/advance':advanceStory(s,form.get('scene'));break;
+        case '/api/story/advance':requireStoryForm(s,form.get('case'));advanceStory(s,form.get('scene'));break;
         case '/api/story/theory':requireStoryForm(s,form.get('case'));recordTheory(s,Object.fromEntries(form));extra.destination='/evidence.html?section=notes';break;
+        case '/api/story/set-aside': {
+          requireStoryForm(s,form.get('case'));
+          const item=setAsideEvidence(s,form.get('category') || '',{restore:form.get('restore')==='yes'});
+          extra.destination='/evidence.html'+(item?'?item='+encodeURIComponent(item):'');break;
+        }
         case '/api/story/accuse':
           requireStoryForm(s,form.get('case'));
           if(form.get('confirm')!=='yes')throw new Error('Review your selections before confirming the final accusation.');
-          accuse(s,{boss:form.get('boss'),hotel:form.get('hotel'),weapon:form.get('weapon')});break;
+          accuse(s,{boss:form.get('boss'),hotel:form.get('hotel'),weapon:form.get('weapon'),falseCategory:form.get('falseCategory')});break;
         case '/api/new': {
           const wallet=newWallet(),next=buyTable(wallet,null,{name:form.get('name') ?? 'You',portrait:form.get('portrait') ?? 'drifter'});
           detach(s);Object.assign(s,{game:next,wallet,campaign:null});run=true;break;
