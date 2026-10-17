@@ -29,6 +29,7 @@
     revision=Number(attr(g,'revision')); el('notice').innerHTML=escape(status);
     if(!players.length) {window.location.href=attr(g,'campaign')==='1'?'/map.html':'/';return;}
     campaignMode=attr(g,'campaign')==='1';
+    el('evidencebag').style.display=attr(g,'story')==='1'?'inline':'none';
     var background=attr(g,'background') || '/images/table-room.jpg';
     if(currentBackground!==background) {el('roomimage').src=background;currentBackground=background;}
     el('raiseunit').innerHTML=campaignMode?'To':'To $';
@@ -41,6 +42,7 @@
     el('recoverypanel').style.display=campaignMode?'block':'none';
     el('recoverycode').value=attr(g,'recoveryCode') || '';
     if(campaignMode)el('gamehelp').innerHTML='<p>Bets and stacks are table chips. Every entry starts with 1,000 chips and 10/20 blinds. Win the entire table to collect its cash prize. Four ordinary table stamps unlock the boss; win its entire table to earn the next invitation.</p><p>Stamps and passes survive losses. House stakes are available from the map when you cannot afford the cheapest table. After a loss, you may retry from the pre-table checkpoint with a fresh deck.</p>';
+    if(attr(g,'story')==='1')el('gamehelp').innerHTML+='<p>Each first boss-table clear also saves a case exhibit and opens its story scene. Use Evidence to inspect records without taking a poker action. Table rumors are optional. After five exhibits, identify the responsible boss, hotel and actual weapon. Review the final confirmation: a wrong accusation ends this character\'s story and forfeits their cash.</p>';
     el('bankroll').innerHTML='Cash $'+attr(g,'cash')+' &nbsp; | &nbsp; Wins '+attr(g,'wins');
     receiveQuotes(g);
     var currentMoves=moveLabels(g,players);

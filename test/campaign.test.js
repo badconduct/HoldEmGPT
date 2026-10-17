@@ -4,7 +4,7 @@ import { mkdtemp, readFile, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parse } from 'acorn';
-import { newCampaign, enterTable, settleCampaign, houseStake, retryTable, validateCampaignSave, bossOpen } from '../lib/campaign.js';
+import { newCampaign as createCampaign, enterTable, settleCampaign, houseStake, retryTable, validateCampaignSave, bossOpen } from '../lib/campaign.js';
 import { casinos, characterFor, assetUrl } from '../lib/campaign-catalog.js';
 import { newDeck } from '../lib/cards.js';
 import { act, startHand, legal } from '../lib/game.js';
@@ -14,6 +14,8 @@ import { bossDecision } from '../lib/bosses.js';
 import { createApp, stateXml } from '../server.js';
 import { saveStore } from '../lib/save-store.js';
 import { campaignPage } from '../lib/campaign-pages.js';
+// Preserve coverage of pre-story v3 saves and their original invitation flow.
+const newCampaign=profile=>createCampaign(profile,{story:false});
 function finishKnownHand(session,settle=true,playerWins=true) {
   const g=session.game;
   const hands=['As Ad','Ks Kd','Qs Qd','Js Jd','Ts Td'].map(s=>s.split(' ')),runout='4d 2c 3h 7s 5d 8c 6d 9d'.split(' ');
@@ -160,6 +162,10 @@ test('HTTP onboarding, gated entries, autosave/restart and manual snapshot branc
     const recovery=/recoveryCode="([a-f0-9]{36})"/.exec(r.text)[1];
     let disk=JSON.parse(await readFile(join(dir,recovery+'.json'),'utf8'));assert.equal(disk.version,3);assert.equal(disk.game,null);
     assert((await request('/intro.html')).text.includes('Mae / The Gambler'));
+    for(let n=0;n<5;n++) {
+      const page=await request(n<3?'/intro.html':'/story.html'),token=/name="scene" value="([^"]+)"/.exec(page.text)[1],scope=/name="case" value="([^"]+)"/.exec(page.text)[1];
+      assert.equal((await request('/api/story/advance',new URLSearchParams({scene:token,case:scope}).toString())).status,200);
+    }
     r=await request('/map.html');assert.equal((r.text.match(/class="camp-label"/g)||[]).length,1);assert.equal((r.text.match(/Invitation required/g)||[]).length,4);
     assert((await request('/casino.html?id='+casinos[1].id)).text.includes('Invitation required'));
     assert.equal((await request('/api/campaign/buy','casino='+casinos[1].id+'&table=table-1')).status,400);

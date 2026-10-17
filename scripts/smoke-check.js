@@ -31,6 +31,10 @@ if(process.argv.includes('--restore')) {
   let xml=await request('/api/campaign/new','name=Deployment+Check&portrait=pilot');assert.equal(attr(xml,'cash'),'1000');assert.equal(attr(xml,'hand'),'0');
   const recoveryCode=attr(xml,'recoveryCode');assert(/^[a-f0-9]{36}$/.test(recoveryCode));
   assert((await request('/intro.html')).includes('Deployment Check / The Pilot'));
+  for(let n=0;n<5;n++) {
+    const scene=await request(n<3?'/intro.html':'/story.html'),token=/name="scene" value="([^"]+)"/.exec(scene)?.[1],scope=/name="case" value="([^"]+)"/.exec(scene)?.[1];assert(token && scope);
+    await request('/api/story/advance',new URLSearchParams({scene:token,case:scope}).toString());
+  }
   const map=await request('/map.html');assert.equal((map.match(/class="camp-label"/g)||[]).length,1);
   xml=await request('/api/campaign/buy','casino=gilded-alibi&table=table-1');assert.equal(attr(xml,'cash'),'750');
   if(process.env.CHECK_MODE)assert.equal(attr(xml,'mode'),process.env.CHECK_MODE);
