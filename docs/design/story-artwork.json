@@ -1,0 +1,482 @@
+{
+  "generator": "Built-in image_gen; one original per evidence form and story subject.",
+  "processing": "Baseline JPEG exports; no essential text baked into images.",
+  "assets": [
+    {
+      "file": "public/images/story/weapon-1.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7281,
+      "sha256": "2281538c836ec0194fff73563403c14f370e80f78534d8f433fbbf745a7359a3"
+    },
+    {
+      "file": "public/images/story/weapon-1-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 959,
+      "sha256": "2064d35016dbce78c8708e81b4da170e1caff461acc46a557f5942b201aead17"
+    },
+    {
+      "file": "public/images/story/weapon-2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7354,
+      "sha256": "59375b269a2bd274adc0cbaca8bacb56a24de3520149bdb4151446148bc32096"
+    },
+    {
+      "file": "public/images/story/weapon-2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 844,
+      "sha256": "47481ad584eaa7617aa5e9cbb4de51622e648af022dfd968c6827cf7c2953376"
+    },
+    {
+      "file": "public/images/story/weapon-3.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7094,
+      "sha256": "a1b7ff20e61a7159abc594256e5596b0184d92e840fcf4bbda98185becf64484"
+    },
+    {
+      "file": "public/images/story/weapon-3-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1050,
+      "sha256": "1bf82bbfe45f142cb7ae92bb27bcbc098cce02486fc15f721b0444aa1c21af00"
+    },
+    {
+      "file": "public/images/story/weapon-4.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 9684,
+      "sha256": "5ebec709594777cdaad7dd417343fd8fee51791ce0fa9c88b4f60b9c9de7abc6"
+    },
+    {
+      "file": "public/images/story/weapon-4-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1077,
+      "sha256": "b81fdd44c36eaf625d16a94e59e91700b231cce9c4d9f9818743459a9095ce41"
+    },
+    {
+      "file": "public/images/story/weapon-5.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 4056,
+      "sha256": "66c36e73d0d8d73fd65351fcefbdb00baff73bec4b82a7128fdbdf8ba18f110c"
+    },
+    {
+      "file": "public/images/story/weapon-5-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 800,
+      "sha256": "d056e49d952058676fd17c693456a7dfac134afa791ab7dbccbcfac904918349"
+    },
+    {
+      "file": "public/images/story/receipt-1.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7506,
+      "sha256": "e815b5b98ed123af321a668707d7bfffe8d9c9af784840db77db7bc104ff8359"
+    },
+    {
+      "file": "public/images/story/receipt-1-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1001,
+      "sha256": "438d5c6678f1cbcace3f7e40d62b083cadc3423060d4d880e17546b9725254df"
+    },
+    {
+      "file": "public/images/story/receipt-2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7645,
+      "sha256": "cf1b67e4ca0c2eecc09ebe09404aa08c2b83612662261e946f40d41498938b92"
+    },
+    {
+      "file": "public/images/story/receipt-2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 997,
+      "sha256": "e45646ea24c79d7382d3eb2e341088d0def828bf3934dd98e56b642b2571dca4"
+    },
+    {
+      "file": "public/images/story/receipt-3.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7336,
+      "sha256": "e4ba7b13d24a3db02af34f0f87d0f454f1274d3b596a89db15e313980dfe2c67"
+    },
+    {
+      "file": "public/images/story/receipt-3-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1051,
+      "sha256": "34bba0ac383395ad9b3069c0be2cec5cd525a53c75c43fb99cafc5ca9b841d6d"
+    },
+    {
+      "file": "public/images/story/receipt-4.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7502,
+      "sha256": "139953803a8c51776c3011dc1677cbe7900f037eb57b6d5605bdf23a79a66043"
+    },
+    {
+      "file": "public/images/story/receipt-4-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1033,
+      "sha256": "371989433b98e8dd6917aa956ad5ec3fb41ad70203a1c7c8fc59b1d52c4b9445"
+    },
+    {
+      "file": "public/images/story/receipt-5.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 6773,
+      "sha256": "f64cf8f7a8a054e36d3b108ed6c6289090fb1b9d70380e01a55380635ed0f4c2"
+    },
+    {
+      "file": "public/images/story/receipt-5-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 974,
+      "sha256": "eb332e876a845430f8e4bf69f5b1ffb26284596df6fa69ae4957e03c0016afe1"
+    },
+    {
+      "file": "public/images/story/photo-1.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7293,
+      "sha256": "85af83ab4d02db8d47c278c9cbc00734ceea51bffb1780b4695088dc84095455"
+    },
+    {
+      "file": "public/images/story/photo-1-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1262,
+      "sha256": "72b6dcfc2ebe4257d695e5223d6f693db8009d9642d691f35469488f31e7f507"
+    },
+    {
+      "file": "public/images/story/photo-2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 8412,
+      "sha256": "7dd60afcf3a674a72440ef2558e5ebc24f60f0efd6c11e060176faae72875920"
+    },
+    {
+      "file": "public/images/story/photo-2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1310,
+      "sha256": "6b0e80e70d4fc03058614a4757c4cf474aab55c76a8ccd482ac194d613bec9a3"
+    },
+    {
+      "file": "public/images/story/photo-3.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 8853,
+      "sha256": "fe7d7ab7208a8b2aba5f6741f07d08ec42cdb171fb2e8960a3e761215e42efab"
+    },
+    {
+      "file": "public/images/story/photo-3-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1393,
+      "sha256": "213c2edecf53655f8dfc77648dbf55d233c3edfa444a19891ee9c5ea8331a070"
+    },
+    {
+      "file": "public/images/story/photo-4.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 10124,
+      "sha256": "47da044c89d610d4b97ddfe333da5a7af8e59ca7c4b7eadee4d34156e0c34b44"
+    },
+    {
+      "file": "public/images/story/photo-4-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1434,
+      "sha256": "1c18e1ee7a1c83e18872178a4c3a7f2db6496c820b0b8dd869e6f7030b590996"
+    },
+    {
+      "file": "public/images/story/photo-5.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7118,
+      "sha256": "b63b8cc231a14c9d1fcaf5c512af98d657b0454584160a56527a9541ebf0def0"
+    },
+    {
+      "file": "public/images/story/photo-5-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1181,
+      "sha256": "87222648e9fe16c7f1cbf3616da827a9c6762d5141942a6ac798238fb6dd2b51"
+    },
+    {
+      "file": "public/images/story/letter-1.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 6714,
+      "sha256": "272b90a996752f0ddcceacdc20bfb680291a88f72ab56f1f9bc684c9f98ad71d"
+    },
+    {
+      "file": "public/images/story/letter-1-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1160,
+      "sha256": "700e6d9aa1d359b8a1314b96564f68134991879e9038141cec2a37ce9057bc40"
+    },
+    {
+      "file": "public/images/story/letter-2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 6475,
+      "sha256": "d88fb220d7d46b82475a93e3c9eee6cbe548700a3565b2d3b925b37e475a1d0e"
+    },
+    {
+      "file": "public/images/story/letter-2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1122,
+      "sha256": "1b77bf4bb3c0db7a7da29076cba81ba3fc8ed5bfd44fda8701a1d458597a034c"
+    },
+    {
+      "file": "public/images/story/letter-3.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 5502,
+      "sha256": "5018d0dc652dce86240a98fc46615d037ae4792fa3a1351f624ba45ce4dce9cb"
+    },
+    {
+      "file": "public/images/story/letter-3-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 877,
+      "sha256": "b48b772964d6d2d64ce66a6ee3db00b2d4ca4ea02dd340b4eebbcbf5c1f9b2aa"
+    },
+    {
+      "file": "public/images/story/letter-4.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 6862,
+      "sha256": "3bfb2c8b8f6f33f93c1f3ba61881edf0a064904afcef088ac9d2e363e8299c23"
+    },
+    {
+      "file": "public/images/story/letter-4-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1166,
+      "sha256": "e9b5d6b2d77966ce3f72b13031d94a77b657241e8a42a6dc1aa469b38d64349e"
+    },
+    {
+      "file": "public/images/story/letter-5.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7173,
+      "sha256": "34d210567d4913a4b3fca27bead2c7a7fca230d322063e98dbcdac0e3b5f92a4"
+    },
+    {
+      "file": "public/images/story/letter-5-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1159,
+      "sha256": "b5a227a4123f68fed24f67a94630cf2cc986ce6f75b51582cdb34219e1745b95"
+    },
+    {
+      "file": "public/images/story/clothing-1.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 5537,
+      "sha256": "307d523e1bdbc085ea5bb50aea661a7a99ef612c5d290a53e3b0a545292589bb"
+    },
+    {
+      "file": "public/images/story/clothing-1-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 946,
+      "sha256": "1cc68c94600ca4d97d0eb3b0f124aa1eb094c47180f22da3d085b01e791c45b8"
+    },
+    {
+      "file": "public/images/story/clothing-2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7289,
+      "sha256": "ab1b652d99663055eb4c1b5bdaeb8b359776c9e6d9c3fe61e9c2539f4427e6a2"
+    },
+    {
+      "file": "public/images/story/clothing-2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 897,
+      "sha256": "7ca547bb5a2682b3cf73ccd387ad8b2598796f379df28d4280b5118275e8ea4e"
+    },
+    {
+      "file": "public/images/story/clothing-3.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7930,
+      "sha256": "a4ec702ffc57fbff23c49676355f98f7cffe872a2469a372b0afb17528966775"
+    },
+    {
+      "file": "public/images/story/clothing-3-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1196,
+      "sha256": "71aa492e13c721953af88f243b4898b160e89a2f88b8fc63102aa5d4c95ab96c"
+    },
+    {
+      "file": "public/images/story/clothing-4.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 6351,
+      "sha256": "28ec9305dfec2b2d4adfc109a20a2fff2fbbef07579ad7945f9a2b8e0e774234"
+    },
+    {
+      "file": "public/images/story/clothing-4-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1016,
+      "sha256": "e77a854176c4c81caa7a3291e96a13d1a1bb4bdc2a5faf4032fe2464e3a6ec25"
+    },
+    {
+      "file": "public/images/story/clothing-5.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 6208,
+      "sha256": "38ccac70a3ce5837642ebb5016adf884f11b08f6d1cbd92043e87c09e81fe6b8"
+    },
+    {
+      "file": "public/images/story/clothing-5-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1021,
+      "sha256": "8a05a33465e9f762f2ec2da0341f09cd5c84f9a098b9b8bdd4b4e84fa89df6d2"
+    },
+    {
+      "file": "public/images/story/suitcase.jpg",
+      "width": 740,
+      "height": 250,
+      "bytes": 41945,
+      "sha256": "0d17dd4ef9b7b306256670f6fa0c3c34615089fe9e95d97663e8e6d3c871390b"
+    },
+    {
+      "file": "public/images/story/corridor.jpg",
+      "width": 740,
+      "height": 250,
+      "bytes": 28105,
+      "sha256": "f98e83f579aa4cb7d3998e5c33433396862a87c7b0b109e444bc704aba3f6a56"
+    },
+    {
+      "file": "public/images/story/rook.jpg",
+      "width": 72,
+      "height": 90,
+      "bytes": 2469,
+      "sha256": "ecb97fbfd36465c6044e7842095d3950b2fac7643c1cefcef3a7cd6f81c9bbc4"
+    },
+    {
+      "file": "public/images/story/arrival-1.jpg",
+      "width": 740,
+      "height": 250,
+      "bytes": 39189,
+      "sha256": "751ef6a1bf18e2a80c205ed7d09df9d5c5812f49bc92291b2ffce44b5551d2d8"
+    },
+    {
+      "file": "public/images/story/arrival-2.jpg",
+      "width": 740,
+      "height": 250,
+      "bytes": 39752,
+      "sha256": "382c104660f3c9fa5b4df305123dca9263b6a294916d02d2021883ed982d7c04"
+    },
+    {
+      "file": "public/images/story/arrival-3.jpg",
+      "width": 740,
+      "height": 250,
+      "bytes": 42819,
+      "sha256": "3951d9e6604934a16a671b60df2d6112b2d5a3066c0b5bf650975dbddba45e1c"
+    },
+    {
+      "file": "public/images/story/arrival-4.jpg",
+      "width": 740,
+      "height": 250,
+      "bytes": 40317,
+      "sha256": "ef8193cb22b9df5744d1b8d4fa2646a924ff47d34b18bb3fb24a92113a0b8973"
+    },
+    {
+      "file": "public/images/story/arrival-5.jpg",
+      "width": 740,
+      "height": 250,
+      "bytes": 39485,
+      "sha256": "6c5322fbb333677c76e1fb49224465606b01cd19793998bd4f87d3fbabe9c84e"
+    },
+    {
+      "file": "public/images/story/photo-1-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7844,
+      "sha256": "1f58acbc237143e339cd865252308474ba012d2fd76befd67d0bbf9e233a1e59"
+    },
+    {
+      "file": "public/images/story/photo-1-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1336,
+      "sha256": "e0151ede16e53430500738e908fd94cbe8e686ddeb7e079bcae169fdd9fae1d3"
+    },
+    {
+      "file": "public/images/story/photo-2-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 8482,
+      "sha256": "14ec75bb2aa82558dc84d5e0373ca5f196ba49152a177ec24d2f51c0179ca7d2"
+    },
+    {
+      "file": "public/images/story/photo-2-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1345,
+      "sha256": "64b72bad07b22c09b667b2cc697f4d420084630461650d059916135c9cfb1276"
+    },
+    {
+      "file": "public/images/story/photo-3-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 8873,
+      "sha256": "67740afa33997898c41a7abb73859e93b52ffb5152e048c266b9b6c0aac286ae"
+    },
+    {
+      "file": "public/images/story/photo-3-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1443,
+      "sha256": "92997d5d631f4b439d0a25919589329f67eb70fb3f91003aca24f738217224a2"
+    },
+    {
+      "file": "public/images/story/photo-4-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 10220,
+      "sha256": "f8b31514d0edfddf422b8beeec8e0c2a99a2d0f6aa64cf1a9a7564ff35060ee8"
+    },
+    {
+      "file": "public/images/story/photo-4-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1453,
+      "sha256": "291ba003145e460a881affb7862a80786686c251262b6d4283b27ca29ff4f18f"
+    },
+    {
+      "file": "public/images/story/photo-5-v2.jpg",
+      "width": 240,
+      "height": 160,
+      "bytes": 7412,
+      "sha256": "ffe9558d1b3af32df4012db4379e0c463bba9c5f76480dafa8db6fdc55243c55"
+    },
+    {
+      "file": "public/images/story/photo-5-v2-thumb.jpg",
+      "width": 72,
+      "height": 48,
+      "bytes": 1204,
+      "sha256": "275f24601dd8f8bc29b2b90d3c396306d1704bd511b19d918874991d5af8eea1"
+    }
+  ]
+}

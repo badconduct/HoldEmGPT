@@ -31,3 +31,20 @@
 .camp-recovery p { margin:4px 0; color:#aaa18b; }
 .camp-pass { padding:12px; margin:8px 0; text-align:center; color:#30271d; background:#e2d1aa; border:3px double #ae8c4e; }
 .camp-pass h2 { color:#47361d; }
+.story-page { margin-top:6px; }
+.story-still { width:740px; height:250px; margin:6px 0; background:#191914; }
+.story-still img { display:block; border:0; }
+.story-speech,.story-controls { border:1px solid #776241; background:#25231c; padding:8px; margin:6px 0; }
+.story-letter { background:#ded0ae; color:#2c2419; border:3px double #8e784c; padding:10px 16px; margin:8px 0; font:15px/22px Georgia,serif; }
+.story-object { width:100%; table-layout:fixed; border-collapse:collapse; background:#25231c; }
+.story-object td { vertical-align:top; word-wrap:break-word; }
+.story-object .story-object-image { width:256px; }
+.story-object img { display:block; border:0; }
+.story-object p { line-height:18px; }
+.story-bag { width:740px; border-collapse:collapse; margin:8px 0; }
+.story-bag th,.story-bag td { border:1px solid #776241; text-align:left; vertical-align:middle; }
+.story-bag img { vertical-align:middle; border:0; }
+.panel .camp-prices { width:100%; }
+.story-end { text-align:center; font:26px Georgia,serif; letter-spacing:3px; }
+.story-controls form { margin:2px 0; }
+textarea { background:#ded0ae; color:#241e15; font:13px Arial,sans-serif; }

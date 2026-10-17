@@ -24,6 +24,18 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - name: Install isolated browser test runtime
+        run: npx playwright install --with-deps chromium
+      - name: Check story pages and both endings at small resolutions
+        run: npm run check:browser
+      - name: Save story review screenshots
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: story-browser-review
+          path: artifacts/story-browser/
+          if-no-files-found: ignore
+          retention-days: 7
       - run: npm audit --omit=dev --audit-level=high
       - uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e
         env:
