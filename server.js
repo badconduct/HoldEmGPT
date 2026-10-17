@@ -12,13 +12,16 @@ import { characterFor, campaignAssets, casinoFor, tableFor } from './lib/campaig
 import { newCampaign, enterTable, settleCampaign, houseStake, retryTable, validateCampaignSave, campaignDestination } from './lib/campaign.js';
 import { campaignPage, campaignPagePaths } from './lib/campaign-pages.js';
 import { saveStore } from './lib/save-store.js';
+import { storyAssets } from './lib/story-catalog.js';
+import { advanceStory, accuse, recordTheory, successorVictim, storyLost } from './lib/story.js';
+import { prepareStoryTalk, commitStoryTalk } from './lib/story-talk.js';
 const root=fileURLToPath(new URL('.',import.meta.url));
 const esc=v=>String(v ?? '').replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));
 const attrs=obj=>Object.entries(obj).map(([k,v])=>' '+k+'="'+esc(v)+'"').join('');
 export function stateXml(g,config,extra={}) {
   const wallet=extra.wallet || newWallet(),campaign=extra.campaign;
   const s=g?view(g):{hand:0,phase:'waiting',actor:-1,board:[],players:[],history:[],revision:0};
-  let xml='<?xml version="1.0" encoding="UTF-8"?><game'+attrs({hand:s.hand,phase:s.phase,actor:s.actor,dealer:s.dealer,sb:s.sb,bb:s.bb,pot:s.pot || 0,revision:s.revision,busy:g?.busy?1:0,canNext:s.canNext?1:0,mode:config.mode,cash:wallet.cash,buyin:g?.campaign?.entry || BUY_IN,wins:wallet.wins,paid:g?.paid?1:0,canBuy:!campaign && g?.paid && tableFinished(g) && wallet.cash>=BUY_IN?1:0,campaign:campaign?1:0,finished:g && tableFinished(g)?1:0,background:g?.campaign?.background || '/images/table-room.jpg',destination:campaignDestination({game:g,campaign}),recoveryCode:campaign?.recoveryCode || '',casinoName:casinoFor(g?.campaign?.casinoId)?.name || '',tableName:tableFor(g?.campaign?.casinoId,g?.campaign?.tableId)?.name || '',prize:g?.campaign?.prize || 5000})+'>';
+  let xml='<?xml version="1.0" encoding="UTF-8"?><game'+attrs({hand:s.hand,phase:s.phase,actor:s.actor,dealer:s.dealer,sb:s.sb,bb:s.bb,pot:s.pot || 0,revision:s.revision,busy:g?.busy?1:0,canNext:s.canNext?1:0,mode:config.mode,cash:wallet.cash,buyin:g?.campaign?.entry || BUY_IN,wins:wallet.wins,paid:g?.paid?1:0,canBuy:!campaign && g?.paid && tableFinished(g) && wallet.cash>=BUY_IN?1:0,campaign:campaign?1:0,story:campaign?.story?1:0,finished:g && tableFinished(g)?1:0,background:g?.campaign?.background || '/images/table-room.jpg',destination:extra.destination || campaignDestination({game:g,campaign}),recoveryCode:campaign?.recoveryCode || '',casinoName:casinoFor(g?.campaign?.casinoId)?.name || '',tableName:tableFor(g?.campaign?.casinoId,g?.campaign?.tableId)?.name || '',prize:g?.campaign?.prize || 5000})+'>';
   const status=extra.error || g?.error || (g?.busy?(s.players[s.actor]?.name || 'Dealer')+' is thinking...':s.phase==='complete'?s.result:s.phase==='waiting'?(campaign?'Choose a casino and table.':'Take a seat. Press Play Game.'):s.actor===0?'Your turn.':s.players[s.actor]?.name+' to act.');
   xml+='<status>'+esc(status)+'</status><save>'+esc(extra.save || '')+'</save><result>'+esc(s.result || '')+'</result><board>';
   for(const c of s.board) xml+='<card>'+c+'</card>';
@@ -47,15 +50,17 @@ export function createApp(config,{saveDir=process.env.SAVE_DIR || join(root,'dat
   function settle(s) {if(!s.game)return;publishWins(s.game);if(s.campaign)settleCampaign(s);else cashOut(s.game,s.wallet);}
   async function pump(s) {
     const g=s.game;
-    if(!g || g.busy || g.error || g.actor<1 || g.phase==='complete')return;
+    if(!g || storyLost(s) || g.busy || g.error || g.actor<1 || g.phase==='complete')return;
     g.busy=true;
     try {
       while(g.actor>0 && g.phase!=='complete' && !g.closed) {
         const i=g.actor;
         await new Promise(r=>setTimeout(r,turnDelay));if(g.closed)break;
+        prepareStoryTalk(g);
         const d=await decision(g,i,config);if(g.closed)break;
         act(g,i,d.action,d.amount);g.players[i].memory.push(d.memory);g.players[i].memory=g.players[i].memory.slice(-12);
-        publishQuote(g,i,d);settle(s);await persist(s);
+        const storyLine=commitStoryTalk(g,i,d.storyLineId);
+        publishQuote(g,i,storyLine?{...d,say:storyLine.text,replyToSeat:storyLine.replyToSeat}:d,{story:!!storyLine});settle(s);await persist(s);
       }
     } catch {if(!g.closed)g.error='Opponent could not act or autosave could not finish. Press Retry to try this turn again.';}
     finally {
@@ -68,7 +73,7 @@ export function createApp(config,{saveDir=process.env.SAVE_DIR || join(root,'dat
     let id=cookie?.[1],s=id?sessions.get(id):null;
     if(!s) {
       if(sessions.size>=500)throw new Error('Table capacity reached.');
-      id=randomBytes(24).toString('hex');s={game:null,campaign:null,wallet:newWallet(),at:Date.now()};sessions.set(id,s);
+      id=randomBytes(24).toString('hex');s={game:null,campaign:null,wallet:newWallet(),csrf:randomBytes(24).toString('hex'),at:Date.now()};sessions.set(id,s);
       res.setHeader('Set-Cookie','holdem='+id+'; Path=/; HttpOnly; SameSite=Lax'+(secureCookies?'; Secure':''));
     }
     s.at=Date.now();return s;
@@ -86,8 +91,14 @@ export function createApp(config,{saveDir=process.env.SAVE_DIR || join(root,'dat
           if(page.redirect){res.writeHead(302,{Location:page.redirect});return res.end();}
           res.setHeader('Content-Type','text/html; charset=utf-8');return res.end(req.method==='HEAD'?undefined:page.html);
         }
+        if(url.pathname==='/table.html') {
+          const session=sessionFor(req,res);
+          if(session.campaign?.story && (storyLost(session) || !session.game || tableFinished(session.game) && session.campaign.story.scene)) {
+            res.writeHead(302,{Location:campaignDestination(session)});return res.end();
+          }
+        }
         const allowed={'/freeplay.html':'public/freeplay.html','/table.html':'public/table.html','/client.js':'public/client.js','/lobby.js':'public/lobby.js','/campaign.js':'public/campaign.js','/campaign.css':'public/campaign.css','/music.js':'public/music.js','/style.css':'public/style.css','/images/table-room.jpg':'public/images/table-room.jpg','/music/midnight-ledger.mid':'public/music/midnight-ledger.mid'};
-        const file=allowed[url.pathname] || (campaignAssets.has(url.pathname)?'public'+url.pathname:null);
+        const file=allowed[url.pathname] || (campaignAssets.has(url.pathname)||storyAssets.has(url.pathname)?'public'+url.pathname:null);
         if(!file){res.writeHead(404);return res.end('Not found');}
         const data=await readFile(join(root,file));res.setHeader('Content-Type',file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.js')?'text/javascript; charset=utf-8':file.endsWith('.css')?'text/css; charset=utf-8':file.endsWith('.mid')?'audio/midi':'image/jpeg');
         if(file.endsWith('.jpg') || file.endsWith('.mid')){res.setHeader('Cache-Control','public, max-age=86400');res.setHeader('Expires',new Date(Date.now()+86400000).toUTCString());}
@@ -99,21 +110,29 @@ export function createApp(config,{saveDir=process.env.SAVE_DIR || join(root,'dat
       if(req.method==='GET' && url.pathname==='/api/state'){if(s.game)publishWins(s.game);return res.end(response());}
       if(req.method!=='POST'){res.writeHead(405);return res.end(response({error:'Use POST for game actions.'}));}
       const origins=publicOrigin?[publicOrigin]:['http://'+req.headers.host,'https://'+req.headers.host];
-      if(req.headers['x-holdem-request']!=='1' || (req.headers.origin && !origins.includes(req.headers.origin))){res.writeHead(403);return res.end(response({error:'Invalid request origin.'}));}
+      if(req.headers.origin && !origins.includes(req.headers.origin)){res.writeHead(403);return res.end(response({error:'Invalid request origin.'}));}
       if(s.locked)throw new Error('The previous request is still being saved. Try again.');
       s.locked=true;locked=s;
       let body='',bytes=0;
-      for await(const chunk of req){bytes+=chunk.length;if(bytes>4096){res.writeHead(413);res.end();return;}body+=chunk;}
+      for await(const chunk of req){bytes+=chunk.length;if(bytes>8192){res.writeHead(413);res.end();return;}body+=chunk;}
       const form=new URLSearchParams(body);let g=s.game,extra={},run=false;
+      const nativeForm=req.headers['x-holdem-request']!=='1';
+      if(nativeForm && (!s.csrf || form.get('csrf')!==s.csrf)){res.writeHead(403);return res.end(response({error:'Invalid request origin.'}));}
       if(g?.busy && !['/api/new','/api/campaign/new'].includes(url.pathname))throw new Error('Wait for the current decision to finish.');
+      if(storyLost(s) && ['/api/action','/api/next','/api/retry','/api/campaign/buy','/api/campaign/stake','/api/campaign/restart'].includes(url.pathname))throw new Error('This character\'s story has ended. Start a new game from the main menu.');
       switch(url.pathname) {
         case '/api/campaign/new': {
-          const next=newCampaign({name:form.get('name') ?? 'You',portrait:form.get('portrait') ?? 'drifter'});
+          const next=newCampaign({name:form.get('name') ?? 'You',portrait:form.get('portrait') ?? 'drifter'},{predecessor:successorVictim(s)});
           detach(s);Object.assign(s,next);owners.set(s.campaign.recoveryCode,s);break;
         }
         case '/api/campaign/buy':enterTable(s,form.get('casino'),form.get('table'));run=true;break;
         case '/api/campaign/stake':houseStake(s);break;
         case '/api/campaign/restart':retryTable(s);run=true;break;
+        case '/api/story/advance':advanceStory(s,form.get('scene'));break;
+        case '/api/story/theory':recordTheory(s,Object.fromEntries(form));extra.destination='/evidence.html';break;
+        case '/api/story/accuse':
+          if(form.get('confirm')!=='yes')throw new Error('Review your selections before confirming the final accusation.');
+          accuse(s,{boss:form.get('boss'),hotel:form.get('hotel'),weapon:form.get('weapon')});break;
         case '/api/new': {
           const wallet=newWallet(),next=buyTable(wallet,null,{name:form.get('name') ?? 'You',portrait:form.get('portrait') ?? 'drifter'});
           detach(s);Object.assign(s,{game:next,wallet,campaign:null});run=true;break;
@@ -154,6 +173,7 @@ export function createApp(config,{saveDir=process.env.SAVE_DIR || join(root,'dat
         default:res.writeHead(404);extra.error='Unknown game action.';
       }
       await persist(s);if(run)void pump(s);
+      if(nativeForm){res.writeHead(303,{Location:extra.destination || campaignDestination(s)});return res.end();}
       res.end(response(extra));
     } catch(error) {
       if(res.headersSent){res.end();return;}

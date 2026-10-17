@@ -7,6 +7,23 @@ JSON parser, fetch, canvas, SVG, modern CSS layout, or TLS is required by the cl
 
 ## The campaign
 
+New games now include **The Empty Chair**, a first-pass noir mystery woven
+through the five-house poker campaign. Every character begins with a suitcase,
+$1,000 and the same letter. Boss wins award five illustrated exhibits, exactly
+one with a false claim. Inspect them in the **Evidence Bag**, then name the
+responsible boss, hotel and actual weapon (or a staged death).
+
+A correct accusation keeps your winnings and opens continued poker at every
+casino. A wrong one forfeits that character's cash and ends on the same suitcase,
+$1,000 and letter before returning to the menu. Their name and portrait become
+the victim in the next linked campaign. Save/load preserves the case, scene
+position, notes and this connection. Old campaign saves keep their original flow.
+
+Eleven authored case variants ship in this attempt. Optional, sparse table exchanges
+draw attention to uncertainty and collected records; all necessary facts remain
+readable with built-in bots and no LLM. See the [implementation and local review
+guide](docs/V3-FIRST-ATTEMPT.md) for scope, artwork and quick review saves.
+
 **Last Seat on Fortune Row** follows five fictional casinos across Las Vegas,
 Hollywood, Mexico City, New York and postwar Paris in 1947. Each house has four
 ordinary tables, a scripted boss, its own eight-person regular cast and five
@@ -18,8 +35,10 @@ and period workwear. The player choices include six men and four women. Campaign
 and free-play tables both use the current cast; superseded profiles are removed.
 
 Start with $1,000 cash. Win four whole tables to unlock the house boss, then win
-its entire table to earn the next invitation. Passes include travel and a room,
-are permanent, and survive losses. Cleared tables remain replayable.
+its entire table to earn one case exhibit and open the next house. Travel and
+a room are included. Access and collected records survive ordinary poker losses.
+Cleared tables remain replayable. Legacy campaigns
+without a case retain their invitation rewards.
 
 | Casino | Ordinary cash entries | Boss entry |
 | --- | --- | ---: |
