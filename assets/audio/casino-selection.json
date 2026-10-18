@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "status": "gameplay-selection",
+  "pack": "Kenney Casino Audio 1.1 and Impact Sounds 1.0",
+  "files": [
+    { "action": "call", "file": "call.wav", "source": "wav/chip-lay-1.wav", "description": "A small chip placement" },
+    { "action": "raise", "file": "raise.wav", "source": "wav/chips-stack-3.wav", "description": "A stack of chips" },
+    { "action": "allin", "file": "allin.wav", "source": "wav/chips-handle-5.wav", "description": "A longer cluster of moving chips" },
+    { "action": "fold", "file": "fold.wav", "source": "wav/card-slide-4.wav", "description": "Cards sliding across the table" },
+    { "action": "check", "file": "check.wav", "packRoot": "kenney-impact", "source": "wav/impactWood_light_000.wav", "description": "A light knock on wood" }
+  ],
+  "pending": {},
+  "playbackIntegrated": true
+}

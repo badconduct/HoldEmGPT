@@ -1,0 +1,30 @@
+LAST SEAT ON FORTUNE ROW - THIRD-PARTY NOTICES
+
+Casino sound effects: Kenney - Casino Audio (1.1)
+Creator: Kenney Vleugels (Kenney.nl)
+Source: https://kenney.nl/assets/casino-audio
+License: Creative Commons Zero 1.0 Universal (CC0-1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+
+The original pack's License.txt is retained with these assets.
+Commercial use, modification and redistribution are permitted under CC0.
+Attribution is optional; this credit is provided voluntarily.
+
+The original OGG recordings are preserved. The WAV copies are converted to
+22,050 Hz, 16-bit mono PCM with a low-pass filter when downsampling.
+No loudness normalization, trimming or new recordings were added.
+The asset manifest records the original and converted file hashes.
+The complete casino library is kept as development source material. Only
+the selected call, raise, all-in, fold and check effects ship with the game.
+
+Check sound: Kenney - Impact Sounds (1.0), impactWood_light_000
+Creator: Kenney Vleugels (Kenney.nl)
+Source: https://kenney.nl/assets/impact-sounds
+License: Creative Commons Zero 1.0 Universal (CC0-1.0)
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+The original Impact Sounds licence is retained as IMPACT.TXT in audio packs.
+
+These sound assets remain CC0; the project's GPL-3.0-only software notice
+does not change their licence. This pack contains sound effects, not music.
+Sounds accompany accepted poker moves. Sound effects and music have separate
+on/off controls. No attribution is required by CC0; we credit Kenney voluntarily.

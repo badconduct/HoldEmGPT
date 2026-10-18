@@ -470,5 +470,42 @@ from [ChessGPT](https://github.com/badconduct/ChessGPT), under the same license.
 Portraits and the table scene are generated fictional artwork; provenance and
 prompts are in `docs/`. The piano MIDI is an original composition, with its
 reproducible source in `scripts/compose-piano.js`. Project assets are included
-under the repository license. No third-party music samples or reference
-photographs are distributed.
+under the repository license, except for the separately licensed audio below.
+No third-party music samples or reference photographs are distributed.
+
+The actual table plays five Kenney CC0 effects for accepted moves by your seat
+and opponents: small chips (call), chip stack (raise), large chip cluster (all-in),
+wooden knock (check) and sliding cards (fold). **Sound: On/Off** is independent
+of Music and remembers its setting in a cookie. Browsers blocking automatic
+audio show **Sound: Enable**; click it or make your next move to enable playback.
+
+Only five WAVs ship: **93,048 bytes**, 22,050 Hz, signed 16-bit mono PCM. Modern
+browsers use one HTML audio voice; IE6 uses one `bgsound` voice. A bounded queue
+plays confirmed moves in order. Loading, polling, saving and switching views do
+not replay history. Rejected moves, quotes and blinds do not make action sounds.
+Muted effects are not downloaded. Physical IE6 audio acceptance is pending;
+ES3 syntax and the legacy playback path are tested.
+
+[Casino Audio 1.1](https://kenney.nl/assets/casino-audio) supplies four effects;
+[Impact Sounds 1.0](https://kenney.nl/assets/impact-sounds) supplies the wood knock.
+Original recordings, unmodified licences and conversion/hash manifests remain
+in `assets/audio/kenney-casino` and `assets/audio/kenney-impact`. The full casino
+library stays in development source and is excluded from the container. CC0
+permits commercial redistribution, including Steam; attribution is optional.
+We credit Kenney voluntarily in [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt),
+the container and the table Help link to `/sounds/credits.txt`. Music is separate.
+
+The shared selection is `assets/audio/casino-selection.json`. Original levels
+are retained; conversion averages stereo to mono and low-pass filters before
+downsampling, without normalization or trimming. Import scripts require only
+development-time `soundfile==0.13.1` and `numpy==2.3.3`, with no game dependency.
+`scripts/import-casino-audio.py` imports the casino pack;
+`scripts/import-check-sound.py <impact-pack.zip>` imports the wood recording.
+`python scripts/select-casino-audio.py` reproduces the selected WAVs and licensed
+archive. Add `--native-root <path>` to sync the selection, wood sample and notices
+as assets for a future C conversion. Native audio integration is deferred:
+finish and deploy the website on Dockernet first. The C app remains a basic demo.
+
+`npm run check:sounds` exercises actual table buttons, decoded playback for all
+five moves, opponent cues, view switching, save deduplication and persistent mute
+in Chromium at 800x600. `npm run check` also covers IE6 fallback and asset hashes.

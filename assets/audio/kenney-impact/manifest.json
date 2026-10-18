@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "pack": "Impact Sounds",
+  "version": "1.0",
+  "creator": "Kenney Vleugels (Kenney.nl)",
+  "sourceUrl": "https://kenney.nl/assets/impact-sounds",
+  "sourceArchiveSha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+  "license": "CC0-1.0",
+  "licenseSha256": "b49aa9c56b04528b95913de13e506a0f7c5e807b9925db9bfef86af1f91120db",
+  "conversion": "Original Vorbis decoded; mono, low-pass resampled to 22050 Hz signed 16-bit PCM. No normalization or trimming.",
+  "files": [
+    {
+      "original": "original/impactWood_light_000.ogg",
+      "originalSha256": "eb45e35b4bed784d3f120de4afec4b0d6ac09d9e143cce8cfcb7d739e1b1f3c3",
+      "sourceSampleRate": 44100,
+      "sourceChannels": 2,
+      "wav": "wav/impactWood_light_000.wav",
+      "wavSha256": "0d616347037a62cfbc042837f61cc21a013fb35670330d70154500aac4195c96",
+      "wavBytes": 11756,
+      "sampleRate": 22050,
+      "channels": 1,
+      "bitsPerSample": 16,
+      "durationMs": 266
+    }
+  ]
+}

@@ -28,12 +28,22 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Check story pages and both endings at small resolutions
         run: npm run check:browser
+      - name: Check move sounds in the actual poker table
+        run: npm run check:sounds
       - name: Save story review screenshots
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: story-browser-review
           path: artifacts/story-browser/
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Save sound playback review results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: sound-browser-review
+          path: artifacts/audio-game-check/
           if-no-files-found: ignore
           retention-days: 7
       - run: npm audit --omit=dev --audit-level=high

@@ -11,3 +11,4 @@ artifacts/
 *.pfx
 *.db
 *.sqlite*
+__pycache__/

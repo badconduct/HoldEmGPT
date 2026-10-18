@@ -21,7 +21,7 @@
     var g=doc.getElementsByTagName('game')[0]; if(!g) { el('notice').innerHTML=escape(value(doc.documentElement) || 'The server returned an invalid reply.'); return; }
     var busy=attr(g,'busy')==='1', players=g.getElementsByTagName('player'), legal=g.getElementsByTagName('legal')[0];
     pollNeeded=busy || (Number(attr(g,'actor'))>0 && !tag(g,'error'));
-    var signature=attr(g,'revision')+'|'+attr(g,'busy')+'|'+attr(g,'cash')+'|'+tag(g,'status')+'|'+attr(g,'hand');
+    var signature=attr(g,'tableId')+'|'+attr(g,'revision')+'|'+attr(g,'busy')+'|'+attr(g,'cash')+'|'+tag(g,'status')+'|'+attr(g,'hand');
     if(signature===lastState && !tag(g,'save')) return;
     lastState=signature;
     var status=tag(g,'status'), thinkingSeat=Number(attr(g,'actor'));
@@ -44,6 +44,7 @@
     if(campaignMode)el('gamehelp').innerHTML='<p>Bets and stacks are table chips. Every entry starts with 1,000 chips and 10/20 blinds. Win the entire table to collect its cash prize. Four ordinary table stamps unlock the boss; win its entire table to earn the next invitation.</p><p>Stamps and passes survive losses. House stakes are available from the map when you cannot afford the cheapest table. After a loss, you may retry from the pre-table checkpoint with a fresh deck.</p>';
     if(attr(g,'story')==='1')el('gamehelp').innerHTML+='<p>Each first boss-table clear also saves a case exhibit and opens its story scene. Use Evidence to inspect records without taking a poker action. Table rumors are optional. After five exhibits, identify the responsible boss, hotel and actual weapon. Review the final confirmation: a wrong accusation ends this character\'s story and forfeits their cash.</p>';
     el('bankroll').innerHTML='Cash $'+attr(g,'cash')+' &nbsp; | &nbsp; Wins '+attr(g,'wins');
+    if(window.HoldemSounds)window.HoldemSounds.update(g);
     receiveQuotes(g);
     var currentMoves=moveLabels(g,players);
     renderTable(g,players,currentMoves,'');
@@ -94,7 +95,7 @@
       timeout=window.setTimeout(function(){finish('Server did not respond. Reconnecting...'); req.abort();},15000); req.send(body);
     } catch(e) { finish('Could not connect to the dealer.'); }
   }
-  function move(action) { request('/api/action','action='+action+'&amount='+encodeURIComponent(el('amount').value)+'&revision='+revision); }
+  function move(action) { if(window.HoldemSounds)window.HoldemSounds.unlock();request('/api/action','action='+action+'&amount='+encodeURIComponent(el('amount').value)+'&revision='+revision); }
   function moveLabels(g,players) {
     var labels=[],hand=attr(g,'hand'),street=attr(g,'phase'),events=g.getElementsByTagName('event'),i,j,m;
     if(street==='complete')for(i=events.length-1;i>=0;i--) {m=/^Hand ([0-9]+) \/ (preflop|flop|turn|river):/.exec(value(events[i]));if(m && m[1]===hand) {street=m[2];break;}}
