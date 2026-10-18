@@ -7,3 +7,8 @@
 Dockerfile text eol=lf
 *.jpg binary
 *.mid binary
+*.wav binary
+*.ogg binary
+*.zip binary
+*.ZIP binary
+assets/audio/**/License.txt binary

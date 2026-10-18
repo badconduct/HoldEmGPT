@@ -11,7 +11,7 @@ COPY --chown=node:node server.js ./
 COPY --chown=node:node lib ./lib
 COPY --chown=node:node content/v2/campaign.json ./content/v2/campaign.json
 COPY --chown=node:node public ./public
-COPY --chown=node:node LICENSE ./LICENSE
+COPY --chown=node:node LICENSE THIRD_PARTY_NOTICES.txt ./
 RUN mkdir -p /app/data/saves && chown -R node:node /app/data
 USER node
 ENV HOST=0.0.0.0 PORT=3083 SAVE_DIR=/app/data/saves

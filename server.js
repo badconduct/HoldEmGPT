@@ -15,13 +15,14 @@ import { saveStore } from './lib/save-store.js';
 import { storyAssets } from './lib/story-catalog.js';
 import { advanceStory, accuse, recordTheory, setAsideEvidence, successorVictim, storyLost, requireStoryForm } from './lib/story.js';
 import { prepareStoryTalk, commitStoryTalk } from './lib/story-talk.js';
+import { moveSound } from './lib/sound-events.js';
 const root=fileURLToPath(new URL('.',import.meta.url));
 const esc=v=>String(v ?? '').replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));
 const attrs=obj=>Object.entries(obj).map(([k,v])=>' '+k+'="'+esc(v)+'"').join('');
 export function stateXml(g,config,extra={}) {
   const wallet=extra.wallet || newWallet(),campaign=extra.campaign;
   const s=g?view(g):{hand:0,phase:'waiting',actor:-1,board:[],players:[],history:[],revision:0};
-  let xml='<?xml version="1.0" encoding="UTF-8"?><game'+attrs({hand:s.hand,phase:s.phase,actor:s.actor,dealer:s.dealer,sb:s.sb,bb:s.bb,pot:s.pot || 0,revision:s.revision,busy:g?.busy?1:0,canNext:s.canNext?1:0,mode:config.mode,cash:wallet.cash,buyin:g?.campaign?.entry || BUY_IN,wins:wallet.wins,paid:g?.paid?1:0,canBuy:!campaign && g?.paid && tableFinished(g) && wallet.cash>=BUY_IN?1:0,campaign:campaign?1:0,story:campaign?.story?1:0,finished:g && tableFinished(g)?1:0,background:g?.campaign?.background || '/images/table-room.jpg',destination:extra.destination || campaignDestination({game:g,campaign}),recoveryCode:campaign?.recoveryCode || '',casinoName:casinoFor(g?.campaign?.casinoId)?.name || '',tableName:tableFor(g?.campaign?.casinoId,g?.campaign?.tableId)?.name || '',prize:g?.campaign?.prize || 5000})+'>';
+  let xml='<?xml version="1.0" encoding="UTF-8"?><game'+attrs({tableId:g?.id || '',hand:s.hand,phase:s.phase,actor:s.actor,dealer:s.dealer,sb:s.sb,bb:s.bb,pot:s.pot || 0,revision:s.revision,busy:g?.busy?1:0,canNext:s.canNext?1:0,mode:config.mode,cash:wallet.cash,buyin:g?.campaign?.entry || BUY_IN,wins:wallet.wins,paid:g?.paid?1:0,canBuy:!campaign && g?.paid && tableFinished(g) && wallet.cash>=BUY_IN?1:0,campaign:campaign?1:0,story:campaign?.story?1:0,finished:g && tableFinished(g)?1:0,background:g?.campaign?.background || '/images/table-room.jpg',destination:extra.destination || campaignDestination({game:g,campaign}),recoveryCode:campaign?.recoveryCode || '',casinoName:casinoFor(g?.campaign?.casinoId)?.name || '',tableName:tableFor(g?.campaign?.casinoId,g?.campaign?.tableId)?.name || '',prize:g?.campaign?.prize || 5000})+'>';
   const status=extra.error || g?.error || (g?.busy?(s.players[s.actor]?.name || 'Dealer')+' is thinking...':s.phase==='complete'?s.result:s.phase==='waiting'?(campaign?'Choose a casino and table.':'Take a seat. Press Play Game.'):s.actor===0?'Your turn.':s.players[s.actor]?.name+' to act.');
   xml+='<status>'+esc(status)+'</status><save>'+esc(extra.save || '')+'</save><result>'+esc(s.result || '')+'</result><board>';
   for(const c of s.board) xml+='<card>'+c+'</card>';
@@ -33,7 +34,7 @@ export function stateXml(g,config,extra={}) {
   }
   xml+='</players>';
   if(s.legal && !g.busy && !g.error) xml+='<legal'+attrs(s.legal)+'/>';
-  xml+='<history>';for(const h of s.history)xml+='<event>'+esc(h)+'</event>';
+  xml+='<history>';for(const [i,h] of s.history.entries())xml+='<event'+attrs({id:g.history.length-s.history.length+i,sound:moveSound(h,s.players)})+'>'+esc(h)+'</event>';
   xml+='</history><dialogue>';
   for(const q of g?.dialogue || [])xml+='<quote'+attrs({id:q.id,seat:q.seat,name:q.name,portrait:q.portrait,hand:q.hand,street:q.street,action:q.action,replyToSeat:q.replyToSeat,kind:q.kind || 'move',amount:q.amount || 0})+'>'+esc(q.text)+'</quote>';
   return xml+'</dialogue><error>'+esc(extra.error || g?.error || '')+'</error></game>';
@@ -98,10 +99,11 @@ export function createApp(config,{saveDir=process.env.SAVE_DIR || join(root,'dat
           }
         }
         const allowed={'/freeplay.html':'public/freeplay.html','/table.html':'public/table.html','/client.js':'public/client.js','/lobby.js':'public/lobby.js','/campaign.js':'public/campaign.js','/campaign.css':'public/campaign.css','/music.js':'public/music.js','/style.css':'public/style.css','/images/table-room.jpg':'public/images/table-room.jpg','/music/midnight-ledger.mid':'public/music/midnight-ledger.mid'};
-        const file=allowed[url.pathname] || (campaignAssets.has(url.pathname)||storyAssets.has(url.pathname)?'public'+url.pathname:null);
+        const audioFiles={'/sounds.js':'public/sounds.js','/sounds/credits.txt':'public/sounds/credits.txt','/sounds/call.wav':'public/sounds/call.wav','/sounds/raise.wav':'public/sounds/raise.wav','/sounds/allin.wav':'public/sounds/allin.wav','/sounds/check.wav':'public/sounds/check.wav','/sounds/fold.wav':'public/sounds/fold.wav'};
+        const file=allowed[url.pathname] || audioFiles[url.pathname] || (campaignAssets.has(url.pathname)||storyAssets.has(url.pathname)?'public'+url.pathname:null);
         if(!file){res.writeHead(404);return res.end('Not found');}
-        const data=await readFile(join(root,file));res.setHeader('Content-Type',file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.js')?'text/javascript; charset=utf-8':file.endsWith('.css')?'text/css; charset=utf-8':file.endsWith('.mid')?'audio/midi':'image/jpeg');
-        if(file.endsWith('.jpg') || file.endsWith('.mid')){res.setHeader('Cache-Control','public, max-age=86400');res.setHeader('Expires',new Date(Date.now()+86400000).toUTCString());}
+        const data=await readFile(join(root,file));res.setHeader('Content-Type',file.endsWith('.html')?'text/html; charset=utf-8':file.endsWith('.js')?'text/javascript; charset=utf-8':file.endsWith('.css')?'text/css; charset=utf-8':file.endsWith('.mid')?'audio/midi':file.endsWith('.wav')?'audio/wav':file.endsWith('.txt')?'text/plain; charset=utf-8':'image/jpeg');
+        if(file.endsWith('.jpg') || file.endsWith('.mid') || file.endsWith('.wav')){res.setHeader('Cache-Control','public, max-age=86400');res.setHeader('Expires',new Date(Date.now()+86400000).toUTCString());}
         res.setHeader('Content-Length',data.length);return res.end(req.method==='HEAD'?undefined:data);
       }
       res.setHeader('Content-Type','text/xml; charset=utf-8');
